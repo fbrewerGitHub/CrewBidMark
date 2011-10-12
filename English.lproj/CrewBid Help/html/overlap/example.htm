@@ -1,0 +1,85 @@
+<html>
+<head>
+   <title>An Overlap Example</title>
+   <meta name="robots" content="keywords"></meta>
+   <meta name="keywords" content="overlap, example, enter, data, previous, month, select, assign, points"></meta>
+   <meta name="description" content="Overlap example which demonstrates CrewBid's overlap features"></meta>
+</head>
+
+<body text="#000000" bgcolor="#ffffff">
+
+<font face="Lucida Grande,Geneva,Helvetica">
+
+<h2>Overlap</h2>
+
+<h3>An Overlap Example</h3>
+
+<p>In this example, we'll assume that:
+   <ul>
+      <li>
+      you are bidding for October 2004 MCO First Officer,
+      </li>
+      <li>
+      you were awarded line 61 in September as an MCO First Officer,
+      </li>
+      <li>
+      you gave away the last trip of the month, a turn on 30 September with <nobr>7:45</nobr> block time and a release time of <nobr>15:15</nobr>, and
+      </li>
+      <li>
+      you picked up a two-day trip that started 30 September, with block time of <nobr>5:15</nobr> on 30 September, <nobr>6:20</nobr> on 1 October, and a release time of <nobr>22:30</nobr> on 01 October.
+      </li>
+   </ul>
+</p>
+
+<p>The September MCO First Officer line 61 calendar, with the last trip selected is shown below.</p>
+
+<p><img src="../../graphics/overlap_ex_prev_month.png"></p>
+
+<h4>The Initial Overlap Tab</h4>
+
+<p>When you first select the Overlap Tab, it will look like the figure below. The left side of the tab has the last six dates of the previous month and the first three dates of the current month along with fields in which block times for those days may be entered. In addtion there is a field for the release time of the last day of the previous month's flying schedule. The release time field moves as times are entered, so that its position always corresponds to the last date of flying in the previous month.</p>
+
+<p>When the Overlap Tab is first selected, and before any data is entered, the block time fields will all be 00:00, and the release time will be next to the first date, with the default time of <nobr>03:00</nobr>.</p>
+
+<p>The right side of the tab has a popup button where you may select the previous month's bid and a field in which to enter the previous month's line number. The popup button is populated with all bid data files that exist for the previous month, and the bid that most closely matches the current bid (crew base and seat position) will be selected.</p>
+
+<p>If there are no such files for the previous month, as would be the case if you did not use CrewBid for the previous month or you removed the files from the CrewBid folder of your home Preferences folder, the popup button will state "No Previous Bid Month Available". In that case, you would not be able to use the previous month's data to fill the Block Times and Release Time on the left side of the tab. In addition, the Line field would be disabled.</p>
+
+<p><img src="../../graphics/overlap_ex_initial.png"></p>
+
+<h4>Use the Previous Month's Data</h4>
+
+<p>The first step in using the previous month's data is to make sure that the correct bid from the previous month is in the popup button. Normally, it will already have the previous month's bid for the current bid's crew base and seat position. But, if you have changed domiciles or upgraded, you may need to select the correct previous month bid.</p>
+
+<p>Next, enter the line number you were awarded. In this example, it is line 61.</p>
+
+<p>Then click the Use Selected Bid and Line Data button. CrewBid will read the bid data file selected in the popup button and fill the Block Time and Release Time fields on the left side of the tab with the appropriate data.</p>
+
+<p>After CrewBid has filled the Block Time and Release Time fields with the data from the September 2004 MCO First Officer line 61, the Overlap Tab will look like the figure below.</p>
+
+<p><img src="../../graphics/overlap_ex_filled.png"></p>
+
+<h4>Manually Enter Trip Data</h4>
+
+<p>Now, since you've dropped the turn on 30 September, you'll want to remove it from the Block Time fields by deleting the entry for 30 September. Double-click the entry to select it, then click the delete key. After deleting the entry, the Overlap Tab will look like the figure below. Note that the Block Time entry for 30 September is now <nobr>00:00</nobr>, indicating that there is no flying on that date, and that the Release Time field has moved to 29 September, which is now the last date with with flying scheduled.</p>
+
+<p><img src="../../graphics/overlap_ex_remove_trip.png"></p>
+
+<p>The next step is to enter the data for the trip that you picked up on 30 September. Enter <nobr>5:15</nobr> in the Block Time for 30 September, <nobr>6:20</nobr> for 01 October, and <nobr>22:30</nobr> for the Release Time (which will now be positioned to correspond to 01 October, the last date with flying scheduled). After you have made these entries, the Overlap Tab will look like the figure below.</p>
+
+<p><img src="../../graphics/overlap_ex_add_trip.png"></p>
+
+<h4>Determine Which Lines Have Overlap</h4>
+
+<p>To determine which lines have overlap, click the Compute Overlap button. CrewBid will determine which lines have overlap, and indicate those lines by coloring the Pay for those lines <font color="brown">brown</font>, as shown in the partial view of the Lines Table below.</p>
+
+<p><img src="../../graphics/overlap_ex_lines.png"></p>
+
+<p>Finally, you may select lines that do not have overlap and assign points to both lines that have and lines that do not have overlap in the Select/Points tab. For example, to assign <nobr>-5.00</nobr> points to lines that have overlap, you would select the Assign points to lines that have overlap checkbox and enter <nobr>-5.00</nobr> in the text field, as shown in the figure below.</p>
+
+<p><img src="../../graphics/overlap_ex_choose.png"></p>
+
+</font>
+
+</body>
+</html>

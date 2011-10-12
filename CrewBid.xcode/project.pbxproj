@@ -1,0 +1,3178 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		089C165FFE840EACC02AAC07 = {
+			children = (
+				089C1660FE840EACC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1660FE840EACC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A6FEA54F5311CA2CBB = {
+			children = (
+				4D1D26F106C3B88C00FB3A9F,
+				1058C7A7FEA54F5311CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7A7FEA54F5311CA2CBB = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7A8FEA54F5311CA2CBB = {
+			children = (
+				2A37F4C5FDCFA73011CA2CEA,
+				2A37F4C4FDCFA73011CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//190
+//191
+//192
+//193
+//194
+		19C28FB0FE9D524F11CA2CBB = {
+			children = (
+				8D15AC370486D014006FF6A4,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//2A0
+//2A1
+//2A2
+//2A3
+//2A4
+		2A37F4A9FDCFA73011CA2CEA = {
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				SDKROOT = /Developer/SDKs/MacOSX10.2.8.sdk;
+			};
+			buildStyles = (
+				4A9504D0FFE6A4CB11CA0CBA,
+				4A9504D1FFE6A4CB11CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D15AC270486D014006FF6A4,
+			);
+		};
+		2A37F4AAFDCFA73011CA2CEA = {
+			children = (
+				2A37F4ABFDCFA73011CA2CEA,
+				4D77DCCD064BB2A30015E535,
+				4DA858120643CC4E008C8071,
+				4D6F656A065E3C480060F6B0,
+				4D0FBCF20657B93C0064E460,
+				4D77DCD0064BB6110015E535,
+				4DA85A460645256E008C8071,
+				4DA85A4F064526ED008C8071,
+				4D72B38C063BD32400933C0C,
+				4DB1BF3206C546F500CA9E2E,
+				4D05593D06C56F1D00732EB8,
+				4D2D6CCB0669FAD000ED62BA,
+				4DE9BE380773900D0028D2CE,
+				4DE2CF1A08373D2D0057DF4B,
+				2A37F4AFFDCFA73011CA2CEA,
+				2A37F4B8FDCFA73011CA2CEA,
+				2A37F4C3FDCFA73011CA2CEA,
+				19C28FB0FE9D524F11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = CrewBid;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA = {
+			children = (
+				2A37F4AEFDCFA73011CA2CEA,
+				2A37F4ACFDCFA73011CA2CEA,
+				4D72B1000639ADAF00933C0C,
+				4D72B1010639ADAF00933C0C,
+			);
+			isa = PBXGroup;
+			name = "Main Classes";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4ACFDCFA73011CA2CEA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBDocument.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4AEFDCFA73011CA2CEA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBDocument.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA = {
+			children = (
+				32DBCF750370BD2300C91783,
+				2A37F4B0FDCFA73011CA2CEA,
+				4D6C02B906A9587400007D11,
+				4D6C02BA06A9587400007D11,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B0FDCFA73011CA2CEA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = main.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B4FDCFA73011CA2CEA = {
+			children = (
+				2A37F4B5FDCFA73011CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = CBDocument.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B5FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBDocument.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B6FDCFA73011CA2CEA = {
+			children = (
+				2A37F4B7FDCFA73011CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = MainMenu.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B7FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/MainMenu.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA = {
+			children = (
+				4DE70775079711BC00EE495A,
+				2A37F4B6FDCFA73011CA2CEA,
+				2A37F4B4FDCFA73011CA2CEA,
+				4D72B1100639B06B00933C0C,
+				4DADE94307D5CEC80001F76F,
+				4D6E176906616D9700118EE4,
+				4D72B1630639BCB200933C0C,
+				4D6A825A06B147F40099EDF7,
+				4DA8581D0643CD45008C8071,
+				4D72B625063DB9D900933C0C,
+				4D2D6CD20669FF5000ED62BA,
+				4DB1694307284E0400F0A094,
+				4DCFCFF307A906130075D0FD,
+				4DAAC14F0660203100B7F9DE,
+				8D15AC360486D014006FF6A4,
+				089C165FFE840EACC02AAC07,
+				2A37F4B9FDCFA73011CA2CEA,
+				4DEB8C010676061600651D14,
+				4D5010D007738519008E8E4A,
+				4D5010C8077384F4008E8E4A,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4B9FDCFA73011CA2CEA = {
+			children = (
+				2A37F4BAFDCFA73011CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = Credits.rtf;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4BAFDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.rtf;
+			name = English;
+			path = English.lproj/Credits.rtf;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA = {
+			children = (
+				1058C7A6FEA54F5311CA2CBB,
+				1058C7A8FEA54F5311CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2A37F4C4FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2A37F4C5FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//2A0
+//2A1
+//2A2
+//2A3
+//2A4
+//320
+//321
+//322
+//323
+//324
+		32DBCF750370BD2300C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CrewBid_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504D0FFE6A4CB11CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504D1FFE6A4CB11CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//4D0
+//4D1
+//4D2
+//4D3
+//4D4
+		4D02485C06CB79640026B6BE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBOverlapTabDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D02485D06CB79640026B6BE = {
+			fileRef = 4D02485C06CB79640026B6BE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D02486006CB7A8D0026B6BE = {
+			children = (
+				4DA85A4906452594008C8071,
+				4DA85A4A06452594008C8071,
+				4DA85AD706454F6A008C8071,
+				4DA85AD806454F6A008C8071,
+				4DA85B5A0645A3F8008C8071,
+				4DA85B5B0645A3F8008C8071,
+				4DA85B600645A4A0008C8071,
+				4DA85B610645A4A0008C8071,
+			);
+			isa = PBXGroup;
+			name = Lines/Trips;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D02486306CB7AB60026B6BE = {
+			children = (
+				4D6E19A30662700900118EE4,
+				4D6E19A70662714F00118EE4,
+				4D0FA9E5079FCBCB007EA133,
+				4D6E19D00662AB4200118EE4,
+				4D2D6B3B0668C46100ED62BA,
+				4D6E19AB0662726A00118EE4,
+				4D02486606CB7ADA0026B6BE,
+			);
+			isa = PBXGroup;
+			name = "Select/Sort Tabs";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D02486606CB7ADA0026B6BE = {
+			children = (
+				4D02485C06CB79640026B6BE,
+				4D64916606C8F1B9006BF850,
+				4D64916706C8F1B9006BF850,
+			);
+			isa = PBXGroup;
+			name = Overlap;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D04438206A8612A008C48CB = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBidFileDownload.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D04438306A8612A008C48CB = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBidFileDownload.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D04438406A8612A008C48CB = {
+			fileRef = 4D04438206A8612A008C48CB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D04438506A8612A008C48CB = {
+			fileRef = 4D04438306A8612A008C48CB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D04438E06A9435C008C48CB = {
+			fileRef = 4D72B1680639BD9C00933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D04438F06A9435D008C48CB = {
+			fileRef = 4D72B1690639BD9C00933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D05593106C56C9100732EB8 = {
+			fileRef = 4DAAC14A0660201C00B7F9DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D05593D06C56F1D00732EB8 = {
+			children = (
+				4D05594406C5707C00732EB8,
+				4D05594506C5707C00732EB8,
+			);
+			isa = PBXGroup;
+			name = "Data Types";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D05594406C5707C00732EB8 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBlockTime.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D05594506C5707C00732EB8 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBlockTime.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D05594606C5707C00732EB8 = {
+			fileRef = 4D05594406C5707C00732EB8;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D05594706C5707C00732EB8 = {
+			fileRef = 4D05594506C5707C00732EB8;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D0FA9E5079FCBCB007EA133 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBlockOfDaysOffTabDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D0FA9E6079FCBCB007EA133 = {
+			fileRef = 4D0FA9E5079FCBCB007EA133;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D0FA9F5079FE5CB007EA133 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBlockOfDaysOffTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D0FA9F6079FE5CB007EA133 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBlockOfDaysOffTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D0FA9F7079FE5CB007EA133 = {
+			fileRef = 4D0FA9F5079FE5CB007EA133;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D0FA9F8079FE5CB007EA133 = {
+			fileRef = 4D0FA9F6079FE5CB007EA133;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D0FA9FB079FE6C4007EA133 = {
+			children = (
+				4D0FA9FC079FE6C4007EA133,
+			);
+			isa = PBXVariantGroup;
+			name = CBBlockOfDaysOffTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D0FA9FC079FE6C4007EA133 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBBlockOfDaysOffTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D0FA9FD079FE6C4007EA133 = {
+			fileRef = 4D0FA9FB079FE6C4007EA133;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D0FBCF20657B93C0064E460 = {
+			children = (
+				4DB168F00657B745001984FD,
+				4DB168F10657B745001984FD,
+				4DA384200743E6F200C5C380,
+				4DA384210743E6F200C5C380,
+				4D970982064C5E1D0040F76B,
+				4D970983064C5E1D0040F76B,
+				4D2D6AA30667C47200ED62BA,
+				4D2D6AA40667C47200ED62BA,
+			);
+			isa = PBXGroup;
+			name = "Interface Item Subclasses";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D1D26F106C3B88C00FB3A9F = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Carbon.framework;
+			path = /System/Library/Frameworks/Carbon.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		4D1D279B06C3DBA700FB3A9F = {
+			fileRef = 4D1D26F106C3B88C00FB3A9F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D690206669F7700ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBButtonMatrixController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D690306669F7700ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBButtonMatrixController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D690406669F7700ED62BA = {
+			fileRef = 4D2D690206669F7700ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D690506669F7700ED62BA = {
+			fileRef = 4D2D690306669F7700ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D69080666A61700ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBDaysOfMonthTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D69090666A61700ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBDaysOfMonthTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D690A0666A61700ED62BA = {
+			fileRef = 4D2D69080666A61700ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D690B0666A61700ED62BA = {
+			fileRef = 4D2D69090666A61700ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6A1506675F5600ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTextFieldMatrixController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6A1606675F5600ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTextFieldMatrixController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6A1706675F5600ED62BA = {
+			fileRef = 4D2D6A1506675F5600ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6A1806675F5600ED62BA = {
+			fileRef = 4D2D6A1606675F5600ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6AA30667C47200ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBSelectCalendarMatrix.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6AA40667C47200ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBSelectCalendarMatrix.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6AF10667DDCC00ED62BA = {
+			fileRef = 4D2D6AA30667C47200ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6AF20667DDCC00ED62BA = {
+			fileRef = 4D2D6AA40667C47200ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6B220667EC4600ED62BA = {
+			children = (
+				4D2D6B230667EC4600ED62BA,
+			);
+			isa = PBXVariantGroup;
+			name = CBOvernightCitiesTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B230667EC4600ED62BA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBOvernightCitiesTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B240667EC4600ED62BA = {
+			fileRef = 4D2D6B220667EC4600ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6B2F0668AD9000ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBOvernightCitiesTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B300668AD9000ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBOvernightCitiesTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B310668AD9000ED62BA = {
+			fileRef = 4D2D6B2F0668AD9000ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6B320668AD9000ED62BA = {
+			fileRef = 4D2D6B300668AD9000ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6B350668B76600ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBFormMatrixController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B360668B76600ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBFormMatrixController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B370668B76600ED62BA = {
+			fileRef = 4D2D6B350668B76600ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6B380668B76600ED62BA = {
+			fileRef = 4D2D6B360668B76600ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6B3B0668C46100ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBOvernightCitiesDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6B3C0668C46100ED62BA = {
+			fileRef = 4D2D6B3B0668C46100ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6C8B0669E97300ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBidSubmitController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6C8C0669E97300ED62BA = {
+			fileRef = 4D2D6C8B0669E97300ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6CC70669F3C500ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBPrintController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6CC80669F3C500ED62BA = {
+			fileRef = 4D2D6CC70669F3C500ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6CCB0669FAD000ED62BA = {
+			children = (
+				4D2D6CCE0669FC2900ED62BA,
+				4D2D6CCF0669FC2900ED62BA,
+				4D2D6D65066A2D8B00ED62BA,
+				4D2D6D66066A2D8B00ED62BA,
+			);
+			isa = PBXGroup;
+			name = Printing;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6CCE0669FC2900ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBLinePrinter.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6CCF0669FC2900ED62BA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBLinePrinter.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6CD00669FC2900ED62BA = {
+			fileRef = 4D2D6CCE0669FC2900ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6CD10669FC2900ED62BA = {
+			fileRef = 4D2D6CCF0669FC2900ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6CD20669FF5000ED62BA = {
+			children = (
+				4D2D6CD30669FF5000ED62BA,
+			);
+			isa = PBXVariantGroup;
+			name = CBLinePrintCalendar.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6CD30669FF5000ED62BA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBLinePrintCalendar.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6CD40669FF5000ED62BA = {
+			fileRef = 4D2D6CD20669FF5000ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6D65066A2D8B00ED62BA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBLineCalendarTripTextView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6D66066A2D8B00ED62BA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBLineCalendarTripTextView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D2D6D67066A2D8B00ED62BA = {
+			fileRef = 4D2D6D65066A2D8B00ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D2D6D68066A2D8B00ED62BA = {
+			fileRef = 4D2D6D66066A2D8B00ED62BA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D483AF307D64C70003511B2 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBRegistrationWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D483AF407D64C70003511B2 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBRegistrationWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D483AF507D64C70003511B2 = {
+			fileRef = 4D483AF307D64C70003511B2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D483AF607D64C70003511B2 = {
+			fileRef = 4D483AF407D64C70003511B2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D4CB6810702E2C1004BC285 = {
+			children = (
+				4D4CB6820702E2C1004BC285,
+			);
+			isa = PBXVariantGroup;
+			name = CBOverlapTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D4CB6820702E2C1004BC285 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBOverlapTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D4CB6830702E2C1004BC285 = {
+			fileRef = 4D4CB6810702E2C1004BC285;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D4CB6970702E577004BC285 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBOverlapTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D4CB6980702E577004BC285 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBOverlapTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D4CB6990702E577004BC285 = {
+			fileRef = 4D4CB6970702E577004BC285;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D4CB69A0702E577004BC285 = {
+			fileRef = 4D4CB6980702E577004BC285;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D5010C8077384F4008E8E4A = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.icns;
+			path = cb_app_icon.icns;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D5010C9077384F4008E8E4A = {
+			fileRef = 4D5010C8077384F4008E8E4A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D5010D007738519008E8E4A = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.icns;
+			path = cb_doc_icon.icns;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D5010D107738519008E8E4A = {
+			fileRef = 4D5010D007738519008E8E4A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D64916606C8F1B9006BF850 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBOverlapDetector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D64916706C8F1B9006BF850 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBOverlapDetector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D64916806C8F1B9006BF850 = {
+			fileRef = 4D64916606C8F1B9006BF850;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D64916906C8F1B9006BF850 = {
+			fileRef = 4D64916706C8F1B9006BF850;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6A825A06B147F40099EDF7 = {
+			children = (
+				4D6A825B06B147F40099EDF7,
+			);
+			isa = PBXVariantGroup;
+			name = CBProgress.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6A825B06B147F40099EDF7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBProgress.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6A825C06B147F40099EDF7 = {
+			fileRef = 4D6A825A06B147F40099EDF7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6A83B706B28FFA0099EDF7 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBidFileWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6A83B806B28FFA0099EDF7 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBidFileWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6A83B906B28FFA0099EDF7 = {
+			fileRef = 4D6A83B706B28FFA0099EDF7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6A83BA06B28FFA0099EDF7 = {
+			fileRef = 4D6A83B806B28FFA0099EDF7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6C02B906A9587400007D11 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBNotificationAndKeyStrings.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6C02BA06A9587400007D11 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBNotificationAndKeyStrings.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6C02BB06A9587400007D11 = {
+			fileRef = 4D6C02B906A9587400007D11;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6C02BC06A9587400007D11 = {
+			fileRef = 4D6C02BA06A9587400007D11;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6C455A07CBDF19001284FA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBFileReader.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6C455B07CBDF19001284FA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBFileReader.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6C455C07CBDF19001284FA = {
+			fileRef = 4D6C455A07CBDF19001284FA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6C455D07CBDF19001284FA = {
+			fileRef = 4D6C455B07CBDF19001284FA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6C45FD07CC0610001284FA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBFALineFileReader.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6C45FE07CC0610001284FA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBFALineFileReader.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6C45FF07CC0610001284FA = {
+			fileRef = 4D6C45FD07CC0610001284FA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6C460007CC0610001284FA = {
+			fileRef = 4D6C45FE07CC0610001284FA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6E176906616D9700118EE4 = {
+			children = (
+				4D6E176A06616D9700118EE4,
+			);
+			isa = PBXVariantGroup;
+			name = CBBidSubmit.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E176A06616D9700118EE4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBBidSubmit.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E176B06616D9700118EE4 = {
+			fileRef = 4D6E176906616D9700118EE4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6E19A30662700900118EE4 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBAircraftChangesTabDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E19A40662700900118EE4 = {
+			fileRef = 4D6E19A30662700900118EE4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6E19A70662714F00118EE4 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBAmPmTabDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E19A80662714F00118EE4 = {
+			fileRef = 4D6E19A70662714F00118EE4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6E19AB0662726A00118EE4 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTripLengthTabDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E19AC0662726A00118EE4 = {
+			fileRef = 4D6E19AB0662726A00118EE4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6E19CB06628D3400118EE4 = {
+			children = (
+				4D6E19CC06628D3400118EE4,
+			);
+			isa = PBXVariantGroup;
+			name = CBDaysOfMonthTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E19CC06628D3400118EE4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBDaysOfMonthTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E19CD06628D3400118EE4 = {
+			fileRef = 4D6E19CB06628D3400118EE4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6E19D00662AB4200118EE4 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBDaysOfMonthTabDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6E19D10662AB4200118EE4 = {
+			fileRef = 4D6E19D00662AB4200118EE4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F656A065E3C480060F6B0 = {
+			children = (
+				4D6F6597065E4A180060F6B0,
+				4D6F6598065E4A180060F6B0,
+				4DAAC1520660206F00B7F9DE,
+				4DAAC1530660206F00B7F9DE,
+				4DAAC1B506603CE800B7F9DE,
+				4DAAC1B606603CE800B7F9DE,
+				4D6F66A8065F64E90060F6B0,
+				4D6F66A9065F64E90060F6B0,
+				4D0FA9F5079FE5CB007EA133,
+				4D0FA9F6079FE5CB007EA133,
+				4D2D69080666A61700ED62BA,
+				4D2D69090666A61700ED62BA,
+				4D4CB6970702E577004BC285,
+				4D4CB6980702E577004BC285,
+				4D2D6B2F0668AD9000ED62BA,
+				4D2D6B300668AD9000ED62BA,
+			);
+			isa = PBXGroup;
+			name = "Select/Points Tab View Items";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F6592065E461C0060F6B0 = {
+			children = (
+				4D6F6593065E461C0060F6B0,
+			);
+			isa = PBXVariantGroup;
+			name = CBTripLengthTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F6593065E461C0060F6B0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBTripLengthTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F6594065E461C0060F6B0 = {
+			fileRef = 4D6F6592065E461C0060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F6597065E4A180060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTabItemController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F6598065E4A180060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTabItemController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F6599065E4A180060F6B0 = {
+			fileRef = 4D6F6597065E4A180060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F659A065E4A180060F6B0 = {
+			fileRef = 4D6F6598065E4A180060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F66A0065F58330060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBInterfaceItemOwner.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F66A1065F58330060F6B0 = {
+			fileRef = 4D6F66A0065F58330060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F66A8065F64E90060F6B0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTripLengthTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F66A9065F64E90060F6B0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTripLengthTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F66AA065F64E90060F6B0 = {
+			fileRef = 4D6F66A8065F64E90060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F66AB065F64E90060F6B0 = {
+			fileRef = 4D6F66A9065F64E90060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F67E1065FC34E0060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBInterfaceGroupController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F67E2065FC34E0060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBInterfaceGroupController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F67E3065FC34E0060F6B0 = {
+			fileRef = 4D6F67E1065FC34E0060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F67E4065FC34E0060F6B0 = {
+			fileRef = 4D6F67E2065FC34E0060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F67FD065FF4BC0060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBIntegerTextFieldController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F67FE065FF4BC0060F6B0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBIntegerTextFieldController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D6F67FF065FF4BC0060F6B0 = {
+			fileRef = 4D6F67FD065FF4BC0060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D6F6800065FF4BC0060F6B0 = {
+			fileRef = 4D6F67FE065FF4BC0060F6B0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B1000639ADAF00933C0C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBAppController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1010639ADAF00933C0C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBAppController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1020639ADAF00933C0C = {
+			fileRef = 4D72B1000639ADAF00933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B1030639ADAF00933C0C = {
+			fileRef = 4D72B1010639ADAF00933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B1080639AE2200933C0C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBPreferencesWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1090639AE2200933C0C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBPreferencesWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B10A0639AE2200933C0C = {
+			fileRef = 4D72B1080639AE2200933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B10B0639AE2200933C0C = {
+			fileRef = 4D72B1090639AE2200933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B1100639B06B00933C0C = {
+			children = (
+				4D72B1110639B06B00933C0C,
+			);
+			isa = PBXVariantGroup;
+			name = CBPreferences.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1110639B06B00933C0C = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBPreferences.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1120639B06B00933C0C = {
+			fileRef = 4D72B1100639B06B00933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B1630639BCB200933C0C = {
+			children = (
+				4D72B1640639BCB200933C0C,
+			);
+			isa = PBXVariantGroup;
+			name = CBBidSelect.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1640639BCB200933C0C = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBBidSelect.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1650639BCB200933C0C = {
+			fileRef = 4D72B1630639BCB200933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B1680639BD9C00933C0C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBNewBidWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B1690639BD9C00933C0C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBNewBidWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B38C063BD32400933C0C = {
+			children = (
+				4D04438206A8612A008C48CB,
+				4D04438306A8612A008C48CB,
+			);
+			isa = PBXGroup;
+			name = "Bid Download/Upload";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B625063DB9D900933C0C = {
+			children = (
+				4D72B626063DB9D900933C0C,
+			);
+			isa = PBXVariantGroup;
+			name = CBBidCredentials.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B626063DB9D900933C0C = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBBidCredentials.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D72B627063DB9D900933C0C = {
+			fileRef = 4D72B625063DB9D900933C0C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D72B628063DBB0C00933C0C = {
+			fileRef = 8D15AC360486D014006FF6A4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D77DCC1064BB28E0015E535 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBLineCalendarController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D77DCC2064BB28E0015E535 = {
+			fileRef = 4D77DCC1064BB28E0015E535;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D77DCCD064BB2A30015E535 = {
+			children = (
+				4D7C981E064656E700FC83DE,
+				4D7C981F064656E700FC83DE,
+				4D7C98260646589600FC83DE,
+				4D77DCC1064BB28E0015E535,
+				4D97097E064C5A310040F76B,
+				4D850AB50658DF03002610DB,
+				4DB1BCE706C50A2200CA9E2E,
+				4D2D6C8B0669E97300ED62BA,
+				4D2D6CC70669F3C500ED62BA,
+			);
+			isa = PBXGroup;
+			name = "Main Window";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D77DCD0064BB6110015E535 = {
+			children = (
+				4DB16434065430F3001984FD,
+				4DB16435065430F3001984FD,
+				4DB1672E065648AF001984FD,
+				4DB1672F065648AF001984FD,
+				4D2D690206669F7700ED62BA,
+				4D2D690306669F7700ED62BA,
+				4D2D6A1506675F5600ED62BA,
+				4D2D6A1606675F5600ED62BA,
+				4D2D6B350668B76600ED62BA,
+				4D2D6B360668B76600ED62BA,
+				4D6F67FD065FF4BC0060F6B0,
+				4D6F67FE065FF4BC0060F6B0,
+				4D850BDD06596FBA002610DB,
+				4D850BDE06596FBA002610DB,
+				4DB16460065436EF001984FD,
+				4DB16461065436EF001984FD,
+				4D77DCD3064BB6370015E535,
+				4D77DCD4064BB6370015E535,
+				4D6F66A0065F58330060F6B0,
+				4D6F67E1065FC34E0060F6B0,
+				4D6F67E2065FC34E0060F6B0,
+			);
+			isa = PBXGroup;
+			name = "Object Controllers";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D77DCD3064BB6370015E535 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBMatrixController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D77DCD4064BB6370015E535 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBMatrixController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D77DCD5064BB6370015E535 = {
+			fileRef = 4D77DCD3064BB6370015E535;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D77DCD6064BB6370015E535 = {
+			fileRef = 4D77DCD4064BB6370015E535;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D7C980E06464DA000FC83DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBDataModel.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D7C980F06464DA000FC83DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBDataModel.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D7C981006464DA000FC83DE = {
+			fileRef = 4D7C980E06464DA000FC83DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D7C981106464DA000FC83DE = {
+			fileRef = 4D7C980F06464DA000FC83DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D7C981E064656E700FC83DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBMainWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D7C981F064656E700FC83DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBMainWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D7C9820064656E700FC83DE = {
+			fileRef = 4D7C981E064656E700FC83DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D7C9821064656E700FC83DE = {
+			fileRef = 4D7C981F064656E700FC83DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D7C98260646589600FC83DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBLinesTableViewController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D7C98270646589600FC83DE = {
+			fileRef = 4D7C98260646589600FC83DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D850AB50658DF03002610DB = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBSelectTabViewController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D850AB60658DF03002610DB = {
+			fileRef = 4D850AB50658DF03002610DB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D850BDD06596FBA002610DB = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBRadioMatrixController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D850BDE06596FBA002610DB = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBRadioMatrixController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D850BDF06596FBA002610DB = {
+			fileRef = 4D850BDD06596FBA002610DB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D850BE006596FBA002610DB = {
+			fileRef = 4D850BDE06596FBA002610DB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D97097E064C5A310040F76B = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBSortTabViewController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D97097F064C5A310040F76B = {
+			fileRef = 4D97097E064C5A310040F76B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D970982064C5E1D0040F76B = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBCalendarMatrix.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D970983064C5E1D0040F76B = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBCalendarMatrix.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4D970984064C5E1D0040F76B = {
+			fileRef = 4D970982064C5E1D0040F76B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4D970985064C5E1D0040F76B = {
+			fileRef = 4D970983064C5E1D0040F76B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA384200743E6F200C5C380 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTableHeaderView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA384210743E6F200C5C380 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTableHeaderView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA384220743E6F200C5C380 = {
+			fileRef = 4DA384200743E6F200C5C380;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA384230743E6F200C5C380 = {
+			fileRef = 4DA384210743E6F200C5C380;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA800DD06B04DD000F51916 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBMainPreferencesWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA800DE06B04DD000F51916 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBMainPreferencesWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA800DF06B04DD000F51916 = {
+			fileRef = 4DA800DD06B04DD000F51916;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA800E006B04DD000F51916 = {
+			fileRef = 4DA800DE06B04DD000F51916;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA800E306B0505300F51916 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBidSubmitPreferencesWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA800E406B0505300F51916 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBidSubmitPreferencesWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA800E506B0505300F51916 = {
+			fileRef = 4DA800E306B0505300F51916;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA800E606B0505300F51916 = {
+			fileRef = 4DA800E406B0505300F51916;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA857640642E65D008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBDataFileUnzip.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA857650642E65D008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBDataFileUnzip.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA857660642E65D008C8071 = {
+			fileRef = 4DA857640642E65D008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA857670642E65D008C8071 = {
+			fileRef = 4DA857650642E65D008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA858120643CC4E008C8071 = {
+			children = (
+				4D483AF307D64C70003511B2,
+				4D483AF407D64C70003511B2,
+				4D72B1080639AE2200933C0C,
+				4D72B1090639AE2200933C0C,
+				4DA800DD06B04DD000F51916,
+				4DA800DE06B04DD000F51916,
+				4DA800E306B0505300F51916,
+				4DA800E406B0505300F51916,
+				4D72B1680639BD9C00933C0C,
+				4D72B1690639BD9C00933C0C,
+				4D6A83B706B28FFA0099EDF7,
+				4D6A83B806B28FFA0099EDF7,
+				4DEA7300063DD8E70069E43C,
+				4DEA7301063DD8E70069E43C,
+				4DE50F0506B97B6900E6E61F,
+				4DE50F0606B97B6900E6E61F,
+				4DB1692007284C9E00F0A094,
+				4DB1692107284C9E00F0A094,
+				4DCFCFF707A907570075D0FD,
+				4DCFCFF607A907570075D0FD,
+			);
+			isa = PBXGroup;
+			name = "Window Controllers";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA8581D0643CD45008C8071 = {
+			children = (
+				4DA8581E0643CD45008C8071,
+			);
+			isa = PBXVariantGroup;
+			name = CBProgressPanel.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA8581E0643CD45008C8071 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBProgressPanel.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA8581F0643CD45008C8071 = {
+			fileRef = 4DA8581D0643CD45008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85A460645256E008C8071 = {
+			children = (
+				4D7C980E06464DA000FC83DE,
+				4D7C980F06464DA000FC83DE,
+				4D02486006CB7A8D0026B6BE,
+				4D02486306CB7AB60026B6BE,
+			);
+			isa = PBXGroup;
+			name = "Data Model";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85A4906452594008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBLine.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85A4A06452594008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBLine.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85A4B06452594008C8071 = {
+			fileRef = 4DA85A4906452594008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85A4C06452594008C8071 = {
+			fileRef = 4DA85A4A06452594008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85A4F064526ED008C8071 = {
+			children = (
+				4D6C45FD07CC0610001284FA,
+				4D6C45FE07CC0610001284FA,
+				4D6C455A07CBDF19001284FA,
+				4D6C455B07CBDF19001284FA,
+				4DB70E9F07BC221E0013016F,
+				4DB70EA007BC221E0013016F,
+				4DE50EFF06B97AD700E6E61F,
+				4DE50F0006B97AD700E6E61F,
+				4DA857640642E65D008C8071,
+				4DA857650642E65D008C8071,
+				4DA85A5206452722008C8071,
+				4DA85A5306452722008C8071,
+				4DA85ADF0645550A008C8071,
+				4DA85AE00645550A008C8071,
+			);
+			isa = PBXGroup;
+			name = "File Reading";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85A5206452722008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBLineFileReader.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85A5306452722008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBLineFileReader.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85A5406452722008C8071 = {
+			fileRef = 4DA85A5206452722008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85A5506452722008C8071 = {
+			fileRef = 4DA85A5306452722008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85AD706454F6A008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTrip.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85AD806454F6A008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTrip.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85AD906454F6A008C8071 = {
+			fileRef = 4DA85AD706454F6A008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85ADA06454F6A008C8071 = {
+			fileRef = 4DA85AD806454F6A008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85ADF0645550A008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTripFileReader.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85AE00645550A008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTripFileReader.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85AE10645550A008C8071 = {
+			fileRef = 4DA85ADF0645550A008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85AE20645550A008C8071 = {
+			fileRef = 4DA85AE00645550A008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85B5A0645A3F8008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTripDay.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85B5B0645A3F8008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTripDay.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85B5C0645A3F8008C8071 = {
+			fileRef = 4DA85B5A0645A3F8008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85B5D0645A3F8008C8071 = {
+			fileRef = 4DA85B5B0645A3F8008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85B600645A4A0008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTripDayLeg.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85B610645A4A0008C8071 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTripDayLeg.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DA85B620645A4A0008C8071 = {
+			fileRef = 4DA85B600645A4A0008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DA85B630645A4A0008C8071 = {
+			fileRef = 4DA85B610645A4A0008C8071;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DAAC14A0660201C00B7F9DE = {
+			children = (
+				4DAAC14B0660201C00B7F9DE,
+			);
+			isa = PBXVariantGroup;
+			name = CBAircraftChangesTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC14B0660201C00B7F9DE = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBAircraftChangesTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC14F0660203100B7F9DE = {
+			children = (
+				4DAAC14A0660201C00B7F9DE,
+				4DAAC1B006603AC000B7F9DE,
+				4D0FA9FB079FE6C4007EA133,
+				4D6E19CB06628D3400118EE4,
+				4D4CB6810702E2C1004BC285,
+				4D2D6B220667EC4600ED62BA,
+				4D6F6592065E461C0060F6B0,
+			);
+			isa = PBXGroup;
+			name = "Select Tabs";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1520660206F00B7F9DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBAircraftChangesTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1530660206F00B7F9DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBAircraftChangesTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1540660206F00B7F9DE = {
+			fileRef = 4DAAC1520660206F00B7F9DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DAAC1550660206F00B7F9DE = {
+			fileRef = 4DAAC1530660206F00B7F9DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DAAC1B006603AC000B7F9DE = {
+			children = (
+				4DAAC1B106603AC000B7F9DE,
+			);
+			isa = PBXVariantGroup;
+			name = CBAmPmTab.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1B106603AC000B7F9DE = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBAmPmTab.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1B206603AC000B7F9DE = {
+			fileRef = 4DAAC1B006603AC000B7F9DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DAAC1B506603CE800B7F9DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBAmPmTabController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1B606603CE800B7F9DE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBAmPmTabController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DAAC1B706603CE800B7F9DE = {
+			fileRef = 4DAAC1B506603CE800B7F9DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DAAC1B806603CE800B7F9DE = {
+			fileRef = 4DAAC1B606603CE800B7F9DE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DADE94307D5CEC80001F76F = {
+			children = (
+				4DADE94407D5CEC80001F76F,
+			);
+			isa = PBXVariantGroup;
+			name = CBRegistration.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DADE94407D5CEC80001F76F = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBRegistration.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DADE94507D5CEC80001F76F = {
+			fileRef = 4DADE94307D5CEC80001F76F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB16434065430F3001984FD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBInterfaceItemController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB16435065430F3001984FD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBInterfaceItemController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB16436065430F3001984FD = {
+			fileRef = 4DB16434065430F3001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB16437065430F3001984FD = {
+			fileRef = 4DB16435065430F3001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB16460065436EF001984FD = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBPopUpButtonController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB16461065436EF001984FD = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBPopUpButtonController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB16462065436EF001984FD = {
+			fileRef = 4DB16460065436EF001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB16463065436EF001984FD = {
+			fileRef = 4DB16461065436EF001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1672E065648AF001984FD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBCheckboxController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1672F065648AF001984FD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBCheckboxController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB16730065648AF001984FD = {
+			fileRef = 4DB1672E065648AF001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB16731065648AF001984FD = {
+			fileRef = 4DB1672F065648AF001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB168F00657B745001984FD = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBTableView.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB168F10657B745001984FD = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBTableView.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB168F20657B745001984FD = {
+			fileRef = 4DB168F00657B745001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB168F30657B745001984FD = {
+			fileRef = 4DB168F10657B745001984FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1692007284C9E00F0A094 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBViewTripWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1692107284C9E00F0A094 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBViewTripWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1692207284C9E00F0A094 = {
+			fileRef = 4DB1692007284C9E00F0A094;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1692307284C9E00F0A094 = {
+			fileRef = 4DB1692107284C9E00F0A094;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1694307284E0400F0A094 = {
+			children = (
+				4DB1694407284E0400F0A094,
+			);
+			isa = PBXVariantGroup;
+			name = CBViewTrip.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1694407284E0400F0A094 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBViewTrip.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1694507284E0400F0A094 = {
+			fileRef = 4DB1694307284E0400F0A094;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1BCE706C50A2200CA9E2E = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBOverlapTabViewController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1BCE806C50A2200CA9E2E = {
+			fileRef = 4DB1BCE706C50A2200CA9E2E;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1BF3206C546F500CA9E2E = {
+			children = (
+				4DB1BF3506C5474E00CA9E2E,
+				4DB1BF3606C5474E00CA9E2E,
+			);
+			isa = PBXGroup;
+			name = Formatters;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1BF3506C5474E00CA9E2E = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBlockTimeFormatter.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1BF3606C5474E00CA9E2E = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBlockTimeFormatter.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB1BF3706C5474E00CA9E2E = {
+			fileRef = 4DB1BF3506C5474E00CA9E2E;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB1BF3806C5474E00CA9E2E = {
+			fileRef = 4DB1BF3606C5474E00CA9E2E;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB70E9F07BC221E0013016F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBFATripFileReader.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB70EA007BC221E0013016F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBFATripFileReader.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DB70EA107BC221E0013016F = {
+			fileRef = 4DB70E9F07BC221E0013016F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DB70EA207BC221E0013016F = {
+			fileRef = 4DB70EA007BC221E0013016F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DCFCFF307A906130075D0FD = {
+			children = (
+				4DCFCFF407A906130075D0FD,
+			);
+			isa = PBXVariantGroup;
+			name = CBFileSelect.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DCFCFF407A906130075D0FD = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/CBFileSelect.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DCFCFF507A906130075D0FD = {
+			fileRef = 4DCFCFF307A906130075D0FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DCFCFF607A907570075D0FD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBFileSelectWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DCFCFF707A907570075D0FD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBFileSelectWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DCFCFF807A907570075D0FD = {
+			fileRef = 4DCFCFF607A907570075D0FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DCFCFF907A907570075D0FD = {
+			fileRef = 4DCFCFF707A907570075D0FD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE2CF1A08373D2D0057DF4B = {
+			children = (
+				4DE2CF2108373E870057DF4B,
+				4DE2CF2208373E870057DF4B,
+			);
+			isa = PBXGroup;
+			name = Categories;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE2CF2108373E870057DF4B = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = "NSMutableArray+MAArrayUtilities.h";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE2CF2208373E870057DF4B = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = "NSMutableArray+MAArrayUtilities.m";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE2CF2308373E870057DF4B = {
+			fileRef = 4DE2CF2108373E870057DF4B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE2CF2408373E870057DF4B = {
+			fileRef = 4DE2CF2208373E870057DF4B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE50EFF06B97AD700E6E61F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBidFileOpener.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE50F0006B97AD700E6E61F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBidFileOpener.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE50F0106B97AD700E6E61F = {
+			fileRef = 4DE50EFF06B97AD700E6E61F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE50F0206B97AD700E6E61F = {
+			fileRef = 4DE50F0006B97AD700E6E61F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE50F0506B97B6900E6E61F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBProgressWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE50F0606B97B6900E6E61F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBProgressWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE50F0706B97B6900E6E61F = {
+			fileRef = 4DE50F0506B97B6900E6E61F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE50F0806B97B6900E6E61F = {
+			fileRef = 4DE50F0606B97B6900E6E61F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE50F7706BA5AD700E6E61F = {
+			fileRef = 4DEA7300063DD8E70069E43C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE50F7806BA5AD800E6E61F = {
+			fileRef = 4DEA7301063DD8E70069E43C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE70775079711BC00EE495A = {
+			children = (
+				4DE70776079711BC00EE495A,
+			);
+			isa = PBXVariantGroup;
+			name = "CrewBid Help";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE70776079711BC00EE495A = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = English;
+			path = "English.lproj/CrewBid Help";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE707C4079711BC00EE495A = {
+			fileRef = 4DE70775079711BC00EE495A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4DE9BE380773900D0028D2CE = {
+			children = (
+				4DE9C07D0773A2DB0028D2CE,
+				4DE9BE3D077395400028D2CE,
+				4DE9BE3E077395400028D2CE,
+			);
+			isa = PBXGroup;
+			name = Registration;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE9BE3D077395400028D2CE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBCrypt.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE9BE3E077395400028D2CE = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBCrypt.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DE9C07D0773A2DB0028D2CE = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = libCdsaCrypt.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DEA7300063DD8E70069E43C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CBBidCredentialWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DEA7301063DD8E70069E43C = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CBBidCredentialWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DEB8C010676061600651D14 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.executable";
+			path = unzip;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4DEB8C020676061600651D14 = {
+			fileRef = 4DEB8C010676061600651D14;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//4D0
+//4D1
+//4D2
+//4D3
+//4D4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D15AC270486D014006FF6A4 = {
+			buildPhases = (
+				8D15AC280486D014006FF6A4,
+				8D15AC2B0486D014006FF6A4,
+				8D15AC300486D014006FF6A4,
+				8D15AC330486D014006FF6A4,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Users/mark/projects/crewbid;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CrewBid_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CrewBid;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = CrewBid;
+			productInstallPath = "$(HOME)/Applications";
+			productName = CrewBid;
+			productReference = 8D15AC370486D014006FF6A4;
+			productType = "com.apple.product-type.application";
+		};
+		8D15AC280486D014006FF6A4 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC290486D014006FF6A4,
+				8D15AC2A0486D014006FF6A4,
+				4D72B1020639ADAF00933C0C,
+				4D72B10A0639AE2200933C0C,
+				4DA857660642E65D008C8071,
+				4DA85A4B06452594008C8071,
+				4DA85A5406452722008C8071,
+				4DA85AD906454F6A008C8071,
+				4DA85AE10645550A008C8071,
+				4DA85B5C0645A3F8008C8071,
+				4DA85B620645A4A0008C8071,
+				4D7C981006464DA000FC83DE,
+				4D7C9820064656E700FC83DE,
+				4D77DCD5064BB6370015E535,
+				4D970984064C5E1D0040F76B,
+				4DB16436065430F3001984FD,
+				4DB16462065436EF001984FD,
+				4DB16730065648AF001984FD,
+				4DB168F20657B745001984FD,
+				4D850BDF06596FBA002610DB,
+				4D6F6599065E4A180060F6B0,
+				4D6F66A1065F58330060F6B0,
+				4D6F66AA065F64E90060F6B0,
+				4D6F67E3065FC34E0060F6B0,
+				4D6F67FF065FF4BC0060F6B0,
+				4DAAC1540660206F00B7F9DE,
+				4DAAC1B706603CE800B7F9DE,
+				4D2D690406669F7700ED62BA,
+				4D2D690A0666A61700ED62BA,
+				4D2D6A1706675F5600ED62BA,
+				4D2D6AF10667DDCC00ED62BA,
+				4D2D6B310668AD9000ED62BA,
+				4D2D6B370668B76600ED62BA,
+				4D2D6CD00669FC2900ED62BA,
+				4D2D6D67066A2D8B00ED62BA,
+				4D04438406A8612A008C48CB,
+				4D04438E06A9435C008C48CB,
+				4D6C02BB06A9587400007D11,
+				4DA800DF06B04DD000F51916,
+				4DA800E506B0505300F51916,
+				4D6A83B906B28FFA0099EDF7,
+				4DE50F0106B97AD700E6E61F,
+				4DE50F0706B97B6900E6E61F,
+				4DE50F7706BA5AD700E6E61F,
+				4DB1BF3706C5474E00CA9E2E,
+				4D05594606C5707C00732EB8,
+				4D64916806C8F1B9006BF850,
+				4D4CB6990702E577004BC285,
+				4DB1692207284C9E00F0A094,
+				4DA384220743E6F200C5C380,
+				4D0FA9F7079FE5CB007EA133,
+				4DCFCFF907A907570075D0FD,
+				4DB70EA107BC221E0013016F,
+				4D6C455C07CBDF19001284FA,
+				4D6C45FF07CC0610001284FA,
+				4D483AF507D64C70003511B2,
+				4DE2CF2308373E870057DF4B,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D15AC290486D014006FF6A4 = {
+			fileRef = 32DBCF750370BD2300C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC2A0486D014006FF6A4 = {
+			fileRef = 2A37F4AEFDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC2B0486D014006FF6A4 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC2C0486D014006FF6A4,
+				8D15AC2D0486D014006FF6A4,
+				8D15AC2E0486D014006FF6A4,
+				8D15AC2F0486D014006FF6A4,
+				4D72B1120639B06B00933C0C,
+				4D72B1650639BCB200933C0C,
+				4D72B627063DB9D900933C0C,
+				4D72B628063DBB0C00933C0C,
+				4DA8581F0643CD45008C8071,
+				4D6F6594065E461C0060F6B0,
+				4DAAC1B206603AC000B7F9DE,
+				4D6E176B06616D9700118EE4,
+				4D6E19CD06628D3400118EE4,
+				4D2D6B240667EC4600ED62BA,
+				4D2D6CD40669FF5000ED62BA,
+				4DEB8C020676061600651D14,
+				4D6A825C06B147F40099EDF7,
+				4D05593106C56C9100732EB8,
+				4D4CB6830702E2C1004BC285,
+				4DB1694507284E0400F0A094,
+				4D5010C9077384F4008E8E4A,
+				4D5010D107738519008E8E4A,
+				4DE707C4079711BC00EE495A,
+				4D0FA9FD079FE6C4007EA133,
+				4DCFCFF507A906130075D0FD,
+				4DADE94507D5CEC80001F76F,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D15AC2C0486D014006FF6A4 = {
+			fileRef = 2A37F4B9FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC2D0486D014006FF6A4 = {
+			fileRef = 2A37F4B6FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC2E0486D014006FF6A4 = {
+			fileRef = 2A37F4B4FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC2F0486D014006FF6A4 = {
+			fileRef = 089C165FFE840EACC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC300486D014006FF6A4 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4,
+				8D15AC320486D014006FF6A4,
+				4D72B1030639ADAF00933C0C,
+				4D72B10B0639AE2200933C0C,
+				4DA857670642E65D008C8071,
+				4DA85A4C06452594008C8071,
+				4DA85A5506452722008C8071,
+				4DA85ADA06454F6A008C8071,
+				4DA85AE20645550A008C8071,
+				4DA85B5D0645A3F8008C8071,
+				4DA85B630645A4A0008C8071,
+				4D7C981106464DA000FC83DE,
+				4D7C9821064656E700FC83DE,
+				4D7C98270646589600FC83DE,
+				4D77DCC2064BB28E0015E535,
+				4D77DCD6064BB6370015E535,
+				4D97097F064C5A310040F76B,
+				4D970985064C5E1D0040F76B,
+				4DB16437065430F3001984FD,
+				4DB16463065436EF001984FD,
+				4DB16731065648AF001984FD,
+				4DB168F30657B745001984FD,
+				4D850AB60658DF03002610DB,
+				4D850BE006596FBA002610DB,
+				4D6F659A065E4A180060F6B0,
+				4D6F66AB065F64E90060F6B0,
+				4D6F67E4065FC34E0060F6B0,
+				4D6F6800065FF4BC0060F6B0,
+				4DAAC1550660206F00B7F9DE,
+				4DAAC1B806603CE800B7F9DE,
+				4D6E19A40662700900118EE4,
+				4D6E19A80662714F00118EE4,
+				4D6E19AC0662726A00118EE4,
+				4D6E19D10662AB4200118EE4,
+				4D2D690506669F7700ED62BA,
+				4D2D690B0666A61700ED62BA,
+				4D2D6A1806675F5600ED62BA,
+				4D2D6AF20667DDCC00ED62BA,
+				4D2D6B320668AD9000ED62BA,
+				4D2D6B380668B76600ED62BA,
+				4D2D6B3C0668C46100ED62BA,
+				4D2D6C8C0669E97300ED62BA,
+				4D2D6CC80669F3C500ED62BA,
+				4D2D6CD10669FC2900ED62BA,
+				4D2D6D68066A2D8B00ED62BA,
+				4D04438506A8612A008C48CB,
+				4D04438F06A9435D008C48CB,
+				4D6C02BC06A9587400007D11,
+				4DA800E006B04DD000F51916,
+				4DA800E606B0505300F51916,
+				4D6A83BA06B28FFA0099EDF7,
+				4DE50F0206B97AD700E6E61F,
+				4DE50F0806B97B6900E6E61F,
+				4DE50F7806BA5AD800E6E61F,
+				4DB1BCE806C50A2200CA9E2E,
+				4DB1BF3806C5474E00CA9E2E,
+				4D05594706C5707C00732EB8,
+				4D64916906C8F1B9006BF850,
+				4D02485D06CB79640026B6BE,
+				4D4CB69A0702E577004BC285,
+				4DB1692307284C9E00F0A094,
+				4DA384230743E6F200C5C380,
+				4D0FA9E6079FCBCB007EA133,
+				4D0FA9F8079FE5CB007EA133,
+				4DCFCFF807A907570075D0FD,
+				4DB70EA207BC221E0013016F,
+				4D6C455D07CBDF19001284FA,
+				4D6C460007CC0610001284FA,
+				4D483AF607D64C70003511B2,
+				4DE2CF2408373E870057DF4B,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D15AC310486D014006FF6A4 = {
+			fileRef = 2A37F4ACFDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D15AC320486D014006FF6A4 = {
+			fileRef = 2A37F4B0FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D15AC330486D014006FF6A4 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4,
+				4D1D279B06C3DBA700FB3A9F,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D15AC340486D014006FF6A4 = {
+			fileRef = 1058C7A7FEA54F5311CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D15AC360486D014006FF6A4 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D15AC370486D014006FF6A4 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = CrewBid.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA;
+}

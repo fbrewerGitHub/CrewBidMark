@@ -1,0 +1,103 @@
+{
+    IBClasses = (
+        {
+            CLASS = CBBidFileWindowController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = CBBlockTimeFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {
+            CLASS = CBCalendarMatrix; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {dateMatrix = NSMatrix; tripTextView = NSTextView; }; 
+            SUPERCLASS = NSMatrix; 
+        }, 
+        {CLASS = CBDocument; LANGUAGE = ObjC; SUPERCLASS = NSDocument; }, 
+        {CLASS = CBEditingTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {
+            ACTIONS = {
+                computeOverlapButtonAction = id; 
+                copyLineLegs = id; 
+                copyTripLegs = id; 
+                daysOfMonthPointsMatrixAction = id; 
+                daysOfMonthSelectMatrixAction = id; 
+                daysOfWeekPointsMatrixAction = id; 
+                daysOfWeekSelectMatrixAction = id; 
+                freezeBottomLines = id; 
+                freezeSelectedLinesAtBottom = id; 
+                freezeTopLines = id; 
+                insertMrtBid = id; 
+                insertReserveBid = id; 
+                move3on3offLinesToBottom = id; 
+                moveBlankLinesToBottom = id; 
+                moveColumn = id; 
+                moveReserveLinesToBottom = id; 
+                moveSortSelections = id; 
+                overlapDatesFormAction = id; 
+                overlapReleaseTimeTextFieldAction = id; 
+                printLine = id; 
+                submitBid = id; 
+                unfreezeBottomLines = id; 
+                unfreezeTopLines = id; 
+                useSelectedDataButtonAction = id; 
+                viewTrip = id; 
+            }; 
+            CLASS = CBMainWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                availableLinesTableColumns = NSTableView; 
+                availableSortSelectionsTableView = NSTableView; 
+                computeOverlapButton = NSButton; 
+                daysOfMonthPointsMatrix = NSMatrix; 
+                daysOfMonthSelectMatrix = CBSelectCalendarMatrix; 
+                daysOfWeekPointsMatrix = NSMatrix; 
+                daysOfWeekSelectMatrix = NSMatrix; 
+                faPositionBox = NSBox; 
+                faPositionTableView = NSTableView; 
+                inUseSortSelectionsTableView = NSTableView; 
+                lastMonthBidPopUpButton = NSPopUpButton; 
+                lastMonthLineTextField = NSTextField; 
+                lineCalendarDateMatrix = NSMatrix; 
+                lineCalendarEntryMatrix = CBCalendarMatrix; 
+                lineCalendarTitleTextField = NSTextField; 
+                linesTableView = NSTableView; 
+                mainWindowTabView = NSTabView; 
+                overlapDatesForm = NSForm; 
+                overlapLastArrivalTextField = NSTextField; 
+                overlapLastArrivalTimeTextField = NSTextField; 
+                selectTabTableView = NSTableView; 
+                selectTabView = NSTabView; 
+                useSelectedDataButton = NSButton; 
+            }; 
+            SUPERCLASS = CBBidFileWindowController; 
+        }, 
+        {
+            CLASS = CBSelectCalendarMatrix; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {pointsMatrix = NSMatrix; }; 
+            SUPERCLASS = NSMatrix; 
+        }, 
+        {CLASS = CBTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {
+            ACTIONS = {
+                copyLineLegs = id; 
+                copyTripLegs = id; 
+                freezeBottomLines = id; 
+                freezeSelectedLinesAtBottom = id; 
+                freezeTopLines = id; 
+                insertMrtBid = id; 
+                insertReserveBid = id; 
+                moveBlankLinesToBottom = id; 
+                moveReserveLinesToBottom = id; 
+                sortByColumns = id; 
+                unfreezeBottomLines = id; 
+                unfreezeTopLines = id; 
+                viewTrip = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

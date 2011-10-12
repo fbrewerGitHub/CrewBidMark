@@ -1,0 +1,1438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D02485D06CB79640026B6BE /* CBOverlapTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D02485C06CB79640026B6BE /* CBOverlapTabDataModel.m */; };
+		4D05594606C5707C00732EB8 /* CBBlockTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D05594406C5707C00732EB8 /* CBBlockTime.h */; };
+		4D05594706C5707C00732EB8 /* CBBlockTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05594506C5707C00732EB8 /* CBBlockTime.m */; };
+		4D0FA9E6079FCBCB007EA133 /* CBBlockOfDaysOffTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0FA9E5079FCBCB007EA133 /* CBBlockOfDaysOffTabDataModel.m */; };
+		4D1D279B06C3DBA700FB3A9F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1D26F106C3B88C00FB3A9F /* Carbon.framework */; };
+		4D263FBE0A8A238D000E74CB /* CBDeadheadsTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D263FBD0A8A238D000E74CB /* CBDeadheadsTabDataModel.m */; };
+		4D2642CB0A8BE806000E74CB /* CBDaysOfMonthTabItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2642CA0A8BE806000E74CB /* CBDaysOfMonthTabItemController.m */; };
+		4D2644840A8CCE69000E74CB /* CBOvernightCitiesTabItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2644830A8CCE69000E74CB /* CBOvernightCitiesTabItemController.m */; };
+		4D26455C0A8D0DE5000E74CB /* CBEditingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D26455A0A8D0DE5000E74CB /* CBEditingTableView.h */; };
+		4D26455D0A8D0DE5000E74CB /* CBEditingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26455B0A8D0DE5000E74CB /* CBEditingTableView.m */; };
+		4D2645E90A8DE64A000E74CB /* CBCommutingTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2645E80A8DE64A000E74CB /* CBCommutingTabDataModel.m */; };
+		4D2648730A90FDB9000E74CB /* CSBidPeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648710A90FDB9000E74CB /* CSBidPeriod.h */; };
+		4D2648740A90FDB9000E74CB /* CSBidPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648720A90FDB9000E74CB /* CSBidPeriod.m */; };
+		4D2648A80A91CE1E000E74CB /* CSBidFileDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D26489C0A91CE1D000E74CB /* CSBidFileDownload.h */; };
+		4D2648A90A91CE1E000E74CB /* CSBidFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26489D0A91CE1D000E74CB /* CSBidFileDownload.m */; };
+		4D2648AA0A91CE1E000E74CB /* CSBidFileDownloadWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D26489E0A91CE1D000E74CB /* CSBidFileDownloadWindowController.h */; };
+		4D2648AB0A91CE1E000E74CB /* CSBidFileDownloadWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26489F0A91CE1D000E74CB /* CSBidFileDownloadWindowController.m */; };
+		4D2648AC0A91CE1E000E74CB /* CSNewBidWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648A00A91CE1D000E74CB /* CSNewBidWindowController.h */; };
+		4D2648AD0A91CE1E000E74CB /* CSNewBidWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648A10A91CE1D000E74CB /* CSNewBidWindowController.m */; };
+		4D2648AE0A91CE1E000E74CB /* CSSubmitBidWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648A20A91CE1D000E74CB /* CSSubmitBidWindowController.h */; };
+		4D2648AF0A91CE1E000E74CB /* CSSubmitBidWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648A30A91CE1D000E74CB /* CSSubmitBidWindowController.m */; };
+		4D2648B00A91CE1E000E74CB /* CSTextFileWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648A40A91CE1D000E74CB /* CSTextFileWindowController.h */; };
+		4D2648B10A91CE1E000E74CB /* CSTextFileWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648A50A91CE1D000E74CB /* CSTextFileWindowController.m */; };
+		4D2648BC0A91D79E000E74CB /* CSCrewPositions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648B80A91D79E000E74CB /* CSCrewPositions.h */; };
+		4D2648BD0A91D79E000E74CB /* CSCrewPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648B90A91D79E000E74CB /* CSCrewPositions.m */; };
+		4D2648BE0A91D79E000E74CB /* CSPreferenceKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648BA0A91D79E000E74CB /* CSPreferenceKeys.h */; };
+		4D2648BF0A91D79E000E74CB /* CSPreferenceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648BB0A91D79E000E74CB /* CSPreferenceKeys.m */; };
+		4D2648DD0A91DDC8000E74CB /* CSError.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2648DB0A91DDC7000E74CB /* CSError.h */; };
+		4D2648DE0A91DDC8000E74CB /* CSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2648DC0A91DDC7000E74CB /* CSError.m */; };
+		4D264A2A0A920233000E74CB /* NewBid.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D264A280A920233000E74CB /* NewBid.nib */; };
+		4D264A530A920A9B000E74CB /* CSOpenBidWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D264A510A920A9A000E74CB /* CSOpenBidWindowController.h */; };
+		4D264A540A920A9B000E74CB /* CSOpenBidWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D264A520A920A9A000E74CB /* CSOpenBidWindowController.m */; };
+		4D264A670A922A98000E74CB /* OpenBid.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D264A650A922A98000E74CB /* OpenBid.nib */; };
+		4D264A6D0A922CA5000E74CB /* Crew Bases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D264A6B0A922CA5000E74CB /* Crew Bases.plist */; };
+		4D264AC60A923BAC000E74CB /* TextFile.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D264AC40A923BAC000E74CB /* TextFile.nib */; };
+		4D264B4B0A933A13000E74CB /* CSBidDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2649760A91EDA9000E74CB /* CSBidDataReader.m */; };
+		4D264B580A9344E8000E74CB /* CSBidDataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2649750A91EDA9000E74CB /* CSBidDataReader.h */; };
+		4D27B9600A9DAF0200CBCAE6 /* CBBidSubmitSecondRound.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D27B95E0A9DAF0200CBCAE6 /* CBBidSubmitSecondRound.nib */; };
+		4D2C47700CCE50BE00AFCE96 /* CSPrintView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2C476E0CCE50BE00AFCE96 /* CSPrintView.h */; };
+		4D2C47710CCE50BE00AFCE96 /* CSPrintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C476F0CCE50BE00AFCE96 /* CSPrintView.m */; };
+		4D2D690406669F7700ED62BA /* CBButtonMatrixController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2D690206669F7700ED62BA /* CBButtonMatrixController.h */; };
+		4D2D690506669F7700ED62BA /* CBButtonMatrixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D690306669F7700ED62BA /* CBButtonMatrixController.m */; };
+		4D2D6A1706675F5600ED62BA /* CBTextFieldMatrixController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2D6A1506675F5600ED62BA /* CBTextFieldMatrixController.h */; };
+		4D2D6A1806675F5600ED62BA /* CBTextFieldMatrixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6A1606675F5600ED62BA /* CBTextFieldMatrixController.m */; };
+		4D2D6AF10667DDCC00ED62BA /* CBSelectCalendarMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2D6AA30667C47200ED62BA /* CBSelectCalendarMatrix.h */; };
+		4D2D6AF20667DDCC00ED62BA /* CBSelectCalendarMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6AA40667C47200ED62BA /* CBSelectCalendarMatrix.m */; };
+		4D2D6B370668B76600ED62BA /* CBFormMatrixController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2D6B350668B76600ED62BA /* CBFormMatrixController.h */; };
+		4D2D6B380668B76600ED62BA /* CBFormMatrixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6B360668B76600ED62BA /* CBFormMatrixController.m */; };
+		4D2D6B3C0668C46100ED62BA /* CBOvernightCitiesDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6B3B0668C46100ED62BA /* CBOvernightCitiesDataModel.m */; };
+		4D2D6C8C0669E97300ED62BA /* CBBidSubmitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6C8B0669E97300ED62BA /* CBBidSubmitController.m */; };
+		4D2D6CC80669F3C500ED62BA /* CBPrintController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6CC70669F3C500ED62BA /* CBPrintController.m */; };
+		4D2D6CD00669FC2900ED62BA /* CBLinePrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2D6CCE0669FC2900ED62BA /* CBLinePrinter.h */; };
+		4D2D6CD10669FC2900ED62BA /* CBLinePrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6CCF0669FC2900ED62BA /* CBLinePrinter.m */; };
+		4D2D6CD40669FF5000ED62BA /* CBLinePrintCalendar.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D6CD20669FF5000ED62BA /* CBLinePrintCalendar.nib */; };
+		4D2D6D67066A2D8B00ED62BA /* CBLineCalendarTripTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2D6D65066A2D8B00ED62BA /* CBLineCalendarTripTextView.h */; };
+		4D2D6D68066A2D8B00ED62BA /* CBLineCalendarTripTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D6D66066A2D8B00ED62BA /* CBLineCalendarTripTextView.m */; };
+		4D40081F0A986F8A00E54B13 /* CBShowTripWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D40081D0A986F8A00E54B13 /* CBShowTripWindowController.h */; };
+		4D4008200A986F8A00E54B13 /* CBShowTripWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D40081E0A986F8A00E54B13 /* CBShowTripWindowController.m */; };
+		4D4008230A986FAA00E54B13 /* MissingTrips.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4008210A986FAA00E54B13 /* MissingTrips.nib */; };
+		4D40082C0A98700F00E54B13 /* CSMissingTripsWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D40082A0A98700F00E54B13 /* CSMissingTripsWindowController.h */; };
+		4D40082D0A98700F00E54B13 /* CSMissingTripsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D40082B0A98700F00E54B13 /* CSMissingTripsWindowController.m */; };
+		4D4632F50AB04B020020CBA1 /* CSCalendarWeek.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D4632F30AB04B020020CBA1 /* CSCalendarWeek.h */; };
+		4D4632F60AB04B020020CBA1 /* CSCalendarWeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4632F40AB04B020020CBA1 /* CSCalendarWeek.m */; };
+		4D46339C0AB06E910020CBA1 /* CBVacationTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D46339B0AB06E910020CBA1 /* CBVacationTabDataModel.m */; };
+		4D483AF507D64C70003511B2 /* CBRegistrationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D483AF307D64C70003511B2 /* CBRegistrationWindowController.h */; };
+		4D483AF607D64C70003511B2 /* CBRegistrationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D483AF407D64C70003511B2 /* CBRegistrationWindowController.m */; };
+		4D4CE1280A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D4CE1260A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.h */; };
+		4D4CE1290A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4CE1270A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.m */; };
+		4D4CE12C0A9E363800CE3CA9 /* RetrieveBidAwards.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4CE12A0A9E363800CE3CA9 /* RetrieveBidAwards.nib */; };
+		4D4EAD470BF21884009270D6 /* SubmitBid.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4EAD450BF21884009270D6 /* SubmitBid.nib */; };
+		4D5010C9077384F4008E8E4A /* cb_app_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4D5010C8077384F4008E8E4A /* cb_app_icon.icns */; };
+		4D5010D107738519008E8E4A /* cb_doc_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4D5010D007738519008E8E4A /* cb_doc_icon.icns */; };
+		4D5E3EE70BF8BF2D00840D27 /* AvoidanceSubmitBid.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E3EE30BF8BF2D00840D27 /* AvoidanceSubmitBid.nib */; };
+		4D5E3EE80BF8BF2D00840D27 /* BuddySubmitBid.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E3EE50BF8BF2D00840D27 /* BuddySubmitBid.nib */; };
+		4D64916806C8F1B9006BF850 /* CBOverlapDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D64916606C8F1B9006BF850 /* CBOverlapDetector.h */; };
+		4D64916906C8F1B9006BF850 /* CBOverlapDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D64916706C8F1B9006BF850 /* CBOverlapDetector.m */; };
+		4D6A825C06B147F40099EDF7 /* CBProgress.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6A825A06B147F40099EDF7 /* CBProgress.nib */; };
+		4D6C02BB06A9587400007D11 /* CBNotificationAndKeyStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6C02B906A9587400007D11 /* CBNotificationAndKeyStrings.h */; };
+		4D6C02BC06A9587400007D11 /* CBNotificationAndKeyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C02BA06A9587400007D11 /* CBNotificationAndKeyStrings.m */; };
+		4D6C455C07CBDF19001284FA /* CBFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6C455A07CBDF19001284FA /* CBFileReader.h */; };
+		4D6C455D07CBDF19001284FA /* CBFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C455B07CBDF19001284FA /* CBFileReader.m */; };
+		4D6C45FF07CC0610001284FA /* CBFALineFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6C45FD07CC0610001284FA /* CBFALineFileReader.h */; };
+		4D6C460007CC0610001284FA /* CBFALineFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C45FE07CC0610001284FA /* CBFALineFileReader.m */; };
+		4D6E176B06616D9700118EE4 /* CBBidSubmit.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6E176906616D9700118EE4 /* CBBidSubmit.nib */; };
+		4D6E19A40662700900118EE4 /* CBAircraftChangesTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E19A30662700900118EE4 /* CBAircraftChangesTabDataModel.m */; };
+		4D6E19A80662714F00118EE4 /* CBAmPmTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E19A70662714F00118EE4 /* CBAmPmTabDataModel.m */; };
+		4D6E19AC0662726A00118EE4 /* CBTripLengthTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E19AB0662726A00118EE4 /* CBTripLengthTabDataModel.m */; };
+		4D6E19D10662AB4200118EE4 /* CBDaysOfMonthTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E19D00662AB4200118EE4 /* CBDaysOfMonthTabDataModel.m */; };
+		4D6F66A1065F58330060F6B0 /* CBInterfaceItemOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6F66A0065F58330060F6B0 /* CBInterfaceItemOwner.h */; };
+		4D6F67E3065FC34E0060F6B0 /* CBInterfaceGroupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6F67E1065FC34E0060F6B0 /* CBInterfaceGroupController.h */; };
+		4D6F67E4065FC34E0060F6B0 /* CBInterfaceGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F67E2065FC34E0060F6B0 /* CBInterfaceGroupController.m */; };
+		4D6F67FF065FF4BC0060F6B0 /* CBIntegerTextFieldController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6F67FD065FF4BC0060F6B0 /* CBIntegerTextFieldController.h */; };
+		4D6F6800065FF4BC0060F6B0 /* CBIntegerTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F67FE065FF4BC0060F6B0 /* CBIntegerTextFieldController.m */; };
+		4D72B1020639ADAF00933C0C /* CBAppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D72B1000639ADAF00933C0C /* CBAppController.h */; };
+		4D72B1030639ADAF00933C0C /* CBAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D72B1010639ADAF00933C0C /* CBAppController.m */; };
+		4D72B10A0639AE2200933C0C /* CBPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D72B1080639AE2200933C0C /* CBPreferencesWindowController.h */; };
+		4D72B10B0639AE2200933C0C /* CBPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D72B1090639AE2200933C0C /* CBPreferencesWindowController.m */; };
+		4D72B1120639B06B00933C0C /* CBPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D72B1100639B06B00933C0C /* CBPreferences.nib */; };
+		4D72B1650639BCB200933C0C /* CBBidSelect.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D72B1630639BCB200933C0C /* CBBidSelect.nib */; };
+		4D72B627063DB9D900933C0C /* CBBidCredentials.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D72B625063DB9D900933C0C /* CBBidCredentials.nib */; };
+		4D74DFBB0FD7E6B600CAC1F0 /* CrewBid Help in Resources */ = {isa = PBXBuildFile; fileRef = 4D74DF1B0FD7E6B600CAC1F0 /* CrewBid Help */; };
+		4D77DCC2064BB28E0015E535 /* CBLineCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D77DCC1064BB28E0015E535 /* CBLineCalendarController.m */; };
+		4D77DCD5064BB6370015E535 /* CBMatrixController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D77DCD3064BB6370015E535 /* CBMatrixController.h */; };
+		4D77DCD6064BB6370015E535 /* CBMatrixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D77DCD4064BB6370015E535 /* CBMatrixController.m */; };
+		4D7C981006464DA000FC83DE /* CBDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D7C980E06464DA000FC83DE /* CBDataModel.h */; };
+		4D7C981106464DA000FC83DE /* CBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C980F06464DA000FC83DE /* CBDataModel.m */; };
+		4D7C9820064656E700FC83DE /* CBMainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D7C981E064656E700FC83DE /* CBMainWindowController.h */; };
+		4D7C9821064656E700FC83DE /* CBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C981F064656E700FC83DE /* CBMainWindowController.m */; };
+		4D7C98270646589600FC83DE /* CBLinesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C98260646589600FC83DE /* CBLinesTableViewController.m */; };
+		4D850AB60658DF03002610DB /* CBSelectTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D850AB50658DF03002610DB /* CBSelectTabViewController.m */; };
+		4D850BDF06596FBA002610DB /* CBRadioMatrixController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D850BDD06596FBA002610DB /* CBRadioMatrixController.h */; };
+		4D850BE006596FBA002610DB /* CBRadioMatrixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D850BDE06596FBA002610DB /* CBRadioMatrixController.m */; };
+		4D853C6D0F28FC7C00678029 /* CBBidSubmitPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA800E306B0505300F51916 /* CBBidSubmitPreferencesWindowController.h */; };
+		4D853C6E0F28FC7C00678029 /* CBBidSubmitPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA800E406B0505300F51916 /* CBBidSubmitPreferencesWindowController.m */; };
+		4D853C6F0F28FC7D00678029 /* CBNewBidWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D72B1680639BD9C00933C0C /* CBNewBidWindowController.h */; };
+		4D853C700F28FC7E00678029 /* CBNewBidWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D72B1690639BD9C00933C0C /* CBNewBidWindowController.m */; };
+		4D853C710F28FC7F00678029 /* CBBidFileWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6A83B706B28FFA0099EDF7 /* CBBidFileWindowController.h */; };
+		4D853C720F28FC8000678029 /* CBBidFileWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A83B806B28FFA0099EDF7 /* CBBidFileWindowController.m */; };
+		4D853C730F28FC8000678029 /* CBBidCredentialWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DEA7300063DD8E70069E43C /* CBBidCredentialWindowController.h */; };
+		4D853C740F28FC8200678029 /* CBBidCredentialWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA7301063DD8E70069E43C /* CBBidCredentialWindowController.m */; };
+		4D853C750F28FC8200678029 /* CBProgressWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE50F0506B97B6900E6E61F /* CBProgressWindowController.h */; };
+		4D853C760F28FC8300678029 /* CBProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE50F0606B97B6900E6E61F /* CBProgressWindowController.m */; };
+		4D853C770F28FC8900678029 /* CBBidFileDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D04438206A8612A008C48CB /* CBBidFileDownload.h */; };
+		4D853C780F28FC8900678029 /* CBBidFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04438306A8612A008C48CB /* CBBidFileDownload.m */; };
+		4D94AD470D3D2818008A6DCE /* CSBidReceipt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D94AD450D3D2818008A6DCE /* CSBidReceipt.h */; };
+		4D94AD480D3D2818008A6DCE /* CSBidReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D94AD460D3D2818008A6DCE /* CSBidReceipt.m */; };
+		4D94AD860D3D2F10008A6DCE /* BidReceipts.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4D94AD840D3D2F10008A6DCE /* BidReceipts.nib */; };
+		4D94AD8B0D3D2F2A008A6DCE /* CSBidReceiptWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D94AD890D3D2F2A008A6DCE /* CSBidReceiptWindowController.h */; };
+		4D94AD8C0D3D2F2A008A6DCE /* CSBidReceiptWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D94AD8A0D3D2F2A008A6DCE /* CSBidReceiptWindowController.m */; };
+		4D97097F064C5A310040F76B /* CBSortTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97097E064C5A310040F76B /* CBSortTabViewController.m */; };
+		4D970984064C5E1D0040F76B /* CBCalendarMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D970982064C5E1D0040F76B /* CBCalendarMatrix.h */; };
+		4D970985064C5E1D0040F76B /* CBCalendarMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D970983064C5E1D0040F76B /* CBCalendarMatrix.m */; };
+		4DA384220743E6F200C5C380 /* CBTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA384200743E6F200C5C380 /* CBTableHeaderView.h */; };
+		4DA384230743E6F200C5C380 /* CBTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA384210743E6F200C5C380 /* CBTableHeaderView.m */; };
+		4DA800DF06B04DD000F51916 /* CBMainPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA800DD06B04DD000F51916 /* CBMainPreferencesWindowController.h */; };
+		4DA800E006B04DD000F51916 /* CBMainPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA800DE06B04DD000F51916 /* CBMainPreferencesWindowController.m */; };
+		4DA857660642E65D008C8071 /* CBDataFileUnzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA857640642E65D008C8071 /* CBDataFileUnzip.h */; };
+		4DA857670642E65D008C8071 /* CBDataFileUnzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA857650642E65D008C8071 /* CBDataFileUnzip.m */; };
+		4DA8581F0643CD45008C8071 /* CBProgressPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8581D0643CD45008C8071 /* CBProgressPanel.nib */; };
+		4DA85A4B06452594008C8071 /* CBLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85A4906452594008C8071 /* CBLine.h */; };
+		4DA85A4C06452594008C8071 /* CBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85A4A06452594008C8071 /* CBLine.m */; };
+		4DA85A5406452722008C8071 /* CBLineFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85A5206452722008C8071 /* CBLineFileReader.h */; };
+		4DA85A5506452722008C8071 /* CBLineFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85A5306452722008C8071 /* CBLineFileReader.m */; };
+		4DA85AD906454F6A008C8071 /* CBTrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85AD706454F6A008C8071 /* CBTrip.h */; };
+		4DA85ADA06454F6A008C8071 /* CBTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85AD806454F6A008C8071 /* CBTrip.m */; };
+		4DA85AE10645550A008C8071 /* CBTripFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85ADF0645550A008C8071 /* CBTripFileReader.h */; };
+		4DA85AE20645550A008C8071 /* CBTripFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85AE00645550A008C8071 /* CBTripFileReader.m */; };
+		4DA85B5C0645A3F8008C8071 /* CBTripDay.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85B5A0645A3F8008C8071 /* CBTripDay.h */; };
+		4DA85B5D0645A3F8008C8071 /* CBTripDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85B5B0645A3F8008C8071 /* CBTripDay.m */; };
+		4DA85B620645A4A0008C8071 /* CBTripDayLeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85B600645A4A0008C8071 /* CBTripDayLeg.h */; };
+		4DA85B630645A4A0008C8071 /* CBTripDayLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85B610645A4A0008C8071 /* CBTripDayLeg.m */; };
+		4DADE94507D5CEC80001F76F /* CBRegistration.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4DADE94307D5CEC80001F76F /* CBRegistration.nib */; };
+		4DB16436065430F3001984FD /* CBInterfaceItemController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB16434065430F3001984FD /* CBInterfaceItemController.h */; };
+		4DB16437065430F3001984FD /* CBInterfaceItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB16435065430F3001984FD /* CBInterfaceItemController.m */; };
+		4DB16462065436EF001984FD /* CBPopUpButtonController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB16460065436EF001984FD /* CBPopUpButtonController.h */; };
+		4DB16463065436EF001984FD /* CBPopUpButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB16461065436EF001984FD /* CBPopUpButtonController.m */; };
+		4DB16730065648AF001984FD /* CBCheckboxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB1672E065648AF001984FD /* CBCheckboxController.h */; };
+		4DB16731065648AF001984FD /* CBCheckboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1672F065648AF001984FD /* CBCheckboxController.m */; };
+		4DB168F20657B745001984FD /* CBTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB168F00657B745001984FD /* CBTableView.h */; };
+		4DB168F30657B745001984FD /* CBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB168F10657B745001984FD /* CBTableView.m */; };
+		4DB1692207284C9E00F0A094 /* CBViewTripWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB1692007284C9E00F0A094 /* CBViewTripWindowController.h */; };
+		4DB1692307284C9E00F0A094 /* CBViewTripWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1692107284C9E00F0A094 /* CBViewTripWindowController.m */; };
+		4DB1694507284E0400F0A094 /* CBViewTrip.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1694307284E0400F0A094 /* CBViewTrip.nib */; };
+		4DB1BCE806C50A2200CA9E2E /* CBOverlapTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1BCE706C50A2200CA9E2E /* CBOverlapTabViewController.m */; };
+		4DB1BF3706C5474E00CA9E2E /* CBBlockTimeFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB1BF3506C5474E00CA9E2E /* CBBlockTimeFormatter.h */; };
+		4DB1BF3806C5474E00CA9E2E /* CBBlockTimeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1BF3606C5474E00CA9E2E /* CBBlockTimeFormatter.m */; };
+		4DB70EA107BC221E0013016F /* CBFATripFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB70E9F07BC221E0013016F /* CBFATripFileReader.h */; };
+		4DB70EA207BC221E0013016F /* CBFATripFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB70EA007BC221E0013016F /* CBFATripFileReader.m */; };
+		4DCFCFF507A906130075D0FD /* CBFileSelect.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCFCFF307A906130075D0FD /* CBFileSelect.nib */; };
+		4DCFCFF807A907570075D0FD /* CBFileSelectWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFCFF607A907570075D0FD /* CBFileSelectWindowController.m */; };
+		4DCFCFF907A907570075D0FD /* CBFileSelectWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DCFCFF707A907570075D0FD /* CBFileSelectWindowController.h */; };
+		4DE2CF2308373E870057DF4B /* NSMutableArray+MAArrayUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE2CF2108373E870057DF4B /* NSMutableArray+MAArrayUtilities.h */; };
+		4DE2CF2408373E870057DF4B /* NSMutableArray+MAArrayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2CF2208373E870057DF4B /* NSMutableArray+MAArrayUtilities.m */; };
+		4DE50F0106B97AD700E6E61F /* CBBidFileOpener.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE50EFF06B97AD700E6E61F /* CBBidFileOpener.h */; };
+		4DE50F0206B97AD700E6E61F /* CBBidFileOpener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE50F0006B97AD700E6E61F /* CBBidFileOpener.m */; };
+		4DEB8C020676061600651D14 /* unzip in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB8C010676061600651D14 /* unzip */; };
+		4DFC88AD0D12DA1C00C3C02C /* CBMaxLegsPerDayTabDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC88AC0D12DA1C00C3C02C /* CBMaxLegsPerDayTabDataModel.m */; };
+		8D15AC290486D014006FF6A4 /* CrewBid_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* CrewBid_Prefix.pch */; };
+		8D15AC2A0486D014006FF6A4 /* CBDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* CBDocument.h */; };
+		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
+		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
+		8D15AC2E0486D014006FF6A4 /* CBDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* CBDocument.nib */; };
+		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		8D15AC310486D014006FF6A4 /* CBDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* CBDocument.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2A37F4ACFDCFA73011CA2CEA /* CBDocument.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* CBDocument.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBDocument.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4B5FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBDocument.nib; sourceTree = "<group>"; };
+		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* CrewBid_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewBid_Prefix.pch; sourceTree = "<group>"; };
+		4D02485C06CB79640026B6BE /* CBOverlapTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOverlapTabDataModel.m; sourceTree = "<group>"; };
+		4D04438206A8612A008C48CB /* CBBidFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBidFileDownload.h; sourceTree = "<group>"; };
+		4D04438306A8612A008C48CB /* CBBidFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBidFileDownload.m; sourceTree = "<group>"; };
+		4D05594406C5707C00732EB8 /* CBBlockTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBlockTime.h; sourceTree = "<group>"; };
+		4D05594506C5707C00732EB8 /* CBBlockTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBlockTime.m; sourceTree = "<group>"; };
+		4D0FA9E5079FCBCB007EA133 /* CBBlockOfDaysOffTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBBlockOfDaysOffTabDataModel.m; sourceTree = "<group>"; };
+		4D1D26F106C3B88C00FB3A9F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		4D263FBD0A8A238D000E74CB /* CBDeadheadsTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDeadheadsTabDataModel.m; sourceTree = "<group>"; };
+		4D2642CA0A8BE806000E74CB /* CBDaysOfMonthTabItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDaysOfMonthTabItemController.m; sourceTree = "<group>"; };
+		4D2644830A8CCE69000E74CB /* CBOvernightCitiesTabItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOvernightCitiesTabItemController.m; sourceTree = "<group>"; };
+		4D26455A0A8D0DE5000E74CB /* CBEditingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBEditingTableView.h; sourceTree = "<group>"; };
+		4D26455B0A8D0DE5000E74CB /* CBEditingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBEditingTableView.m; sourceTree = "<group>"; };
+		4D2645E80A8DE64A000E74CB /* CBCommutingTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCommutingTabDataModel.m; sourceTree = "<group>"; };
+		4D2648710A90FDB9000E74CB /* CSBidPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBidPeriod.h; sourceTree = "<group>"; };
+		4D2648720A90FDB9000E74CB /* CSBidPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBidPeriod.m; sourceTree = "<group>"; };
+		4D26489A0A91CE1D000E74CB /* CSBidDataImporter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSBidDataImporter.h; sourceTree = "<group>"; };
+		4D26489B0A91CE1D000E74CB /* CSBidDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSBidDataImporter.m; sourceTree = "<group>"; };
+		4D26489C0A91CE1D000E74CB /* CSBidFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSBidFileDownload.h; sourceTree = "<group>"; };
+		4D26489D0A91CE1D000E74CB /* CSBidFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSBidFileDownload.m; sourceTree = "<group>"; };
+		4D26489E0A91CE1D000E74CB /* CSBidFileDownloadWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSBidFileDownloadWindowController.h; sourceTree = "<group>"; };
+		4D26489F0A91CE1D000E74CB /* CSBidFileDownloadWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSBidFileDownloadWindowController.m; sourceTree = "<group>"; };
+		4D2648A00A91CE1D000E74CB /* CSNewBidWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSNewBidWindowController.h; sourceTree = "<group>"; };
+		4D2648A10A91CE1D000E74CB /* CSNewBidWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSNewBidWindowController.m; sourceTree = "<group>"; };
+		4D2648A20A91CE1D000E74CB /* CSSubmitBidWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSSubmitBidWindowController.h; sourceTree = "<group>"; };
+		4D2648A30A91CE1D000E74CB /* CSSubmitBidWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSSubmitBidWindowController.m; sourceTree = "<group>"; };
+		4D2648A40A91CE1D000E74CB /* CSTextFileWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSTextFileWindowController.h; sourceTree = "<group>"; };
+		4D2648A50A91CE1D000E74CB /* CSTextFileWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSTextFileWindowController.m; sourceTree = "<group>"; };
+		4D2648B80A91D79E000E74CB /* CSCrewPositions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSCrewPositions.h; sourceTree = "<group>"; };
+		4D2648B90A91D79E000E74CB /* CSCrewPositions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSCrewPositions.m; sourceTree = "<group>"; };
+		4D2648BA0A91D79E000E74CB /* CSPreferenceKeys.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSPreferenceKeys.h; sourceTree = "<group>"; };
+		4D2648BB0A91D79E000E74CB /* CSPreferenceKeys.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSPreferenceKeys.m; sourceTree = "<group>"; };
+		4D2648DB0A91DDC7000E74CB /* CSError.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSError.h; sourceTree = "<group>"; };
+		4D2648DC0A91DDC7000E74CB /* CSError.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSError.m; sourceTree = "<group>"; };
+		4D2649750A91EDA9000E74CB /* CSBidDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBidDataReader.h; sourceTree = "<group>"; };
+		4D2649760A91EDA9000E74CB /* CSBidDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBidDataReader.m; sourceTree = "<group>"; };
+		4D264A290A920233000E74CB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/NewBid.nib; sourceTree = "<group>"; };
+		4D264A510A920A9A000E74CB /* CSOpenBidWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSOpenBidWindowController.h; sourceTree = "<group>"; };
+		4D264A520A920A9A000E74CB /* CSOpenBidWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSOpenBidWindowController.m; sourceTree = "<group>"; };
+		4D264A660A922A98000E74CB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/OpenBid.nib; sourceTree = "<group>"; };
+		4D264A6C0A922CA5000E74CB /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = English; path = "English.lproj/Crew Bases.plist"; sourceTree = "<group>"; };
+		4D264AC50A923BAC000E74CB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/TextFile.nib; sourceTree = "<group>"; };
+		4D27B95F0A9DAF0200CBCAE6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBBidSubmitSecondRound.nib; sourceTree = "<group>"; };
+		4D2C476E0CCE50BE00AFCE96 /* CSPrintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPrintView.h; sourceTree = "<group>"; };
+		4D2C476F0CCE50BE00AFCE96 /* CSPrintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPrintView.m; sourceTree = "<group>"; };
+		4D2D690206669F7700ED62BA /* CBButtonMatrixController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBButtonMatrixController.h; sourceTree = "<group>"; };
+		4D2D690306669F7700ED62BA /* CBButtonMatrixController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBButtonMatrixController.m; sourceTree = "<group>"; };
+		4D2D6A1506675F5600ED62BA /* CBTextFieldMatrixController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTextFieldMatrixController.h; sourceTree = "<group>"; };
+		4D2D6A1606675F5600ED62BA /* CBTextFieldMatrixController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTextFieldMatrixController.m; sourceTree = "<group>"; };
+		4D2D6AA30667C47200ED62BA /* CBSelectCalendarMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSelectCalendarMatrix.h; sourceTree = "<group>"; };
+		4D2D6AA40667C47200ED62BA /* CBSelectCalendarMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSelectCalendarMatrix.m; sourceTree = "<group>"; };
+		4D2D6B350668B76600ED62BA /* CBFormMatrixController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFormMatrixController.h; sourceTree = "<group>"; };
+		4D2D6B360668B76600ED62BA /* CBFormMatrixController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFormMatrixController.m; sourceTree = "<group>"; };
+		4D2D6B3B0668C46100ED62BA /* CBOvernightCitiesDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOvernightCitiesDataModel.m; sourceTree = "<group>"; };
+		4D2D6C8B0669E97300ED62BA /* CBBidSubmitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBidSubmitController.m; sourceTree = "<group>"; };
+		4D2D6CC70669F3C500ED62BA /* CBPrintController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrintController.m; sourceTree = "<group>"; };
+		4D2D6CCE0669FC2900ED62BA /* CBLinePrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLinePrinter.h; sourceTree = "<group>"; };
+		4D2D6CCF0669FC2900ED62BA /* CBLinePrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLinePrinter.m; sourceTree = "<group>"; };
+		4D2D6CD30669FF5000ED62BA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBLinePrintCalendar.nib; sourceTree = "<group>"; };
+		4D2D6D65066A2D8B00ED62BA /* CBLineCalendarTripTextView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBLineCalendarTripTextView.h; sourceTree = "<group>"; };
+		4D2D6D66066A2D8B00ED62BA /* CBLineCalendarTripTextView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBLineCalendarTripTextView.m; sourceTree = "<group>"; };
+		4D40081D0A986F8A00E54B13 /* CBShowTripWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBShowTripWindowController.h; sourceTree = "<group>"; };
+		4D40081E0A986F8A00E54B13 /* CBShowTripWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBShowTripWindowController.m; sourceTree = "<group>"; };
+		4D4008220A986FAA00E54B13 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MissingTrips.nib; sourceTree = "<group>"; };
+		4D40082A0A98700F00E54B13 /* CSMissingTripsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSMissingTripsWindowController.h; sourceTree = "<group>"; };
+		4D40082B0A98700F00E54B13 /* CSMissingTripsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSMissingTripsWindowController.m; sourceTree = "<group>"; };
+		4D4632F30AB04B020020CBA1 /* CSCalendarWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCalendarWeek.h; sourceTree = "<group>"; };
+		4D4632F40AB04B020020CBA1 /* CSCalendarWeek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCalendarWeek.m; sourceTree = "<group>"; };
+		4D46339B0AB06E910020CBA1 /* CBVacationTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVacationTabDataModel.m; sourceTree = "<group>"; };
+		4D483AF307D64C70003511B2 /* CBRegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRegistrationWindowController.h; sourceTree = "<group>"; };
+		4D483AF407D64C70003511B2 /* CBRegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRegistrationWindowController.m; sourceTree = "<group>"; };
+		4D4CE1260A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSRetrieveBidAwardsWindowController.h; sourceTree = "<group>"; };
+		4D4CE1270A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSRetrieveBidAwardsWindowController.m; sourceTree = "<group>"; };
+		4D4CE12B0A9E363800CE3CA9 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RetrieveBidAwards.nib; sourceTree = "<group>"; };
+		4D4EAD460BF21884009270D6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SubmitBid.nib; sourceTree = "<group>"; };
+		4D5010C8077384F4008E8E4A /* cb_app_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cb_app_icon.icns; sourceTree = "<group>"; };
+		4D5010D007738519008E8E4A /* cb_doc_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cb_doc_icon.icns; sourceTree = "<group>"; };
+		4D5E3EE40BF8BF2D00840D27 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/AvoidanceSubmitBid.nib; sourceTree = "<group>"; };
+		4D5E3EE60BF8BF2D00840D27 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/BuddySubmitBid.nib; sourceTree = "<group>"; };
+		4D64916606C8F1B9006BF850 /* CBOverlapDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBOverlapDetector.h; sourceTree = "<group>"; };
+		4D64916706C8F1B9006BF850 /* CBOverlapDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOverlapDetector.m; sourceTree = "<group>"; };
+		4D6A825B06B147F40099EDF7 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBProgress.nib; sourceTree = "<group>"; };
+		4D6A83B706B28FFA0099EDF7 /* CBBidFileWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBidFileWindowController.h; sourceTree = "<group>"; };
+		4D6A83B806B28FFA0099EDF7 /* CBBidFileWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBidFileWindowController.m; sourceTree = "<group>"; };
+		4D6C02B906A9587400007D11 /* CBNotificationAndKeyStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNotificationAndKeyStrings.h; sourceTree = "<group>"; };
+		4D6C02BA06A9587400007D11 /* CBNotificationAndKeyStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNotificationAndKeyStrings.m; sourceTree = "<group>"; };
+		4D6C455A07CBDF19001284FA /* CBFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFileReader.h; sourceTree = "<group>"; };
+		4D6C455B07CBDF19001284FA /* CBFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFileReader.m; sourceTree = "<group>"; };
+		4D6C45FD07CC0610001284FA /* CBFALineFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFALineFileReader.h; sourceTree = "<group>"; };
+		4D6C45FE07CC0610001284FA /* CBFALineFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFALineFileReader.m; sourceTree = "<group>"; };
+		4D6E176A06616D9700118EE4 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBBidSubmit.nib; sourceTree = "<group>"; };
+		4D6E19A30662700900118EE4 /* CBAircraftChangesTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAircraftChangesTabDataModel.m; sourceTree = "<group>"; };
+		4D6E19A70662714F00118EE4 /* CBAmPmTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAmPmTabDataModel.m; sourceTree = "<group>"; };
+		4D6E19AB0662726A00118EE4 /* CBTripLengthTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTripLengthTabDataModel.m; sourceTree = "<group>"; };
+		4D6E19D00662AB4200118EE4 /* CBDaysOfMonthTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDaysOfMonthTabDataModel.m; sourceTree = "<group>"; };
+		4D6F66A0065F58330060F6B0 /* CBInterfaceItemOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBInterfaceItemOwner.h; sourceTree = "<group>"; };
+		4D6F67E1065FC34E0060F6B0 /* CBInterfaceGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBInterfaceGroupController.h; sourceTree = "<group>"; };
+		4D6F67E2065FC34E0060F6B0 /* CBInterfaceGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBInterfaceGroupController.m; sourceTree = "<group>"; };
+		4D6F67FD065FF4BC0060F6B0 /* CBIntegerTextFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBIntegerTextFieldController.h; sourceTree = "<group>"; };
+		4D6F67FE065FF4BC0060F6B0 /* CBIntegerTextFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBIntegerTextFieldController.m; sourceTree = "<group>"; };
+		4D72B1000639ADAF00933C0C /* CBAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAppController.h; sourceTree = "<group>"; };
+		4D72B1010639ADAF00933C0C /* CBAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAppController.m; sourceTree = "<group>"; };
+		4D72B1080639AE2200933C0C /* CBPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPreferencesWindowController.h; sourceTree = "<group>"; };
+		4D72B1090639AE2200933C0C /* CBPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPreferencesWindowController.m; sourceTree = "<group>"; };
+		4D72B1110639B06B00933C0C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBPreferences.nib; sourceTree = "<group>"; };
+		4D72B1640639BCB200933C0C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBBidSelect.nib; sourceTree = "<group>"; };
+		4D72B1680639BD9C00933C0C /* CBNewBidWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNewBidWindowController.h; sourceTree = "<group>"; };
+		4D72B1690639BD9C00933C0C /* CBNewBidWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNewBidWindowController.m; sourceTree = "<group>"; };
+		4D72B626063DB9D900933C0C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBBidCredentials.nib; sourceTree = "<group>"; };
+		4D74DF1C0FD7E6B600CAC1F0 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/CrewBid Help"; sourceTree = "<group>"; };
+		4D77DCC1064BB28E0015E535 /* CBLineCalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLineCalendarController.m; sourceTree = "<group>"; };
+		4D77DCD3064BB6370015E535 /* CBMatrixController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMatrixController.h; sourceTree = "<group>"; };
+		4D77DCD4064BB6370015E535 /* CBMatrixController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMatrixController.m; sourceTree = "<group>"; };
+		4D7C980E06464DA000FC83DE /* CBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDataModel.h; sourceTree = "<group>"; };
+		4D7C980F06464DA000FC83DE /* CBDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDataModel.m; sourceTree = "<group>"; };
+		4D7C981E064656E700FC83DE /* CBMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMainWindowController.h; sourceTree = "<group>"; };
+		4D7C981F064656E700FC83DE /* CBMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMainWindowController.m; sourceTree = "<group>"; };
+		4D7C98260646589600FC83DE /* CBLinesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLinesTableViewController.m; sourceTree = "<group>"; };
+		4D850AB50658DF03002610DB /* CBSelectTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSelectTabViewController.m; sourceTree = "<group>"; };
+		4D850BDD06596FBA002610DB /* CBRadioMatrixController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRadioMatrixController.h; sourceTree = "<group>"; };
+		4D850BDE06596FBA002610DB /* CBRadioMatrixController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRadioMatrixController.m; sourceTree = "<group>"; };
+		4D94AD450D3D2818008A6DCE /* CSBidReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBidReceipt.h; sourceTree = "<group>"; };
+		4D94AD460D3D2818008A6DCE /* CSBidReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBidReceipt.m; sourceTree = "<group>"; };
+		4D94AD850D3D2F10008A6DCE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/BidReceipts.nib; sourceTree = "<group>"; };
+		4D94AD890D3D2F2A008A6DCE /* CSBidReceiptWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBidReceiptWindowController.h; sourceTree = "<group>"; };
+		4D94AD8A0D3D2F2A008A6DCE /* CSBidReceiptWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBidReceiptWindowController.m; sourceTree = "<group>"; };
+		4D97097E064C5A310040F76B /* CBSortTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSortTabViewController.m; sourceTree = "<group>"; };
+		4D970982064C5E1D0040F76B /* CBCalendarMatrix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBCalendarMatrix.h; sourceTree = "<group>"; };
+		4D970983064C5E1D0040F76B /* CBCalendarMatrix.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBCalendarMatrix.m; sourceTree = "<group>"; };
+		4DA384200743E6F200C5C380 /* CBTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTableHeaderView.h; sourceTree = "<group>"; };
+		4DA384210743E6F200C5C380 /* CBTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTableHeaderView.m; sourceTree = "<group>"; };
+		4DA800DD06B04DD000F51916 /* CBMainPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMainPreferencesWindowController.h; sourceTree = "<group>"; };
+		4DA800DE06B04DD000F51916 /* CBMainPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMainPreferencesWindowController.m; sourceTree = "<group>"; };
+		4DA800E306B0505300F51916 /* CBBidSubmitPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBidSubmitPreferencesWindowController.h; sourceTree = "<group>"; };
+		4DA800E406B0505300F51916 /* CBBidSubmitPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBidSubmitPreferencesWindowController.m; sourceTree = "<group>"; };
+		4DA857640642E65D008C8071 /* CBDataFileUnzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDataFileUnzip.h; sourceTree = "<group>"; };
+		4DA857650642E65D008C8071 /* CBDataFileUnzip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDataFileUnzip.m; sourceTree = "<group>"; };
+		4DA8581E0643CD45008C8071 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBProgressPanel.nib; sourceTree = "<group>"; };
+		4DA85A4906452594008C8071 /* CBLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLine.h; sourceTree = "<group>"; };
+		4DA85A4A06452594008C8071 /* CBLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLine.m; sourceTree = "<group>"; };
+		4DA85A5206452722008C8071 /* CBLineFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLineFileReader.h; sourceTree = "<group>"; };
+		4DA85A5306452722008C8071 /* CBLineFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLineFileReader.m; sourceTree = "<group>"; };
+		4DA85AD706454F6A008C8071 /* CBTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTrip.h; sourceTree = "<group>"; };
+		4DA85AD806454F6A008C8071 /* CBTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTrip.m; sourceTree = "<group>"; };
+		4DA85ADF0645550A008C8071 /* CBTripFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTripFileReader.h; sourceTree = "<group>"; };
+		4DA85AE00645550A008C8071 /* CBTripFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTripFileReader.m; sourceTree = "<group>"; };
+		4DA85B5A0645A3F8008C8071 /* CBTripDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTripDay.h; sourceTree = "<group>"; };
+		4DA85B5B0645A3F8008C8071 /* CBTripDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTripDay.m; sourceTree = "<group>"; };
+		4DA85B600645A4A0008C8071 /* CBTripDayLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTripDayLeg.h; sourceTree = "<group>"; };
+		4DA85B610645A4A0008C8071 /* CBTripDayLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTripDayLeg.m; sourceTree = "<group>"; };
+		4DADE94407D5CEC80001F76F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBRegistration.nib; sourceTree = "<group>"; };
+		4DB16434065430F3001984FD /* CBInterfaceItemController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBInterfaceItemController.h; sourceTree = "<group>"; };
+		4DB16435065430F3001984FD /* CBInterfaceItemController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBInterfaceItemController.m; sourceTree = "<group>"; };
+		4DB16460065436EF001984FD /* CBPopUpButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPopUpButtonController.h; sourceTree = "<group>"; };
+		4DB16461065436EF001984FD /* CBPopUpButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPopUpButtonController.m; sourceTree = "<group>"; };
+		4DB1672E065648AF001984FD /* CBCheckboxController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBCheckboxController.h; sourceTree = "<group>"; };
+		4DB1672F065648AF001984FD /* CBCheckboxController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBCheckboxController.m; sourceTree = "<group>"; };
+		4DB168F00657B745001984FD /* CBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTableView.h; sourceTree = "<group>"; };
+		4DB168F10657B745001984FD /* CBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTableView.m; sourceTree = "<group>"; };
+		4DB1692007284C9E00F0A094 /* CBViewTripWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBViewTripWindowController.h; sourceTree = "<group>"; };
+		4DB1692107284C9E00F0A094 /* CBViewTripWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBViewTripWindowController.m; sourceTree = "<group>"; };
+		4DB1694407284E0400F0A094 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBViewTrip.nib; sourceTree = "<group>"; };
+		4DB1BCE706C50A2200CA9E2E /* CBOverlapTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBOverlapTabViewController.m; sourceTree = "<group>"; };
+		4DB1BF3506C5474E00CA9E2E /* CBBlockTimeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBlockTimeFormatter.h; sourceTree = "<group>"; };
+		4DB1BF3606C5474E00CA9E2E /* CBBlockTimeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBlockTimeFormatter.m; sourceTree = "<group>"; };
+		4DB70E9F07BC221E0013016F /* CBFATripFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFATripFileReader.h; sourceTree = "<group>"; };
+		4DB70EA007BC221E0013016F /* CBFATripFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFATripFileReader.m; sourceTree = "<group>"; };
+		4DCFCFF407A906130075D0FD /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBFileSelect.nib; sourceTree = "<group>"; };
+		4DCFCFF607A907570075D0FD /* CBFileSelectWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBFileSelectWindowController.m; sourceTree = "<group>"; };
+		4DCFCFF707A907570075D0FD /* CBFileSelectWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBFileSelectWindowController.h; sourceTree = "<group>"; };
+		4DE2CF2108373E870057DF4B /* NSMutableArray+MAArrayUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MAArrayUtilities.h"; sourceTree = "<group>"; };
+		4DE2CF2208373E870057DF4B /* NSMutableArray+MAArrayUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MAArrayUtilities.m"; sourceTree = "<group>"; };
+		4DE50EFF06B97AD700E6E61F /* CBBidFileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBidFileOpener.h; sourceTree = "<group>"; };
+		4DE50F0006B97AD700E6E61F /* CBBidFileOpener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBidFileOpener.m; sourceTree = "<group>"; };
+		4DE50F0506B97B6900E6E61F /* CBProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBProgressWindowController.h; sourceTree = "<group>"; };
+		4DE50F0606B97B6900E6E61F /* CBProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBProgressWindowController.m; sourceTree = "<group>"; };
+		4DE9BE3D077395400028D2CE /* CBCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCrypt.h; sourceTree = "<group>"; };
+		4DE9BE3E077395400028D2CE /* CBCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCrypt.m; sourceTree = "<group>"; };
+		4DE9C07D0773A2DB0028D2CE /* libCdsaCrypt.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = libCdsaCrypt.h; sourceTree = "<group>"; };
+		4DEA7300063DD8E70069E43C /* CBBidCredentialWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBidCredentialWindowController.h; sourceTree = "<group>"; };
+		4DEA7301063DD8E70069E43C /* CBBidCredentialWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBidCredentialWindowController.m; sourceTree = "<group>"; };
+		4DEB8C010676061600651D14 /* unzip */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = unzip; sourceTree = "<group>"; };
+		4DFC88AC0D12DA1C00C3C02C /* CBMaxLegsPerDayTabDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMaxLegsPerDayTabDataModel.m; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* CrewBid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrewBid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				4D1D279B06C3DBA700FB3A9F /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D1D26F106C3B88C00FB3A9F /* Carbon.framework */,
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* CrewBid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* CrewBid */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4ABFDCFA73011CA2CEA /* Main Classes */,
+				4D77DCCD064BB2A30015E535 /* Main Window */,
+				4DA858120643CC4E008C8071 /* Window Controllers */,
+				4D0FBCF20657B93C0064E460 /* Interface Item Subclasses */,
+				4D77DCD0064BB6110015E535 /* Object Controllers */,
+				4D26486D0A90FD00000E74CB /* Bid Period Files */,
+				4DA85A460645256E008C8071 /* Data Model */,
+				4DA85A4F064526ED008C8071 /* File Reading */,
+				4D72B38C063BD32400933C0C /* Bid Download/Upload */,
+				4D94AD830D3D2E1A008A6DCE /* Bid Receipts */,
+				4DB1BF3206C546F500CA9E2E /* Formatters */,
+				4D05593D06C56F1D00732EB8 /* Data Types */,
+				4D2D6CCB0669FAD000ED62BA /* Printing */,
+				4DE9BE380773900D0028D2CE /* Registration */,
+				4DE2CF1A08373D2D0057DF4B /* Categories */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = CrewBid;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Main Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4AEFDCFA73011CA2CEA /* CBDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* CBDocument.m */,
+				4D72B1000639ADAF00933C0C /* CBAppController.h */,
+				4D72B1010639ADAF00933C0C /* CBAppController.m */,
+			);
+			name = "Main Classes";
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* CrewBid_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+				4D6C02B906A9587400007D11 /* CBNotificationAndKeyStrings.h */,
+				4D6C02BA06A9587400007D11 /* CBNotificationAndKeyStrings.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D74DF1B0FD7E6B600CAC1F0 /* CrewBid Help */,
+				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
+				2A37F4B4FDCFA73011CA2CEA /* CBDocument.nib */,
+				4D72B1100639B06B00933C0C /* CBPreferences.nib */,
+				4DADE94307D5CEC80001F76F /* CBRegistration.nib */,
+				4D6E176906616D9700118EE4 /* CBBidSubmit.nib */,
+				4D27B95E0A9DAF0200CBCAE6 /* CBBidSubmitSecondRound.nib */,
+				4D72B1630639BCB200933C0C /* CBBidSelect.nib */,
+				4D264A280A920233000E74CB /* NewBid.nib */,
+				4D4008210A986FAA00E54B13 /* MissingTrips.nib */,
+				4D264A650A922A98000E74CB /* OpenBid.nib */,
+				4D4CE12A0A9E363800CE3CA9 /* RetrieveBidAwards.nib */,
+				4D264AC40A923BAC000E74CB /* TextFile.nib */,
+				4D6A825A06B147F40099EDF7 /* CBProgress.nib */,
+				4DA8581D0643CD45008C8071 /* CBProgressPanel.nib */,
+				4D72B625063DB9D900933C0C /* CBBidCredentials.nib */,
+				4D2D6CD20669FF5000ED62BA /* CBLinePrintCalendar.nib */,
+				4DB1694307284E0400F0A094 /* CBViewTrip.nib */,
+				4DCFCFF307A906130075D0FD /* CBFileSelect.nib */,
+				4D4EAD450BF21884009270D6 /* SubmitBid.nib */,
+				4D5E3EE30BF8BF2D00840D27 /* AvoidanceSubmitBid.nib */,
+				4D5E3EE50BF8BF2D00840D27 /* BuddySubmitBid.nib */,
+				4D94AD840D3D2F10008A6DCE /* BidReceipts.nib */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+				4D264A6B0A922CA5000E74CB /* Crew Bases.plist */,
+				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
+				4DEB8C010676061600651D14 /* unzip */,
+				4D5010D007738519008E8E4A /* cb_doc_icon.icns */,
+				4D5010C8077384F4008E8E4A /* cb_app_icon.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D02486006CB7A8D0026B6BE /* Lines/Trips */ = {
+			isa = PBXGroup;
+			children = (
+				4DA85A4906452594008C8071 /* CBLine.h */,
+				4DA85A4A06452594008C8071 /* CBLine.m */,
+				4DA85AD706454F6A008C8071 /* CBTrip.h */,
+				4DA85AD806454F6A008C8071 /* CBTrip.m */,
+				4DA85B5A0645A3F8008C8071 /* CBTripDay.h */,
+				4DA85B5B0645A3F8008C8071 /* CBTripDay.m */,
+				4DA85B600645A4A0008C8071 /* CBTripDayLeg.h */,
+				4DA85B610645A4A0008C8071 /* CBTripDayLeg.m */,
+			);
+			name = Lines/Trips;
+			sourceTree = "<group>";
+		};
+		4D02486306CB7AB60026B6BE /* Select/Sort Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				4D6E19A30662700900118EE4 /* CBAircraftChangesTabDataModel.m */,
+				4D6E19A70662714F00118EE4 /* CBAmPmTabDataModel.m */,
+				4D0FA9E5079FCBCB007EA133 /* CBBlockOfDaysOffTabDataModel.m */,
+				4D2645E80A8DE64A000E74CB /* CBCommutingTabDataModel.m */,
+				4D6E19D00662AB4200118EE4 /* CBDaysOfMonthTabDataModel.m */,
+				4D263FBD0A8A238D000E74CB /* CBDeadheadsTabDataModel.m */,
+				4D2D6B3B0668C46100ED62BA /* CBOvernightCitiesDataModel.m */,
+				4D6E19AB0662726A00118EE4 /* CBTripLengthTabDataModel.m */,
+				4D46339B0AB06E910020CBA1 /* CBVacationTabDataModel.m */,
+				4DFC88AC0D12DA1C00C3C02C /* CBMaxLegsPerDayTabDataModel.m */,
+				4D02486606CB7ADA0026B6BE /* Overlap */,
+			);
+			name = "Select/Sort Tabs";
+			sourceTree = "<group>";
+		};
+		4D02486606CB7ADA0026B6BE /* Overlap */ = {
+			isa = PBXGroup;
+			children = (
+				4D02485C06CB79640026B6BE /* CBOverlapTabDataModel.m */,
+				4D64916606C8F1B9006BF850 /* CBOverlapDetector.h */,
+				4D64916706C8F1B9006BF850 /* CBOverlapDetector.m */,
+			);
+			name = Overlap;
+			sourceTree = "<group>";
+		};
+		4D05593D06C56F1D00732EB8 /* Data Types */ = {
+			isa = PBXGroup;
+			children = (
+				4D05594406C5707C00732EB8 /* CBBlockTime.h */,
+				4D05594506C5707C00732EB8 /* CBBlockTime.m */,
+			);
+			name = "Data Types";
+			sourceTree = "<group>";
+		};
+		4D0FBCF20657B93C0064E460 /* Interface Item Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				4DB168F00657B745001984FD /* CBTableView.h */,
+				4DB168F10657B745001984FD /* CBTableView.m */,
+				4DA384200743E6F200C5C380 /* CBTableHeaderView.h */,
+				4DA384210743E6F200C5C380 /* CBTableHeaderView.m */,
+				4D970982064C5E1D0040F76B /* CBCalendarMatrix.h */,
+				4D970983064C5E1D0040F76B /* CBCalendarMatrix.m */,
+				4D2D6AA30667C47200ED62BA /* CBSelectCalendarMatrix.h */,
+				4D2D6AA40667C47200ED62BA /* CBSelectCalendarMatrix.m */,
+				4D26455A0A8D0DE5000E74CB /* CBEditingTableView.h */,
+				4D26455B0A8D0DE5000E74CB /* CBEditingTableView.m */,
+			);
+			name = "Interface Item Subclasses";
+			sourceTree = "<group>";
+		};
+		4D26486D0A90FD00000E74CB /* Bid Period Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D2648710A90FDB9000E74CB /* CSBidPeriod.h */,
+				4D2648720A90FDB9000E74CB /* CSBidPeriod.m */,
+			);
+			name = "Bid Period Files";
+			sourceTree = "<group>";
+		};
+		4D2D6CCB0669FAD000ED62BA /* Printing */ = {
+			isa = PBXGroup;
+			children = (
+				4D2D6CCE0669FC2900ED62BA /* CBLinePrinter.h */,
+				4D2D6CCF0669FC2900ED62BA /* CBLinePrinter.m */,
+				4D2D6D65066A2D8B00ED62BA /* CBLineCalendarTripTextView.h */,
+				4D2D6D66066A2D8B00ED62BA /* CBLineCalendarTripTextView.m */,
+				4D2C476E0CCE50BE00AFCE96 /* CSPrintView.h */,
+				4D2C476F0CCE50BE00AFCE96 /* CSPrintView.m */,
+			);
+			name = Printing;
+			sourceTree = "<group>";
+		};
+		4D72B38C063BD32400933C0C /* Bid Download/Upload */ = {
+			isa = PBXGroup;
+			children = (
+				4D2648DB0A91DDC7000E74CB /* CSError.h */,
+				4D2648DC0A91DDC7000E74CB /* CSError.m */,
+				4D2648B80A91D79E000E74CB /* CSCrewPositions.h */,
+				4D2648B90A91D79E000E74CB /* CSCrewPositions.m */,
+				4D2648BA0A91D79E000E74CB /* CSPreferenceKeys.h */,
+				4D2648BB0A91D79E000E74CB /* CSPreferenceKeys.m */,
+				4D26489A0A91CE1D000E74CB /* CSBidDataImporter.h */,
+				4D26489B0A91CE1D000E74CB /* CSBidDataImporter.m */,
+				4D26489C0A91CE1D000E74CB /* CSBidFileDownload.h */,
+				4D26489D0A91CE1D000E74CB /* CSBidFileDownload.m */,
+				4D26489E0A91CE1D000E74CB /* CSBidFileDownloadWindowController.h */,
+				4D26489F0A91CE1D000E74CB /* CSBidFileDownloadWindowController.m */,
+				4D2648A00A91CE1D000E74CB /* CSNewBidWindowController.h */,
+				4D2648A10A91CE1D000E74CB /* CSNewBidWindowController.m */,
+				4D40082A0A98700F00E54B13 /* CSMissingTripsWindowController.h */,
+				4D40082B0A98700F00E54B13 /* CSMissingTripsWindowController.m */,
+				4D264A510A920A9A000E74CB /* CSOpenBidWindowController.h */,
+				4D264A520A920A9A000E74CB /* CSOpenBidWindowController.m */,
+				4D2648A20A91CE1D000E74CB /* CSSubmitBidWindowController.h */,
+				4D2648A30A91CE1D000E74CB /* CSSubmitBidWindowController.m */,
+				4D4CE1260A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.h */,
+				4D4CE1270A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.m */,
+				4D04438206A8612A008C48CB /* CBBidFileDownload.h */,
+				4D04438306A8612A008C48CB /* CBBidFileDownload.m */,
+			);
+			name = "Bid Download/Upload";
+			sourceTree = "<group>";
+		};
+		4D77DCCD064BB2A30015E535 /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				4D7C981E064656E700FC83DE /* CBMainWindowController.h */,
+				4D7C981F064656E700FC83DE /* CBMainWindowController.m */,
+				4D7C98260646589600FC83DE /* CBLinesTableViewController.m */,
+				4D77DCC1064BB28E0015E535 /* CBLineCalendarController.m */,
+				4D97097E064C5A310040F76B /* CBSortTabViewController.m */,
+				4D850AB50658DF03002610DB /* CBSelectTabViewController.m */,
+				4D2642CA0A8BE806000E74CB /* CBDaysOfMonthTabItemController.m */,
+				4D2644830A8CCE69000E74CB /* CBOvernightCitiesTabItemController.m */,
+				4DB1BCE706C50A2200CA9E2E /* CBOverlapTabViewController.m */,
+				4D2D6C8B0669E97300ED62BA /* CBBidSubmitController.m */,
+				4D2D6CC70669F3C500ED62BA /* CBPrintController.m */,
+			);
+			name = "Main Window";
+			sourceTree = "<group>";
+		};
+		4D77DCD0064BB6110015E535 /* Object Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DB16434065430F3001984FD /* CBInterfaceItemController.h */,
+				4DB16435065430F3001984FD /* CBInterfaceItemController.m */,
+				4DB1672E065648AF001984FD /* CBCheckboxController.h */,
+				4DB1672F065648AF001984FD /* CBCheckboxController.m */,
+				4D2D690206669F7700ED62BA /* CBButtonMatrixController.h */,
+				4D2D690306669F7700ED62BA /* CBButtonMatrixController.m */,
+				4D2D6A1506675F5600ED62BA /* CBTextFieldMatrixController.h */,
+				4D2D6A1606675F5600ED62BA /* CBTextFieldMatrixController.m */,
+				4D2D6B350668B76600ED62BA /* CBFormMatrixController.h */,
+				4D2D6B360668B76600ED62BA /* CBFormMatrixController.m */,
+				4D6F67FD065FF4BC0060F6B0 /* CBIntegerTextFieldController.h */,
+				4D6F67FE065FF4BC0060F6B0 /* CBIntegerTextFieldController.m */,
+				4D850BDD06596FBA002610DB /* CBRadioMatrixController.h */,
+				4D850BDE06596FBA002610DB /* CBRadioMatrixController.m */,
+				4DB16460065436EF001984FD /* CBPopUpButtonController.h */,
+				4DB16461065436EF001984FD /* CBPopUpButtonController.m */,
+				4D77DCD3064BB6370015E535 /* CBMatrixController.h */,
+				4D77DCD4064BB6370015E535 /* CBMatrixController.m */,
+				4D6F66A0065F58330060F6B0 /* CBInterfaceItemOwner.h */,
+				4D6F67E1065FC34E0060F6B0 /* CBInterfaceGroupController.h */,
+				4D6F67E2065FC34E0060F6B0 /* CBInterfaceGroupController.m */,
+			);
+			name = "Object Controllers";
+			sourceTree = "<group>";
+		};
+		4D94AD830D3D2E1A008A6DCE /* Bid Receipts */ = {
+			isa = PBXGroup;
+			children = (
+				4D94AD450D3D2818008A6DCE /* CSBidReceipt.h */,
+				4D94AD460D3D2818008A6DCE /* CSBidReceipt.m */,
+				4D94AD890D3D2F2A008A6DCE /* CSBidReceiptWindowController.h */,
+				4D94AD8A0D3D2F2A008A6DCE /* CSBidReceiptWindowController.m */,
+			);
+			name = "Bid Receipts";
+			sourceTree = "<group>";
+		};
+		4DA858120643CC4E008C8071 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D483AF307D64C70003511B2 /* CBRegistrationWindowController.h */,
+				4D483AF407D64C70003511B2 /* CBRegistrationWindowController.m */,
+				4D72B1080639AE2200933C0C /* CBPreferencesWindowController.h */,
+				4D72B1090639AE2200933C0C /* CBPreferencesWindowController.m */,
+				4DA800DD06B04DD000F51916 /* CBMainPreferencesWindowController.h */,
+				4DA800DE06B04DD000F51916 /* CBMainPreferencesWindowController.m */,
+				4DA800E306B0505300F51916 /* CBBidSubmitPreferencesWindowController.h */,
+				4DA800E406B0505300F51916 /* CBBidSubmitPreferencesWindowController.m */,
+				4D72B1680639BD9C00933C0C /* CBNewBidWindowController.h */,
+				4D72B1690639BD9C00933C0C /* CBNewBidWindowController.m */,
+				4D6A83B706B28FFA0099EDF7 /* CBBidFileWindowController.h */,
+				4D6A83B806B28FFA0099EDF7 /* CBBidFileWindowController.m */,
+				4DEA7300063DD8E70069E43C /* CBBidCredentialWindowController.h */,
+				4DEA7301063DD8E70069E43C /* CBBidCredentialWindowController.m */,
+				4DE50F0506B97B6900E6E61F /* CBProgressWindowController.h */,
+				4DE50F0606B97B6900E6E61F /* CBProgressWindowController.m */,
+				4DB1692007284C9E00F0A094 /* CBViewTripWindowController.h */,
+				4DB1692107284C9E00F0A094 /* CBViewTripWindowController.m */,
+				4DCFCFF707A907570075D0FD /* CBFileSelectWindowController.h */,
+				4DCFCFF607A907570075D0FD /* CBFileSelectWindowController.m */,
+				4D40081D0A986F8A00E54B13 /* CBShowTripWindowController.h */,
+				4D40081E0A986F8A00E54B13 /* CBShowTripWindowController.m */,
+				4D2648A40A91CE1D000E74CB /* CSTextFileWindowController.h */,
+				4D2648A50A91CE1D000E74CB /* CSTextFileWindowController.m */,
+			);
+			name = "Window Controllers";
+			sourceTree = "<group>";
+		};
+		4DA85A460645256E008C8071 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D7C980E06464DA000FC83DE /* CBDataModel.h */,
+				4D7C980F06464DA000FC83DE /* CBDataModel.m */,
+				4D4632F30AB04B020020CBA1 /* CSCalendarWeek.h */,
+				4D4632F40AB04B020020CBA1 /* CSCalendarWeek.m */,
+				4D02486006CB7A8D0026B6BE /* Lines/Trips */,
+				4D02486306CB7AB60026B6BE /* Select/Sort Tabs */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		4DA85A4F064526ED008C8071 /* File Reading */ = {
+			isa = PBXGroup;
+			children = (
+				4D6C45FD07CC0610001284FA /* CBFALineFileReader.h */,
+				4D6C45FE07CC0610001284FA /* CBFALineFileReader.m */,
+				4D6C455A07CBDF19001284FA /* CBFileReader.h */,
+				4D6C455B07CBDF19001284FA /* CBFileReader.m */,
+				4DB70E9F07BC221E0013016F /* CBFATripFileReader.h */,
+				4DB70EA007BC221E0013016F /* CBFATripFileReader.m */,
+				4DE50EFF06B97AD700E6E61F /* CBBidFileOpener.h */,
+				4DE50F0006B97AD700E6E61F /* CBBidFileOpener.m */,
+				4DA857640642E65D008C8071 /* CBDataFileUnzip.h */,
+				4DA857650642E65D008C8071 /* CBDataFileUnzip.m */,
+				4DA85A5206452722008C8071 /* CBLineFileReader.h */,
+				4DA85A5306452722008C8071 /* CBLineFileReader.m */,
+				4DA85ADF0645550A008C8071 /* CBTripFileReader.h */,
+				4DA85AE00645550A008C8071 /* CBTripFileReader.m */,
+				4D2649750A91EDA9000E74CB /* CSBidDataReader.h */,
+				4D2649760A91EDA9000E74CB /* CSBidDataReader.m */,
+			);
+			name = "File Reading";
+			sourceTree = "<group>";
+		};
+		4DB1BF3206C546F500CA9E2E /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				4DB1BF3506C5474E00CA9E2E /* CBBlockTimeFormatter.h */,
+				4DB1BF3606C5474E00CA9E2E /* CBBlockTimeFormatter.m */,
+			);
+			name = Formatters;
+			sourceTree = "<group>";
+		};
+		4DE2CF1A08373D2D0057DF4B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4DE2CF2108373E870057DF4B /* NSMutableArray+MAArrayUtilities.h */,
+				4DE2CF2208373E870057DF4B /* NSMutableArray+MAArrayUtilities.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		4DE9BE380773900D0028D2CE /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				4DE9C07D0773A2DB0028D2CE /* libCdsaCrypt.h */,
+				4DE9BE3D077395400028D2CE /* CBCrypt.h */,
+				4DE9BE3E077395400028D2CE /* CBCrypt.m */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D15AC280486D014006FF6A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC290486D014006FF6A4 /* CrewBid_Prefix.pch in Headers */,
+				8D15AC2A0486D014006FF6A4 /* CBDocument.h in Headers */,
+				4D72B1020639ADAF00933C0C /* CBAppController.h in Headers */,
+				4D72B10A0639AE2200933C0C /* CBPreferencesWindowController.h in Headers */,
+				4DA857660642E65D008C8071 /* CBDataFileUnzip.h in Headers */,
+				4DA85A4B06452594008C8071 /* CBLine.h in Headers */,
+				4DA85A5406452722008C8071 /* CBLineFileReader.h in Headers */,
+				4DA85AD906454F6A008C8071 /* CBTrip.h in Headers */,
+				4DA85AE10645550A008C8071 /* CBTripFileReader.h in Headers */,
+				4DA85B5C0645A3F8008C8071 /* CBTripDay.h in Headers */,
+				4DA85B620645A4A0008C8071 /* CBTripDayLeg.h in Headers */,
+				4D7C981006464DA000FC83DE /* CBDataModel.h in Headers */,
+				4D7C9820064656E700FC83DE /* CBMainWindowController.h in Headers */,
+				4D77DCD5064BB6370015E535 /* CBMatrixController.h in Headers */,
+				4D970984064C5E1D0040F76B /* CBCalendarMatrix.h in Headers */,
+				4DB16436065430F3001984FD /* CBInterfaceItemController.h in Headers */,
+				4DB16462065436EF001984FD /* CBPopUpButtonController.h in Headers */,
+				4DB16730065648AF001984FD /* CBCheckboxController.h in Headers */,
+				4DB168F20657B745001984FD /* CBTableView.h in Headers */,
+				4D850BDF06596FBA002610DB /* CBRadioMatrixController.h in Headers */,
+				4D6F66A1065F58330060F6B0 /* CBInterfaceItemOwner.h in Headers */,
+				4D6F67E3065FC34E0060F6B0 /* CBInterfaceGroupController.h in Headers */,
+				4D6F67FF065FF4BC0060F6B0 /* CBIntegerTextFieldController.h in Headers */,
+				4D2D690406669F7700ED62BA /* CBButtonMatrixController.h in Headers */,
+				4D2D6A1706675F5600ED62BA /* CBTextFieldMatrixController.h in Headers */,
+				4D2D6AF10667DDCC00ED62BA /* CBSelectCalendarMatrix.h in Headers */,
+				4D2D6B370668B76600ED62BA /* CBFormMatrixController.h in Headers */,
+				4D2D6CD00669FC2900ED62BA /* CBLinePrinter.h in Headers */,
+				4D2D6D67066A2D8B00ED62BA /* CBLineCalendarTripTextView.h in Headers */,
+				4D6C02BB06A9587400007D11 /* CBNotificationAndKeyStrings.h in Headers */,
+				4DA800DF06B04DD000F51916 /* CBMainPreferencesWindowController.h in Headers */,
+				4DE50F0106B97AD700E6E61F /* CBBidFileOpener.h in Headers */,
+				4DB1BF3706C5474E00CA9E2E /* CBBlockTimeFormatter.h in Headers */,
+				4D05594606C5707C00732EB8 /* CBBlockTime.h in Headers */,
+				4D64916806C8F1B9006BF850 /* CBOverlapDetector.h in Headers */,
+				4DB1692207284C9E00F0A094 /* CBViewTripWindowController.h in Headers */,
+				4DA384220743E6F200C5C380 /* CBTableHeaderView.h in Headers */,
+				4DCFCFF907A907570075D0FD /* CBFileSelectWindowController.h in Headers */,
+				4DB70EA107BC221E0013016F /* CBFATripFileReader.h in Headers */,
+				4D6C455C07CBDF19001284FA /* CBFileReader.h in Headers */,
+				4D6C45FF07CC0610001284FA /* CBFALineFileReader.h in Headers */,
+				4D483AF507D64C70003511B2 /* CBRegistrationWindowController.h in Headers */,
+				4DE2CF2308373E870057DF4B /* NSMutableArray+MAArrayUtilities.h in Headers */,
+				4D26455C0A8D0DE5000E74CB /* CBEditingTableView.h in Headers */,
+				4D2648730A90FDB9000E74CB /* CSBidPeriod.h in Headers */,
+				4D2648A80A91CE1E000E74CB /* CSBidFileDownload.h in Headers */,
+				4D2648AA0A91CE1E000E74CB /* CSBidFileDownloadWindowController.h in Headers */,
+				4D2648AC0A91CE1E000E74CB /* CSNewBidWindowController.h in Headers */,
+				4D2648AE0A91CE1E000E74CB /* CSSubmitBidWindowController.h in Headers */,
+				4D2648B00A91CE1E000E74CB /* CSTextFileWindowController.h in Headers */,
+				4D2648BC0A91D79E000E74CB /* CSCrewPositions.h in Headers */,
+				4D2648BE0A91D79E000E74CB /* CSPreferenceKeys.h in Headers */,
+				4D2648DD0A91DDC8000E74CB /* CSError.h in Headers */,
+				4D264A530A920A9B000E74CB /* CSOpenBidWindowController.h in Headers */,
+				4D264B580A9344E8000E74CB /* CSBidDataReader.h in Headers */,
+				4D40081F0A986F8A00E54B13 /* CBShowTripWindowController.h in Headers */,
+				4D40082C0A98700F00E54B13 /* CSMissingTripsWindowController.h in Headers */,
+				4D4CE1280A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.h in Headers */,
+				4D4632F50AB04B020020CBA1 /* CSCalendarWeek.h in Headers */,
+				4D2C47700CCE50BE00AFCE96 /* CSPrintView.h in Headers */,
+				4D94AD470D3D2818008A6DCE /* CSBidReceipt.h in Headers */,
+				4D94AD8B0D3D2F2A008A6DCE /* CSBidReceiptWindowController.h in Headers */,
+				4D853C6D0F28FC7C00678029 /* CBBidSubmitPreferencesWindowController.h in Headers */,
+				4D853C6F0F28FC7D00678029 /* CBNewBidWindowController.h in Headers */,
+				4D853C710F28FC7F00678029 /* CBBidFileWindowController.h in Headers */,
+				4D853C730F28FC8000678029 /* CBBidCredentialWindowController.h in Headers */,
+				4D853C750F28FC8200678029 /* CBProgressWindowController.h in Headers */,
+				4D853C770F28FC8900678029 /* CBBidFileDownload.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* CrewBid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D4BD6220A5DA216009B4BEE /* Build configuration list for PBXNativeTarget "CrewBid" */;
+			buildPhases = (
+				8D15AC280486D014006FF6A4 /* Headers */,
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrewBid;
+			productInstallPath = "$(HOME)/Applications";
+			productName = CrewBid;
+			productReference = 8D15AC370486D014006FF6A4 /* CrewBid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Mark Ackerman";
+			};
+			buildConfigurationList = 4D4BD6260A5DA216009B4BEE /* Build configuration list for PBXProject "CrewBid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* CrewBid */;
+			projectDirPath = "";
+			projectRoot = ../crewbid_old;
+			targets = (
+				8D15AC270486D014006FF6A4 /* CrewBid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
+				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
+				8D15AC2E0486D014006FF6A4 /* CBDocument.nib in Resources */,
+				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
+				4D72B1120639B06B00933C0C /* CBPreferences.nib in Resources */,
+				4D72B1650639BCB200933C0C /* CBBidSelect.nib in Resources */,
+				4D72B627063DB9D900933C0C /* CBBidCredentials.nib in Resources */,
+				4DA8581F0643CD45008C8071 /* CBProgressPanel.nib in Resources */,
+				4D6E176B06616D9700118EE4 /* CBBidSubmit.nib in Resources */,
+				4D2D6CD40669FF5000ED62BA /* CBLinePrintCalendar.nib in Resources */,
+				4DEB8C020676061600651D14 /* unzip in Resources */,
+				4D6A825C06B147F40099EDF7 /* CBProgress.nib in Resources */,
+				4DB1694507284E0400F0A094 /* CBViewTrip.nib in Resources */,
+				4D5010C9077384F4008E8E4A /* cb_app_icon.icns in Resources */,
+				4D5010D107738519008E8E4A /* cb_doc_icon.icns in Resources */,
+				4DCFCFF507A906130075D0FD /* CBFileSelect.nib in Resources */,
+				4DADE94507D5CEC80001F76F /* CBRegistration.nib in Resources */,
+				4D264A2A0A920233000E74CB /* NewBid.nib in Resources */,
+				4D264A670A922A98000E74CB /* OpenBid.nib in Resources */,
+				4D264A6D0A922CA5000E74CB /* Crew Bases.plist in Resources */,
+				4D264AC60A923BAC000E74CB /* TextFile.nib in Resources */,
+				4D4008230A986FAA00E54B13 /* MissingTrips.nib in Resources */,
+				4D27B9600A9DAF0200CBCAE6 /* CBBidSubmitSecondRound.nib in Resources */,
+				4D4CE12C0A9E363800CE3CA9 /* RetrieveBidAwards.nib in Resources */,
+				4D4EAD470BF21884009270D6 /* SubmitBid.nib in Resources */,
+				4D5E3EE70BF8BF2D00840D27 /* AvoidanceSubmitBid.nib in Resources */,
+				4D5E3EE80BF8BF2D00840D27 /* BuddySubmitBid.nib in Resources */,
+				4D94AD860D3D2F10008A6DCE /* BidReceipts.nib in Resources */,
+				4D74DFBB0FD7E6B600CAC1F0 /* CrewBid Help in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4 /* CBDocument.m in Sources */,
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				4D72B1030639ADAF00933C0C /* CBAppController.m in Sources */,
+				4D72B10B0639AE2200933C0C /* CBPreferencesWindowController.m in Sources */,
+				4DA857670642E65D008C8071 /* CBDataFileUnzip.m in Sources */,
+				4DA85A4C06452594008C8071 /* CBLine.m in Sources */,
+				4DA85A5506452722008C8071 /* CBLineFileReader.m in Sources */,
+				4DA85ADA06454F6A008C8071 /* CBTrip.m in Sources */,
+				4DA85AE20645550A008C8071 /* CBTripFileReader.m in Sources */,
+				4DA85B5D0645A3F8008C8071 /* CBTripDay.m in Sources */,
+				4DA85B630645A4A0008C8071 /* CBTripDayLeg.m in Sources */,
+				4D7C981106464DA000FC83DE /* CBDataModel.m in Sources */,
+				4D7C9821064656E700FC83DE /* CBMainWindowController.m in Sources */,
+				4D7C98270646589600FC83DE /* CBLinesTableViewController.m in Sources */,
+				4D77DCC2064BB28E0015E535 /* CBLineCalendarController.m in Sources */,
+				4D77DCD6064BB6370015E535 /* CBMatrixController.m in Sources */,
+				4D97097F064C5A310040F76B /* CBSortTabViewController.m in Sources */,
+				4D970985064C5E1D0040F76B /* CBCalendarMatrix.m in Sources */,
+				4DB16437065430F3001984FD /* CBInterfaceItemController.m in Sources */,
+				4DB16463065436EF001984FD /* CBPopUpButtonController.m in Sources */,
+				4DB16731065648AF001984FD /* CBCheckboxController.m in Sources */,
+				4DB168F30657B745001984FD /* CBTableView.m in Sources */,
+				4D850AB60658DF03002610DB /* CBSelectTabViewController.m in Sources */,
+				4D850BE006596FBA002610DB /* CBRadioMatrixController.m in Sources */,
+				4D6F67E4065FC34E0060F6B0 /* CBInterfaceGroupController.m in Sources */,
+				4D6F6800065FF4BC0060F6B0 /* CBIntegerTextFieldController.m in Sources */,
+				4D6E19A40662700900118EE4 /* CBAircraftChangesTabDataModel.m in Sources */,
+				4D6E19A80662714F00118EE4 /* CBAmPmTabDataModel.m in Sources */,
+				4D6E19AC0662726A00118EE4 /* CBTripLengthTabDataModel.m in Sources */,
+				4D6E19D10662AB4200118EE4 /* CBDaysOfMonthTabDataModel.m in Sources */,
+				4D2D690506669F7700ED62BA /* CBButtonMatrixController.m in Sources */,
+				4D2D6A1806675F5600ED62BA /* CBTextFieldMatrixController.m in Sources */,
+				4D2D6AF20667DDCC00ED62BA /* CBSelectCalendarMatrix.m in Sources */,
+				4D2D6B380668B76600ED62BA /* CBFormMatrixController.m in Sources */,
+				4D2D6B3C0668C46100ED62BA /* CBOvernightCitiesDataModel.m in Sources */,
+				4D2D6C8C0669E97300ED62BA /* CBBidSubmitController.m in Sources */,
+				4D2D6CC80669F3C500ED62BA /* CBPrintController.m in Sources */,
+				4D2D6CD10669FC2900ED62BA /* CBLinePrinter.m in Sources */,
+				4D2D6D68066A2D8B00ED62BA /* CBLineCalendarTripTextView.m in Sources */,
+				4D6C02BC06A9587400007D11 /* CBNotificationAndKeyStrings.m in Sources */,
+				4DA800E006B04DD000F51916 /* CBMainPreferencesWindowController.m in Sources */,
+				4DE50F0206B97AD700E6E61F /* CBBidFileOpener.m in Sources */,
+				4DB1BCE806C50A2200CA9E2E /* CBOverlapTabViewController.m in Sources */,
+				4DB1BF3806C5474E00CA9E2E /* CBBlockTimeFormatter.m in Sources */,
+				4D05594706C5707C00732EB8 /* CBBlockTime.m in Sources */,
+				4D64916906C8F1B9006BF850 /* CBOverlapDetector.m in Sources */,
+				4D02485D06CB79640026B6BE /* CBOverlapTabDataModel.m in Sources */,
+				4DB1692307284C9E00F0A094 /* CBViewTripWindowController.m in Sources */,
+				4DA384230743E6F200C5C380 /* CBTableHeaderView.m in Sources */,
+				4D0FA9E6079FCBCB007EA133 /* CBBlockOfDaysOffTabDataModel.m in Sources */,
+				4DCFCFF807A907570075D0FD /* CBFileSelectWindowController.m in Sources */,
+				4DB70EA207BC221E0013016F /* CBFATripFileReader.m in Sources */,
+				4D6C455D07CBDF19001284FA /* CBFileReader.m in Sources */,
+				4D6C460007CC0610001284FA /* CBFALineFileReader.m in Sources */,
+				4D483AF607D64C70003511B2 /* CBRegistrationWindowController.m in Sources */,
+				4DE2CF2408373E870057DF4B /* NSMutableArray+MAArrayUtilities.m in Sources */,
+				4D263FBE0A8A238D000E74CB /* CBDeadheadsTabDataModel.m in Sources */,
+				4D2642CB0A8BE806000E74CB /* CBDaysOfMonthTabItemController.m in Sources */,
+				4D2644840A8CCE69000E74CB /* CBOvernightCitiesTabItemController.m in Sources */,
+				4D26455D0A8D0DE5000E74CB /* CBEditingTableView.m in Sources */,
+				4D2645E90A8DE64A000E74CB /* CBCommutingTabDataModel.m in Sources */,
+				4D2648740A90FDB9000E74CB /* CSBidPeriod.m in Sources */,
+				4D2648A90A91CE1E000E74CB /* CSBidFileDownload.m in Sources */,
+				4D2648AB0A91CE1E000E74CB /* CSBidFileDownloadWindowController.m in Sources */,
+				4D2648AD0A91CE1E000E74CB /* CSNewBidWindowController.m in Sources */,
+				4D2648AF0A91CE1E000E74CB /* CSSubmitBidWindowController.m in Sources */,
+				4D2648B10A91CE1E000E74CB /* CSTextFileWindowController.m in Sources */,
+				4D2648BD0A91D79E000E74CB /* CSCrewPositions.m in Sources */,
+				4D2648BF0A91D79E000E74CB /* CSPreferenceKeys.m in Sources */,
+				4D2648DE0A91DDC8000E74CB /* CSError.m in Sources */,
+				4D264A540A920A9B000E74CB /* CSOpenBidWindowController.m in Sources */,
+				4D264B4B0A933A13000E74CB /* CSBidDataReader.m in Sources */,
+				4D4008200A986F8A00E54B13 /* CBShowTripWindowController.m in Sources */,
+				4D40082D0A98700F00E54B13 /* CSMissingTripsWindowController.m in Sources */,
+				4D4CE1290A9E35AE00CE3CA9 /* CSRetrieveBidAwardsWindowController.m in Sources */,
+				4D4632F60AB04B020020CBA1 /* CSCalendarWeek.m in Sources */,
+				4D46339C0AB06E910020CBA1 /* CBVacationTabDataModel.m in Sources */,
+				4D2C47710CCE50BE00AFCE96 /* CSPrintView.m in Sources */,
+				4DFC88AD0D12DA1C00C3C02C /* CBMaxLegsPerDayTabDataModel.m in Sources */,
+				4D94AD480D3D2818008A6DCE /* CSBidReceipt.m in Sources */,
+				4D94AD8C0D3D2F2A008A6DCE /* CSBidReceiptWindowController.m in Sources */,
+				4D853C6E0F28FC7C00678029 /* CBBidSubmitPreferencesWindowController.m in Sources */,
+				4D853C700F28FC7E00678029 /* CBNewBidWindowController.m in Sources */,
+				4D853C720F28FC8000678029 /* CBBidFileWindowController.m in Sources */,
+				4D853C740F28FC8200678029 /* CBBidCredentialWindowController.m in Sources */,
+				4D853C760F28FC8300678029 /* CBProgressWindowController.m in Sources */,
+				4D853C780F28FC8900678029 /* CBBidFileDownload.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2A37F4B4FDCFA73011CA2CEA /* CBDocument.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4B5FDCFA73011CA2CEA /* English */,
+			);
+			name = CBDocument.nib;
+			sourceTree = "<group>";
+		};
+		2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4B7FDCFA73011CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4BAFDCFA73011CA2CEA /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4D264A280A920233000E74CB /* NewBid.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D264A290A920233000E74CB /* English */,
+			);
+			name = NewBid.nib;
+			sourceTree = "<group>";
+		};
+		4D264A650A922A98000E74CB /* OpenBid.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D264A660A922A98000E74CB /* English */,
+			);
+			name = OpenBid.nib;
+			sourceTree = "<group>";
+		};
+		4D264A6B0A922CA5000E74CB /* Crew Bases.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D264A6C0A922CA5000E74CB /* English */,
+			);
+			name = "Crew Bases.plist";
+			sourceTree = "<group>";
+		};
+		4D264AC40A923BAC000E74CB /* TextFile.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D264AC50A923BAC000E74CB /* English */,
+			);
+			name = TextFile.nib;
+			sourceTree = "<group>";
+		};
+		4D27B95E0A9DAF0200CBCAE6 /* CBBidSubmitSecondRound.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D27B95F0A9DAF0200CBCAE6 /* English */,
+			);
+			name = CBBidSubmitSecondRound.nib;
+			sourceTree = "<group>";
+		};
+		4D2D6CD20669FF5000ED62BA /* CBLinePrintCalendar.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D2D6CD30669FF5000ED62BA /* English */,
+			);
+			name = CBLinePrintCalendar.nib;
+			sourceTree = "<group>";
+		};
+		4D4008210A986FAA00E54B13 /* MissingTrips.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D4008220A986FAA00E54B13 /* English */,
+			);
+			name = MissingTrips.nib;
+			sourceTree = "<group>";
+		};
+		4D4CE12A0A9E363800CE3CA9 /* RetrieveBidAwards.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D4CE12B0A9E363800CE3CA9 /* English */,
+			);
+			name = RetrieveBidAwards.nib;
+			sourceTree = "<group>";
+		};
+		4D4EAD450BF21884009270D6 /* SubmitBid.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D4EAD460BF21884009270D6 /* English */,
+			);
+			name = SubmitBid.nib;
+			sourceTree = "<group>";
+		};
+		4D5E3EE30BF8BF2D00840D27 /* AvoidanceSubmitBid.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D5E3EE40BF8BF2D00840D27 /* English */,
+			);
+			name = AvoidanceSubmitBid.nib;
+			sourceTree = "<group>";
+		};
+		4D5E3EE50BF8BF2D00840D27 /* BuddySubmitBid.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D5E3EE60BF8BF2D00840D27 /* English */,
+			);
+			name = BuddySubmitBid.nib;
+			sourceTree = "<group>";
+		};
+		4D6A825A06B147F40099EDF7 /* CBProgress.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D6A825B06B147F40099EDF7 /* English */,
+			);
+			name = CBProgress.nib;
+			sourceTree = "<group>";
+		};
+		4D6E176906616D9700118EE4 /* CBBidSubmit.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D6E176A06616D9700118EE4 /* English */,
+			);
+			name = CBBidSubmit.nib;
+			sourceTree = "<group>";
+		};
+		4D72B1100639B06B00933C0C /* CBPreferences.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D72B1110639B06B00933C0C /* English */,
+			);
+			name = CBPreferences.nib;
+			sourceTree = "<group>";
+		};
+		4D72B1630639BCB200933C0C /* CBBidSelect.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D72B1640639BCB200933C0C /* English */,
+			);
+			name = CBBidSelect.nib;
+			sourceTree = "<group>";
+		};
+		4D72B625063DB9D900933C0C /* CBBidCredentials.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D72B626063DB9D900933C0C /* English */,
+			);
+			name = CBBidCredentials.nib;
+			sourceTree = "<group>";
+		};
+		4D74DF1B0FD7E6B600CAC1F0 /* CrewBid Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D74DF1C0FD7E6B600CAC1F0 /* English */,
+			);
+			name = "CrewBid Help";
+			sourceTree = "<group>";
+		};
+		4D94AD840D3D2F10008A6DCE /* BidReceipts.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D94AD850D3D2F10008A6DCE /* English */,
+			);
+			name = BidReceipts.nib;
+			sourceTree = "<group>";
+		};
+		4DA8581D0643CD45008C8071 /* CBProgressPanel.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DA8581E0643CD45008C8071 /* English */,
+			);
+			name = CBProgressPanel.nib;
+			sourceTree = "<group>";
+		};
+		4DADE94307D5CEC80001F76F /* CBRegistration.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DADE94407D5CEC80001F76F /* English */,
+			);
+			name = CBRegistration.nib;
+			sourceTree = "<group>";
+		};
+		4DB1694307284E0400F0A094 /* CBViewTrip.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DB1694407284E0400F0A094 /* English */,
+			);
+			name = CBViewTrip.nib;
+			sourceTree = "<group>";
+		};
+		4DCFCFF307A906130075D0FD /* CBFileSelect.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DCFCFF407A906130075D0FD /* English */,
+			);
+			name = CBFileSelect.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D4BD6230A5DA216009B4BEE /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CrewBid_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-bind_at_load";
+				PRODUCT_NAME = CrewBid;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Development;
+		};
+		4D4BD6240A5DA216009B4BEE /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CrewBid_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-lSystem";
+				PRODUCT_NAME = CrewBid;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		4D4BD6250A5DA216009B4BEE /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CrewBid_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CrewBid;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		4D4BD6270A5DA216009B4BEE /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = "-bind_at_load";
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Development;
+		};
+		4D4BD6280A5DA216009B4BEE /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = "-lSystem";
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Deployment;
+		};
+		4D4BD6290A5DA216009B4BEE /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx10.5;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D4BD6220A5DA216009B4BEE /* Build configuration list for PBXNativeTarget "CrewBid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D4BD6230A5DA216009B4BEE /* Development */,
+				4D4BD6240A5DA216009B4BEE /* Deployment */,
+				4D4BD6250A5DA216009B4BEE /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		4D4BD6260A5DA216009B4BEE /* Build configuration list for PBXProject "CrewBid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D4BD6270A5DA216009B4BEE /* Development */,
+				4D4BD6280A5DA216009B4BEE /* Deployment */,
+				4D4BD6290A5DA216009B4BEE /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

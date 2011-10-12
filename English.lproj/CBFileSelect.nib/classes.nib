@@ -1,0 +1,17 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancelButtonAction = id; defaultButtonAction = id; }; 
+            CLASS = CBFileSelectWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                defaultButton = NSButton; 
+                fileSelectTableView = NSTableView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

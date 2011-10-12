@@ -1,0 +1,37 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                closeSheet = id; 
+                credentialCancelButtonAction = id; 
+                credentialOkButtonAction = id; 
+            }; 
+            CLASS = CBBidFileDownload; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                credentialCancelButton = NSButton; 
+                credentialOkButton = NSButton; 
+                credentialWindow = NSWindow; 
+                passwordTextField = NSTextField; 
+                progressCancelButton = NSButton; 
+                progressIndicator = NSProgressIndicator; 
+                progressTextField = NSTextField; 
+                progressWindow = NSWindow; 
+                userIdTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = CBProgressWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                progressIndicator = NSProgressIndicator; 
+                progressTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

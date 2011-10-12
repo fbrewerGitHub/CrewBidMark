@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>BWI</string>
+	<string>DAL</string>
+	<string>HOU</string>
+	<string>LAS</string>
+	<string>MCO</string>
+	<string>MDW</string>
+	<string>OAK</string>
+	<string>PHX</string>
+</array>
+</plist>

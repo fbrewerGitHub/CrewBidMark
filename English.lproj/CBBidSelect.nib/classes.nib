@@ -1,0 +1,30 @@
+{
+    IBClasses = (
+        {
+            CLASS = CBBidFileWindowController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {
+                basePopUpButtonAction = id; 
+                cancelButtonAction = id; 
+                okButtonAction = id; 
+                roundPopUpButtonAction = id; 
+                seatPopUpButtonAction = id; 
+            }; 
+            CLASS = CBNewBidWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                basePopUpButton = NSPopUpButton; 
+                monthPopUpButton = NSPopUpButton; 
+                roundPopUpButton = NSPopUpButton; 
+                seatPopUpButton = NSPopUpButton; 
+            }; 
+            SUPERCLASS = CBBidFileWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }
+    ); 
+    IBVersion = 1; 
+}

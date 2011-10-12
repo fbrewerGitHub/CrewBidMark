@@ -1,0 +1,12 @@
+{
+    IBClasses = (
+        {
+            CLASS = CBProgressPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {progressIndicator = NSProgressIndicator; progressTextField = NSTextField; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

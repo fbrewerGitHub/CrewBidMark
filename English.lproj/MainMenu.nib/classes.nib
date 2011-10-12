@@ -1,0 +1,52 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                emailSupport = id; 
+                newBid = id; 
+                openBidFile = id; 
+                openBidReceipt = id; 
+                openPreferences = id; 
+                removeOldFiles = id; 
+            }; 
+            CLASS = CBAppController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                applyChoices = id; 
+                copyLineLegs = id; 
+                copyTripLegs = id; 
+                freezeBottomLines = id; 
+                freezeSelectedLinesAtBottom = id; 
+                freezeTopLines = id; 
+                insertMrtBid = id; 
+                insertReserveBid = id; 
+                move3on3offLinesToBottom = id; 
+                moveBlankLinesToBottom = id; 
+                moveReserveLinesToBottom = id; 
+                openBidFile = id; 
+                printLine = id; 
+                printTextFile = id; 
+                removeOldFiles = id; 
+                retrieveBidAwards = id; 
+                saveChoices = id; 
+                showBidAwards = id; 
+                showBidLinesText = id; 
+                showBidReceipt = id; 
+                showCoverLetter = id; 
+                showSeniorityList = id; 
+                showTripsText = id; 
+                submitBid = id; 
+                unfreezeBottomLines = id; 
+                unfreezeTopLines = id; 
+                viewTrip = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

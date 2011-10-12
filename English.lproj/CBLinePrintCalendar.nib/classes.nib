@@ -1,0 +1,17 @@
+{
+    IBClasses = (
+        {
+            CLASS = CBLinePrinter; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                calendarView = NSView; 
+                dates = NSMatrix; 
+                entries = NSMatrix; 
+                title = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

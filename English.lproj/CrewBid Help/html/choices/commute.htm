@@ -1,0 +1,163 @@
+<html>
+<head>
+   <title>Commuting</title>
+   <meta name="robots" content="keywords"></meta>
+   <meta name="keywords" content="commute, commuting, overnight, overnights, domicile, start, end, trip, select, line, assign, point"></meta>
+   <meta name="description" content="Selecting lines and assigning points for commuting (by commutes required and overnights in domicile)"></meta>
+</head>
+
+<body text="#000000" bgcolor="#ffffff">
+
+<font face="Lucida Grande,Geneva,Helvetica">
+
+<h2>Selecting Lines and Assigning Points</h2>
+
+<h3>Commuting</h3>
+
+<img src="../../graphics/commute.png"></img>
+
+</br>
+</br>
+
+<p>The Commuting choices allow you to select and assign points to lines by:
+	<ul>
+		<li>
+		the number of commutes to domicile required, and 
+		</li>
+		<li>
+		the number of overnights in domicile required.
+		</li>
+	</ul>
+</p>
+
+<p>The number of commutes required for a line is determined by:
+	<ul>
+		<li>
+		the number of trips in the line, and 
+		</li>
+		<li>
+		whether back-to-back trips require an overnight in domicile.
+		</li>
+	</ul>
+</p>
+
+<p>The number of overnights in domicile for a line is determined by:
+	<ul>
+		<li>
+		the start and end times for each day of the week, and 
+		</li>
+		<li>
+		whether back-to-back trips require an overnight in domicile.
+		</li>
+	</ul>
+</p>
+
+<p>Normally, for commuting purposes, back-to-back trips should be considered to require an overnight in domicile. (A back-to-back trip is a trip that has either another trip that ends the day before the trip begins or another trip the begins the day after the trip ends.) If back-to-back trips require an overnight in domicile, the number of commutes required for a line will be the number of blocks of back-to-back trips. If back-to-back trips do not require an overnight in domicile, the number of commutes required for a line will be the number of trips.</p>
+
+<p>Whether back-to-back trips are considered to require an overnight in domicile also affects the number of overnights in domicile for a line. If back-to-back trips require an overnight in domicile:
+	<ul>
+		<li>
+		each pair of back-to-back trips require an overnight in domicile, 
+		</li>
+		<li>
+		each trip that begins a block of back-to-back trips or is not back-to-back, and departs before the earliest depart time, requires an overnight in domicile, and
+		</li>
+		<li>
+		each trip that ends a block of back-to-back trips or is not back-to-back, and arrives after the latest arrive time, requires an overnight in domicile.
+		</li>
+	</ul>
+</p>
+
+<p>If back-to-back trips do not require an overnight in domicile, then an overnight in domicile will be required for each trip that departs before the earliest depart time, and an overnight in domicile will be required for each trip that arrives after the latest arrival time.</p>
+
+</br>
+
+<table bgcolor="#fff8dc">
+   <tr bgcolor="#fff8dc">
+      <td>
+         <font size="2">
+         To select lines by number of commutes required:
+         <ol>
+            <li>
+            Select the Select/Points tab item in the Choices Tab View.
+            </li>
+             <li>
+            Select the Commuting item from the list on the left.
+            </li>
+             <li>
+            Enter the maximum number of commutes required and select the checkbox for Selects lines with &lt;number&gt; or less commutes required.
+            </li>
+        </font>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+<table bgcolor="#fff8dc">
+   <tr bgcolor="#fff8dc">
+      <td>
+         <font size="2">
+         To select lines by number of overnights in domicile:
+         <ol>
+            <li>
+            Select the Select/Points tab item in the Choices Tab View.
+            </li>
+             <li>
+            Select the Commuting item from the list on the left.
+            </li>
+             <li>
+            Enter the maximum number of overnights in domicile and select the checkbox for Selects lines with &lt;number&gt; or less overnights in domicile.
+            </li>
+        </font>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+</br>
+</br>
+
+<table bgcolor="#fff8dc">
+   <tr bgcolor="#fff8dc">
+      <td>
+         <font size="2">
+         To assign points for commutes required:
+         <ol>
+            <li>
+            Select the Select/Points tab item in the Choices Tab View.
+            </li>
+             <li>
+            Select the Commuting item from the list on the left.
+            </li>
+             <li>
+            Enter the points to be assigned for each commute required and select the checkbox for Assign &lt;number&gt; points for each commute required.
+            </li>
+        </font>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+<table bgcolor="#fff8dc">
+   <tr bgcolor="#fff8dc">
+      <td>
+         <font size="2">
+         To assign points for overnights in domicile:
+         <ol>
+            <li>
+            Select the Select/Points tab item in the Choices Tab View.
+            </li>
+             <li>
+            Select the Commuting item from the list on the left.
+            </li>
+             <li>
+            Enter the points to be assigned for each overnight in domicile and select the checkbox for Assign &lt;number&gt; points for each overnight in domicile.
+            </li>
+        </font>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+</body>
+</html>

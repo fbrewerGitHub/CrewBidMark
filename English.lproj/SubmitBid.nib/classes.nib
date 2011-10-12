@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                cancelButtonAction = id; 
+                okButtonAction = id; 
+                progressCancelButtonAction = id; 
+            }; 
+            CLASS = CSBidFileDownloadWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {progressView = NSView; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {
+                changeEmployeeNumberAction = id; 
+                employeeNumberCancelAction = id; 
+                employeeNumberChangeAction = id; 
+            }; 
+            CLASS = CSSubmitBidWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {changeEmployeeNumberWindow = NSWindow; }; 
+            SUPERCLASS = CSBidFileDownloadWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

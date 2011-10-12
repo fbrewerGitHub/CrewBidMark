@@ -1,0 +1,39 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {doneButtonAction = id; saveBidBeforeSubmitCheckboxAction = id; }; 
+            CLASS = CBMainPreferencesWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {saveBidBeforeSubmitCheckbox = NSButton; }; 
+            SUPERCLASS = CBPreferencesWindowController; 
+        }, 
+        {
+            ACTIONS = {
+                amEarliestDepartTimeTextFieldAction = id; 
+                amLatestArrivalTimeTextFieldAction = id; 
+                crewPositionMatrixAction = id; 
+                employeeBid1TextFieldAction = id; 
+                employeeBid2TextFieldAction = id; 
+                employeeBid3TextFieldAction = id; 
+                employeeNumberTextFieldAction = id; 
+            }; 
+            CLASS = CBPreferencesWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                amEarliestDepartTimeTextField = NSTextField; 
+                amLatestArrivalTimeTextField = NSTextField; 
+                crewPositionMatrix = NSMatrix; 
+                employee1StaticText = NSTextField; 
+                employee2StaticText = NSTextField; 
+                employee3StaticText = NSTextField; 
+                employeeBid1TextField = NSTextField; 
+                employeeBid2TextField = NSTextField; 
+                employeeBid3TextField = NSTextField; 
+                employeeNumberTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

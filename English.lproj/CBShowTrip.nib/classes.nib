@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancelButtonAction = id; showTripButtonAction = id; }; 
+            CLASS = CBShowTripWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                showTripButton = NSButton; 
+                tripPanel = NSPanel; 
+                tripTextField = NSTextField; 
+                tripTextView = NSTextView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}
