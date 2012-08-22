@@ -258,6 +258,7 @@
 	// dialog, so that the user can see for whom and by whom the bid was
 	// submitted
 	CSBidReceiptWindowController *brwc = [[CSBidReceiptWindowController alloc] initWithBidPeriod:[[self dataModel] bidPeriod]];
+	[brwc setDelegate:self];
 	[NSApp 
 		beginSheet:[brwc window] 
 		modalForWindow:[self windowForSheet] 
@@ -269,11 +270,11 @@
 - (void)showBidReceiptSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	// context info is CSBidReceiptWindowController *
-	[sheet close];
 	if (NSOKButton == returnCode) {
 		NSString *selectedBidReceiptPath = [[(CSBidReceiptWindowController *)contextInfo selectedBidReceipt] path];
 		[[NSWorkspace sharedWorkspace] openFile:selectedBidReceiptPath];
 	}
+	[sheet close];
 	[(CSBidReceiptWindowController *)contextInfo release];
 }
 

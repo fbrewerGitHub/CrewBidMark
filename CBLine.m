@@ -718,6 +718,22 @@ NSComparisonResult compareLinesByFACPosition(CBLine * fore, CBLine * aft)
    return comparisonResult;
 }
 
+NSComparisonResult compareLinesByFADPosition(CBLine * fore, CBLine * aft)
+{
+	NSComparisonResult comparisonResult = NSOrderedSame;
+	BOOL foreIsD = [[fore faPosition] isEqualToString:@"D"];
+	BOOL aftIsD = [[aft faPosition] isEqualToString:@"D"];
+	if (foreIsD && !aftIsD)
+	{
+		comparisonResult = NSOrderedAscending;
+	}
+	else if (!foreIsD && aftIsD)
+	{
+		comparisonResult = NSOrderedDescending;
+	}
+	return comparisonResult;
+}
+
 NSComparisonResult compareLinesBySelected(CBLine * fore, CBLine * aft)
 {
    // ordered ascending if line is selected and other is not
