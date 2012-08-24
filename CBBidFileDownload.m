@@ -307,8 +307,13 @@ NSString * CREDENTIAL_REQUEST = @"CREDENTIALS=%@&REQUEST=LOGON&UID=%@&PWD=%@";
       }
       [self setFileConnection:nil];
    }
-   
+    
+    // Supress complier warning for possible insecure format ('errorMessage' is
+    // not a string literal).
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
    NSBeginAlertSheet(errorTitle, @"OK", @"Help", nil, [[self owner] window], self, @selector(errorSheetDidEnd:returnCode:contextInfo:), NULL, [helpPage retain], errorMessage);
+#pragma clang diagnostic pop
 }
 
 - (void)errorSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo

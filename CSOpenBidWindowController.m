@@ -87,7 +87,7 @@
 {
     NSMutableArray *bidPeriodValuessForOldDocuments = [NSMutableArray array];
     NSString *crewBidDirectoryPath = [[NSApp delegate] valueForKey:@"crewBidDirectoryPath"];
-    NSArray *crewBidDirectoryContents = [[NSFileManager defaultManager] directoryContentsAtPath:crewBidDirectoryPath];
+    NSArray *crewBidDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:crewBidDirectoryPath error:NULL];
     NSEnumerator *crewBidDirectoryEnumerator = [crewBidDirectoryContents objectEnumerator];
     NSString *fileName = nil;
     while (fileName = [crewBidDirectoryEnumerator nextObject])

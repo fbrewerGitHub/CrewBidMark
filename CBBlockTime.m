@@ -49,7 +49,7 @@
       decimalDigitString = [decimalDigitString stringByAppendingString:tempString];
    }
    
-   if (stringLength = [decimalDigitString length]) {
+   if ((stringLength = [decimalDigitString length])) {
       if (stringLength > 1) {
          blockHours = [[decimalDigitString substringToIndex:stringLength - 2] intValue];
          blockMinutes = [[decimalDigitString substringFromIndex:stringLength - 2] intValue];

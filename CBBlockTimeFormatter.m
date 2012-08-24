@@ -39,7 +39,7 @@
    BOOL returnValue = NO;
    CBBlockTime * blockTime = nil;
    
-   if (blockTime = [CBBlockTime blockTimeWithString:string]) {
+   if ((blockTime = [CBBlockTime blockTimeWithString:string])) {
 
       returnValue = YES;
       

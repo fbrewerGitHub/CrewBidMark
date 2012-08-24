@@ -132,8 +132,8 @@ NSString * BID_SUBMIT_REQUEST = @"REQUEST=UPLOAD_BID&CREDENTIALS=%@&PACKETID=%@&
 
 - (NSString *)packetIDWithBase:(NSString *)base month:(NSCalendarDate *)month position:(NSString *)position round:(int)round
 {
-   NSString * yearString = [NSString stringWithFormat:@"%d", [month yearOfCommonEra]];
-   NSString * monthString = [NSString stringWithFormat:@"%02d", [month monthOfYear]];
+   NSString * yearString = [NSString stringWithFormat:@"%ld", (long)[month yearOfCommonEra]];
+   NSString * monthString = [NSString stringWithFormat:@"%02ld", (long)[month monthOfYear]];
    int bidRound = round;
    if (![position isEqualToString:@"FA"]) {
       if (1 == round) {

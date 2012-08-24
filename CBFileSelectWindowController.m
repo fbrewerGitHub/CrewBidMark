@@ -44,7 +44,7 @@
 
    // get files and select flle
    fileManager = [NSFileManager defaultManager];
-   filesToDisplay = [[NSMutableArray alloc] initWithArray:[fileManager directoryContentsAtPath:[self directory]]];
+    filesToDisplay = [NSMutableArray arrayWithArray:[fileManager contentsOfDirectoryAtPath:[self directory] error:NULL]];
    if ([self fileTypes])
    {
       filesEnumerator = [filesToDisplay objectEnumerator];
@@ -67,7 +67,7 @@
    if ([self fileName])
    {
       fileIndex = [[self files] indexOfObject:[[self fileName] stringByDeletingPathExtension]];
-      [[self fileSelectTableView] selectRow:fileIndex byExtendingSelection:NO];
+       [[self fileSelectTableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:fileIndex] byExtendingSelection:NO];
    }
 }
 

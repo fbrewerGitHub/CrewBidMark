@@ -69,7 +69,7 @@ NSString *CSBidFileDownloadErrorKey = @"error";
 - (void)beginFileDownload
 {
     // Create data directory
-    [[NSFileManager defaultManager] createDirectoryAtPath:[self downloadDirectory] attributes:nil];
+    [[NSFileManager defaultManager] createDirectoryAtPath:[self downloadDirectory] withIntermediateDirectories:YES attributes:nil error:NULL];
     
     // Initialize third party url request
     NSURL *thirdPartyURL = [[NSURL alloc] initWithString:CSThirdPartyURL];
@@ -303,7 +303,7 @@ NSString *CSBidFileDownloadErrorKey = @"error";
             NSString *filePath = [[self downloadDirectory] stringByAppendingPathComponent:file];
             [self unzipFile:filePath intoDirectory:[self downloadDirectory]];
             // Remove the compressed file
-            [fileManager removeFileAtPath:filePath handler:NULL];
+            [fileManager removeItemAtPath:filePath error:NULL];
         }
     }
 }
@@ -315,7 +315,7 @@ NSString *CSBidFileDownloadErrorKey = @"error";
 
     if (![fm fileExistsAtPath:dirPath isDirectory:&isDir] && isDir)
     {
-        [fm createDirectoryAtPath:dirPath attributes:nil];
+        [fm createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:NULL];
     }
 
     NSString *dittoPath = @"/usr/bin/ditto";

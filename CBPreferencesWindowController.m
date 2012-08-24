@@ -265,8 +265,13 @@ NSString *CBAmTimePreferencesChangedNotification = @"AM Time Preferences Changed
       sheetModalWindow = [self window];
    }
 
+    // Supress compiler warning for possible insecure format string
+    // ('errorDescription' not a literal string).
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
    NSBeginAlertSheet(error, defaultButtonTitle, alternateButtonTitle, nil, sheetModalWindow, self, @selector(employeeTextFieldSheetDidEnd:returnCode:contextInfo:), NULL, contextInfo, errorDescription);
-
+#pragma clang diagnostic pop
+    
    return NO;
 }
 

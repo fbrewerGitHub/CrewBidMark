@@ -16,8 +16,8 @@
 	// subclasses must override and return value for the object represented
 	// by the interface item
    NSMatrix * matrix = (NSMatrix *)[self interfaceItem];
-   int row = 0;
-   int col = 0;
+   NSInteger row = 0;
+   NSInteger col = 0;
    [matrix getRow:&row column:&col ofCell:[matrix selectedCell]];
    int cellIndex = row * [matrix numberOfColumns] + col;
 	return [NSNumber numberWithInt:cellIndex];

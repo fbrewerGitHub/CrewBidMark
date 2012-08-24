@@ -299,14 +299,14 @@ NSString * CBNewBidControllerDidFinish = @"CBNewBidController Did Finish Notific
       [[newDocument dataModel] setBottomFreezeIndex:[lines count]];
       // delete trips and lines files
       NSFileManager * fileManager = [NSFileManager defaultManager];
-      [fileManager removeFileAtPath:tripsFilePath handler:nil];
-      [fileManager removeFileAtPath:linesFilePath handler:nil];
+       [fileManager removeItemAtPath:tripsFilePath error:NULL];
+       [fileManager removeItemAtPath:linesFilePath error:NULL];
       // write new document to file
       NSString * newDocumentPath = [crewBidDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.crewbid", documentName]];
-      [newDocument writeToFile:newDocumentPath ofType:@"CrewBid document"];
+       [newDocument writeToURL:[NSURL fileURLWithPath:newDocumentPath] ofType:@"CrewBid document" error:NULL];
       // hide file extension
       NSMutableDictionary * fileExtensionHiddenAttributes = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSFileExtensionHidden];
-      [fileManager changeFileAttributes:fileExtensionHiddenAttributes atPath:newDocumentPath];
+       [fileManager setAttributes:fileExtensionHiddenAttributes ofItemAtPath:newDocumentPath error:NULL];
       // set user defaults for most recently opened bid
       [[NSUserDefaults standardUserDefaults] setObject:[documentName stringByAppendingPathExtension:@"crewbid"] forKey:CBMostRecentOpenedBidFileKey];
       // release newly created document
@@ -335,7 +335,12 @@ NSString * CBNewBidControllerDidFinish = @"CBNewBidController Did Finish Notific
    [NSApp endSheet:[[[self bidFileDownload] progressController] window]];
    [[[[self bidFileDownload] progressController] window] orderOut:nil];
    // show alert sheet with error title and message
+    // Suppress complier warning for possible insecure format string ('message'
+    // not a string literal).
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
    NSBeginAlertSheet(title, @"Try Again", @"Cancel", nil, [self window], self, @selector(errorSheetDidEnd:returnCode:contextInfo:), NULL, nil, message);
+#pragma clang diagnostic pop
 }
 
 - (void)errorSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)conetextInfo

@@ -148,16 +148,24 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
 - (void)freezeSelectedLinesAtBottom:(id)sender
 {
 	int bottomFreeze = [[self dataModel] bottomFreezeIndex];
-   NSEnumerator *selectedRowsEnum = [[self linesTableView] selectedRowEnumerator];
-   NSMutableArray *rowsArray = [NSMutableArray array];
-	NSNumber *selectedRowNum = nil;
-	while (selectedRowNum = [selectedRowsEnum nextObject]) {
-		int selectedRow = [selectedRowNum intValue];
-		if (selectedRow < bottomFreeze) {
-			[rowsArray addObject:selectedRowNum];
-		}
-	}
-//	[[self undoManager] setActionName:[(NSMenuItem *)sender title]];
+    NSMutableArray *rowsArray = [NSMutableArray array];
+    NSIndexSet *selectedRowIndexes = [[self linesTableView] selectedRowIndexes];
+    NSUInteger selectedRow = selectedRowIndexes.firstIndex;
+    while (NSNotFound != selectedRow) {
+        selectedRow = [selectedRowIndexes indexGreaterThanIndex:selectedRow];
+        if (selectedRow < bottomFreeze) {
+            [rowsArray addObject:[NSNumber numberWithUnsignedInteger:selectedRow]];
+        }
+    }
+    
+//    NSEnumerator *selectedRowsEnum = [[self linesTableView] selectedRowEnumerator];
+//	NSNumber *selectedRowNum = nil;
+//	while (selectedRowNum = [selectedRowsEnum nextObject]) {
+//		int selectedRow = [selectedRowNum intValue];
+//		if (selectedRow < bottomFreeze) {
+//			[rowsArray addObject:selectedRowNum];
+//		}
+//	}
 	[self moveLinesTableRows:rowsArray toRow:bottomFreeze];
 	[[self dataModel] setBottomFreezeIndex:bottomFreeze - [rowsArray count]];
 }
@@ -270,7 +278,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
             if (0 == [[self linesTableView] selectedRow]) {
                [menuItem setTitle:@"Freeze Top Line"];
             } else {
-               [menuItem setTitle:[NSString stringWithFormat:@"Freeze Top %d Lines", [[self linesTableView] selectedRow] + 1]];
+               [menuItem setTitle:[NSString stringWithFormat:@"Freeze Top %ld Lines", (long)[[self linesTableView] selectedRow] + 1]];
             }
          } else {
             [menuItem setTitle:@"Freeze Top Lines"];
@@ -287,7 +295,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
             if ([[[self dataModel] lines] count] == [[self linesTableView] selectedRow]) {
                [menuItem setTitle:@"Freeze Bottom Line"];
             } else {
-               [menuItem setTitle:[NSString stringWithFormat:@"Freeze Bottom %d Lines", [[[self dataModel] lines] count] - [[self linesTableView] selectedRow]]];
+               [menuItem setTitle:[NSString stringWithFormat:@"Freeze Bottom %lu Lines", (unsigned long)[[[self dataModel] lines] count] - [[self linesTableView] selectedRow]]];
             }
          } else {
             [menuItem setTitle:@"Freeze Bottom Lines"];
@@ -310,7 +318,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
                [menuItem setTitle:@"Move Selected Row to Bottom"];
                break;
             default:
-               [menuItem setTitle:[NSString stringWithFormat:@"Freeze %d Selected Rows at Bottom", [[self linesTableView] numberOfSelectedRows]]];
+               [menuItem setTitle:[NSString stringWithFormat:@"Freeze %ld Selected Rows at Bottom", (long)[[self linesTableView] numberOfSelectedRows]]];
                break;
          }
          break;
@@ -496,7 +504,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
 	unsigned index = 0;
    for (index = 0; index < calendarStringsCount; index++) {
 		NSCalendarDate * date = [calendarStrings objectAtIndex:index];
-      NSString * dateString = [NSString stringWithFormat:@"%d", [date dayOfMonth]];
+      NSString * dateString = [NSString stringWithFormat:@"%ld", (long)[date dayOfMonth]];
       [calendarStrings replaceObjectAtIndex:index withObject:dateString];
    }
    return [NSArray arrayWithArray:calendarStrings];
@@ -766,7 +774,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       // select moved rows
       numberOfRowsToSelect = [rowsArray count];
       for (rowIndex = 0; rowIndex < numberOfRowsToSelect; rowIndex++ ) {
-         [tableView selectRow:(firstSelectedRow + rowIndex) byExtendingSelection:YES];
+          [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:firstSelectedRow + rowIndex] byExtendingSelection:YES];
       }
 
    // move from in use sort selections to available sort selections
@@ -797,7 +805,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       // select moved rows
       numberOfRowsToSelect = [rowsArray count];
       for (rowIndex = 0; rowIndex < numberOfRowsToSelect; rowIndex++ ) {
-         [tableView selectRow:(firstSelectedRow + rowIndex) byExtendingSelection:YES];
+          [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:firstSelectedRow + rowIndex] byExtendingSelection:YES];
       }
 
    // move within lines table view
@@ -815,18 +823,18 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       // select moved rows
       numberOfRowsToSelect = [rowsArray count];
       for (rowIndex = 0; rowIndex < numberOfRowsToSelect; rowIndex++ ) {
-         [tableView selectRow:(firstSelectedRow + rowIndex) byExtendingSelection:YES];
+          [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:firstSelectedRow + rowIndex] byExtendingSelection:YES];
       }
       
       [self adjustDataModelFreezeIndexesAfterMovingRows:rowsArray toRow:row];
 
       // TEST CODE
-		NSString *undoActionName = nil;
-		if ([rowsArray count] > 1) {
-			undoActionName = @"Drag Rows";
-		} else {
-			undoActionName = @"Drag Row";
-		}
+//		NSString *undoActionName = nil;
+//		if ([rowsArray count] > 1) {
+//			undoActionName = @"Drag Rows";
+//		} else {
+//			undoActionName = @"Drag Row";
+//		}
 //		[[self undoManager] setActionName:undoActionName];
 //		[self moveLinesTableRows:rowsArray toRow:row];
 
@@ -844,7 +852,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       // select moved rows
       numberOfRowsToSelect = [rowsArray count];
       for (rowIndex = 0; rowIndex < numberOfRowsToSelect; rowIndex++ ) {
-         [tableView selectRow:(firstSelectedRow + rowIndex) byExtendingSelection:YES];
+          [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:firstSelectedRow + rowIndex] byExtendingSelection:YES];
       }
    }
 
@@ -1170,9 +1178,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       }
       // remove aircraft changes table column
       cid = @"aircraftChanges";
-      if (tc = [atc tableColumnWithIdentifier:cid]) {
+      if ((tc = [atc tableColumnWithIdentifier:cid])) {
          [atc removeTableColumn:tc];
-      } else if (tc = [ltv tableColumnWithIdentifier:cid]) {
+      } else if ((tc = [ltv tableColumnWithIdentifier:cid])) {
          [ltv removeTableColumn:tc];
       }
    }
@@ -1180,11 +1188,11 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    else
    {
       cid = @"faPosition";
-      if (tc = [atc tableColumnWithIdentifier:cid])
+      if ((tc = [atc tableColumnWithIdentifier:cid]))
       {
          [atc removeTableColumn:tc];
       }
-      else if (tc = [ltv tableColumnWithIdentifier:cid])
+      else if ((tc = [ltv tableColumnWithIdentifier:cid]))
       {
          [ltv removeTableColumn:tc];
       }
@@ -1198,101 +1206,101 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
         while (tc = [e nextObject])
         {
             // fa positions
-            if (tc = [atc tableColumnWithIdentifier:@"faPosition"])
+            if ((tc = [atc tableColumnWithIdentifier:@"faPosition"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"faPosition"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"faPosition"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // pay per duty
-            if (tc = [atc tableColumnWithIdentifier:@"payPerDuty"])
+            if ((tc = [atc tableColumnWithIdentifier:@"payPerDuty"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"payPerDuty"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"payPerDuty"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // pay per leg
-            if (tc = [atc tableColumnWithIdentifier:@"payPerLeg"])
+            if ((tc = [atc tableColumnWithIdentifier:@"payPerLeg"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"payPerLeg"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"payPerLeg"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // pay per tafb
-            if (tc = [atc tableColumnWithIdentifier:@"payPerTafb"])
+            if ((tc = [atc tableColumnWithIdentifier:@"payPerTafb"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"payPerTafb"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"payPerTafb"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // aircraft changes
-            if (tc = [atc tableColumnWithIdentifier:@"aircraftChanges"])
+            if ((tc = [atc tableColumnWithIdentifier:@"aircraftChanges"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"aircraftChanges"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"aircraftChanges"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // legs
-            if (tc = [atc tableColumnWithIdentifier:@"legs"])
+            if ((tc = [atc tableColumnWithIdentifier:@"legs"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"legs"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"legs"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // max legs
-            if (tc = [atc tableColumnWithIdentifier:@"maxLegs"])
+            if ((tc = [atc tableColumnWithIdentifier:@"maxLegs"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"maxLegs"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"maxLegs"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // passes through domicile
-            if (tc = [atc tableColumnWithIdentifier:@"passesThroughDomicile"])
+            if ((tc = [atc tableColumnWithIdentifier:@"passesThroughDomicile"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"passesThroughDomicile"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"passesThroughDomicile"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // vacation pay
-            if (tc = [atc tableColumnWithIdentifier:@"vacationPay"])
+            if ((tc = [atc tableColumnWithIdentifier:@"vacationPay"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"vacationPay"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"vacationPay"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // vacation drop
-            if (tc = [atc tableColumnWithIdentifier:@"vacationDrop"])
+            if ((tc = [atc tableColumnWithIdentifier:@"vacationDrop"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"vacationDrop"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"vacationDrop"]))
             {
                 [ltv removeTableColumn:tc];
             }
             // pay with vacation
-            if (tc = [atc tableColumnWithIdentifier:@"payWithVacation"])
+            if ((tc = [atc tableColumnWithIdentifier:@"payWithVacation"]))
             {
                 [atc removeTableColumn:tc];
             }
-            else if (tc = [ltv tableColumnWithIdentifier:@"payWithVacation"])
+            else if ((tc = [ltv tableColumnWithIdentifier:@"payWithVacation"]))
             {
                 [ltv removeTableColumn:tc];
             }
@@ -1305,38 +1313,38 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
     while (tc = [e nextObject])
     {
         // vacation pay
-        if (tc = [atc tableColumnWithIdentifier:@"vacationPay"])
+        if ((tc = [atc tableColumnWithIdentifier:@"vacationPay"]))
         {
             [atc removeTableColumn:tc];
         }
-        else if (tc = [ltv tableColumnWithIdentifier:@"vacationPay"])
+        else if ((tc = [ltv tableColumnWithIdentifier:@"vacationPay"]))
         {
             [ltv removeTableColumn:tc];
         }
         // vacation drop
-        if (tc = [atc tableColumnWithIdentifier:@"vacationDrop"])
+        if ((tc = [atc tableColumnWithIdentifier:@"vacationDrop"]))
         {
             [atc removeTableColumn:tc];
         }
-        else if (tc = [ltv tableColumnWithIdentifier:@"vacationDrop"])
+        else if ((tc = [ltv tableColumnWithIdentifier:@"vacationDrop"]))
         {
             [ltv removeTableColumn:tc];
         }
         // pay with vacation
-        if (tc = [atc tableColumnWithIdentifier:@"payWithVacation"])
+        if ((tc = [atc tableColumnWithIdentifier:@"payWithVacation"]))
         {
             [atc removeTableColumn:tc];
         }
-        else if (tc = [ltv tableColumnWithIdentifier:@"payWithVacation"])
+        else if ((tc = [ltv tableColumnWithIdentifier:@"payWithVacation"]))
         {
             [ltv removeTableColumn:tc];
         }
         // vacation days off
-        if (tc = [atc tableColumnWithIdentifier:@"vacationDaysOff"])
+        if ((tc = [atc tableColumnWithIdentifier:@"vacationDaysOff"]))
         {
             [atc removeTableColumn:tc];
         }
-        else if (tc = [ltv tableColumnWithIdentifier:@"vacationDaysOff"])
+        else if ((tc = [ltv tableColumnWithIdentifier:@"vacationDaysOff"]))
         {
             [ltv removeTableColumn:tc];
         }

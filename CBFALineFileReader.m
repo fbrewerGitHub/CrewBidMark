@@ -22,7 +22,7 @@
    NSRange tripNumRange = {0, 0};
    NSRange tripDateRange = {0, 0};
    NSCalendarDate *tripDate = nil;
-   int tripStartDay = 0;
+   NSInteger tripStartDay = 0;
    NSRange tripPosRange = {0, 0};
    NSRange tripResvStartRange = {0, 0};
    NSRange tripResvEndRange = {0, 0};

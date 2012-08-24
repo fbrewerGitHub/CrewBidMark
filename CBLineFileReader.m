@@ -42,9 +42,9 @@
    // create an array of strings that contain data for each line
 	NSString * linesString = [NSString stringWithContentsOfFile:[self linesFilePath] encoding:NSUTF8StringEncoding error:NULL];
    NSRange lineRange = NSMakeRange(0, [linesString length]);
-   unsigned lineStartIndex = 0;
-   unsigned lineEndIndex = 0;
-   unsigned nextLineStartIndex = 0;
+   NSUInteger lineStartIndex = 0;
+   NSUInteger lineEndIndex = 0;
+   NSUInteger nextLineStartIndex = 0;
    [linesString getLineStart:&lineStartIndex end:&nextLineStartIndex contentsEnd:&lineEndIndex forRange:lineRange];
    NSString * lineSeparator = [linesString substringWithRange:NSMakeRange(lineEndIndex, nextLineStartIndex - lineEndIndex)];
    NSArray * linesStringArray = [linesString componentsSeparatedByString:lineSeparator];

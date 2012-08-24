@@ -145,7 +145,7 @@ int CBOverlapNextDayHour = 3;
 
    CBTrip * trip = nil;
    NSCalendarDate * tripStartDate = nil;
-   int tripDayIndex = 0;
+   NSInteger tripDayIndex = 0;
    CBTripDay * tripDay = nil;
    NSCalendarDate * releaseTime = nil;
    CBBlockTime * blockTime = nil;

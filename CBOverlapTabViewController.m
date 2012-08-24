@@ -64,7 +64,7 @@
    
    NSCalendarDate *curMonth = [[self dataModel] month];
    NSCalendarDate *prevMonth = nil;
-   int monthDiff = 0;
+   NSInteger monthDiff = 0;
 
    // put names of files from previous month last month bid popup button
    [previousMonthPopUpButton removeAllItems];
@@ -176,7 +176,7 @@
    NSString * previousMonthFileName = nil;
    NSString * previousMonthFilePath = nil;
 
-   if (previousMonthLineNumber = [[self lastMonthLineTextField] intValue]) {
+   if ((previousMonthLineNumber = [[self lastMonthLineTextField] intValue])) {
    
       numberOfOverlapFormEntries = [[[self overlapDatesForm] cells] count];
    
@@ -205,7 +205,7 @@
 {
    CBProgressWindowController * progressController = nil;
    progressController = [[CBProgressWindowController alloc] init];
-   [progressController setProgressText:[NSString stringWithFormat:@"Computing overlaps...", [[self lastMonthBidPopUpButton] titleOfSelectedItem]]];
+    [progressController setProgressText:@"Computing overlaps..."];
    [progressController disableCancelButton];
 
    // commit pending edits
@@ -249,7 +249,7 @@
    CBBlockTime * releaseTime = [[self overlapLastArrivalTimeTextField] objectValue];
    
    // make sure we've got a reasonable release time (between 00:00 and 24:00)
-   if ([releaseTime totalMinutes] >= 0 && [releaseTime totalMinutes] <= 24 * 60) {
+   if (/*[releaseTime totalMinutes] >= 0 &&*/ [releaseTime totalMinutes] <= 24 * 60) {
       float y = [[self overlapLastArrivalTimeTextField] frame].origin.y;
       int index = (int)(251.0 - y) / 27;
       CBBlockTime * blockTime = [[[self overlapDatesForm] cellAtIndex:index] objectValue];
@@ -329,9 +329,9 @@
 {
    NSCalendarDate * releaseDate = nil;
    NSCalendarDate * firstFormDate = nil;
-   int hoursSinceFirstFormDate = 0;
-   int minutesSinceFirstFormDate = 0;
-   int releaseDateIndex = 0;
+   NSInteger hoursSinceFirstFormDate = 0;
+   NSInteger minutesSinceFirstFormDate = 0;
+   NSInteger releaseDateIndex = 0;
    
    const float INITIAL_TEXT_X = 116.0;
    const float INITIAL_TEXT_Y = 253.0;
@@ -371,9 +371,9 @@
 
 - (BOOL)sheetForBlockTimeTextFieldValidationFailure:(NSString *)string errorDescription:(NSString *)error
 {
-   NSString * alertInformation = @"Type any of the digits \"0\" - \"9\" and at most a single colon \":\" in the time text field, such as \"12:30\".";
+//   NSString * alertInformation = @"Type any of the digits \"0\" - \"9\" and at most a single colon \":\" in the time text field, such as \"12:30\".";
    
-   NSBeginAlertSheet(error, nil, nil, nil, [self window], self, NULL, NULL, nil, alertInformation);
+   NSBeginAlertSheet(error, nil, nil, nil, [self window], self, NULL, NULL, nil, @"Type any of the digits \"0\" - \"9\" and at most a single colon \":\" in the time text field, such as \"12:30\".");
    
    return NO;
 }
@@ -381,7 +381,7 @@
 - (BOOL)sheetForReleaseTimeInvalidValue
 {
    NSString *title = nil;
-   NSString *message = @"Release time must be between 00:00 and 24:00.";
+//   NSString *message = @"Release time must be between 00:00 and 24:00.";
    
    CBBlockTime *relTime = [[self overlapLastArrivalTimeTextField] objectValue];
    int totMin = [relTime totalMinutes];
@@ -390,7 +390,7 @@
       title = [NSString stringWithFormat:@"Release time entered (%02d:%02d) is greater than maximum or 24:00.", [relTime hours], [relTime minutes]];
    }
 
-   NSBeginAlertSheet(title, nil, nil, nil, [self window], self, @selector(invalidReleaseTimeSheetDidEnd:returnCode:contextInfo:), NULL, nil, message);
+   NSBeginAlertSheet(title, nil, nil, nil, [self window], self, @selector(invalidReleaseTimeSheetDidEnd:returnCode:contextInfo:), NULL, nil, @"Release time must be between 00:00 and 24:00.");
 
    return NO;
 }

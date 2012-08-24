@@ -235,11 +235,11 @@
     char bidRoundChar = [self isSecondRoundBid] ? 'B' : 'D';
     
     // bid month: hex value of month integer
-    NSString *bidDataFileName =  [NSString stringWithFormat:@"%c%c%@%X.737", 
-        bidPosChar, 
+    NSString *bidDataFileName =  [NSString stringWithFormat:@"%c%c%@%lx.737", 
+        bidPosChar,
         bidRoundChar, 
         [self base], 
-        [[self month] monthOfYear]];
+        (long)[[self month] monthOfYear]];
     
     return bidDataFileName;
 }
@@ -391,7 +391,7 @@
 - (NSArray *)bidReceipts
 {
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *bidDataDirContents = [fm directoryContentsAtPath:[self bidDataDirectoryPath]];
+    NSArray *bidDataDirContents = [fm contentsOfDirectoryAtPath:[self bidDataDirectoryPath] error:NULL];
     NSMutableArray *bidReceipts = [NSMutableArray arrayWithCapacity:8];
     NSEnumerator *contentsEnum = [bidDataDirContents objectEnumerator];
     NSString *name = nil;
@@ -439,7 +439,7 @@
 	NSString *empNum = [self employeeNumberByRemovingLeadingZerosFromEmployeeNumber:employeeNumber];
 	NSString *empNumBidReceiptFormat = [NSString stringWithFormat:@"%@ Bid Receipt", empNum];
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *bidReceiptDirContents = [fm directoryContentsAtPath:bidReceiptDir];
+    NSArray *bidReceiptDirContents = [fm contentsOfDirectoryAtPath:bidReceiptDir error:NULL];
     NSMutableArray *bidReceipts = [NSMutableArray arrayWithCapacity:8];
     NSEnumerator *contentsEnum = [bidReceiptDirContents objectEnumerator];
     NSString *filename = nil;

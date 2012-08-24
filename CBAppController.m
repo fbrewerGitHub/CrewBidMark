@@ -78,7 +78,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 
 
 - (void)awakeFromNib
-{
+{    
    // notify user and quit if not a good operating system environment
    BOOL isGoodEnvironment = [self checkEnvironment];
    if (!isGoodEnvironment) {
@@ -189,13 +189,15 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 {
    // create open bid panel
    NSOpenPanel * openPanel = [NSOpenPanel openPanel];
-   [openPanel setDelegate:self];
+//   [openPanel setDelegate:self];
    [openPanel setCanChooseDirectories:NO];
    [openPanel setAllowsMultipleSelection:NO];
+//    [openPanel setDirectoryURL:[NSURL fileURLWithPath:[self crewBidDirectoryPath]]];
+//    [openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"crewbid"]];
+    
    NSString * fileToSelect = [[NSUserDefaults standardUserDefaults] objectForKey:CBMostRecentOpenedBidFileKey];
    NSArray * fileTypes = [NSArray arrayWithObject:@"crewbid"];
    int result = [openPanel runModalForDirectory:[self crewBidDirectoryPath] file:fileToSelect types:fileTypes];
-//   int result = [openPanel runModalForDirectory:[self crewBidDirectoryPath] file:fileToSelect types:nil];
    if (result == NSOKButton) {
       // get file to open
       NSArray * filesToOpen = [openPanel filenames];
@@ -250,8 +252,8 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
          @selector(removeFilesSheetDidEnd:returnCode:contextInfo:),
          NULL,
          [panel retain],
-         @"Are you sure you want to remove %d %@?\n\nThe %@ will be moved to the Trash.",
-         [[panel filenames] count], ([[panel filenames] count] > 1 ? @"files" : @"file"), ([[panel filenames] count] > 1 ? @"files" : @"file"));
+         @"Are you sure you want to remove %lu %@?\n\nThe %@ will be moved to the Trash.",
+         (unsigned long)[[panel filenames] count], ([[panel filenames] count] > 1 ? @"files" : @"file"), ([[panel filenames] count] > 1 ? @"files" : @"file"));
    }
 }
 
@@ -295,7 +297,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
         // remove bid document files and bid data directories (if they exist)
         NSString *crewBidDir = [self crewBidDirectoryPath];
         NSString *trashDir = [NSHomeDirectory() stringByAppendingPathComponent:@".Trash"];
-        int tag = 0;
+        NSInteger tag = 0;
         NSWorkspace *sharedWorkspace = [NSWorkspace sharedWorkspace];
         [sharedWorkspace 
             performFileOperation:NSWorkspaceRecycleOperation 
@@ -326,7 +328,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)n
 {
-	// begin check for new version assynchronously
+	// begin check for new version asynchronously
 	NSString *latestVersionURLString = @"http://www.macrewsoft.com/bin/CrewBidVersion.plist";
 	NSURL *latestVersionURL = [NSURL URLWithString:latestVersionURLString];
 	NSURLRequest *latestVersionRequest = [NSURLRequest requestWithURL:latestVersionURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30];
@@ -369,7 +371,6 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
             preferencesController = [[CBMainPreferencesWindowController alloc] init];
             [NSApp runModalForWindow:[preferencesController window]];
         }
-//        [self openPreferences:nil];
     }
 
    // open last opened bid file, if month it was created is the same as current
@@ -380,7 +381,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
    {
       NSString *lastOpenedBidPath = [[self crewBidDirectoryPath] stringByAppendingPathComponent:lastOpenedBid];
       NSFileManager *fileManager = [NSFileManager defaultManager];
-      NSDate *fileDate = [[fileManager fileAttributesAtPath:lastOpenedBidPath traverseLink:NO] objectForKey:NSFileCreationDate];
+       NSDate *fileDate = [[fileManager attributesOfItemAtPath:lastOpenedBidPath error:NULL] objectForKey:NSFileCreationDate];
       NSCalendarDate *fileCreatedDate = [NSCalendarDate dateWithString:[fileDate description]];
       NSCalendarDate *now = [NSCalendarDate calendarDate];
       
@@ -431,7 +432,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
    if (!crewBidDirectoryExists) {
       // passing nil for attributes gives default values for attributes such
       // as grooup and owner permissions
-      directoryCreated = [defaultManager createDirectoryAtPath:crewBidDirectoryPath attributes:nil];
+       directoryCreated = [defaultManager createDirectoryAtPath:crewBidDirectoryPath withIntermediateDirectories:YES attributes:nil error:NULL];
    }
    // check that the directory is writeable
    directoryCreated = [defaultManager isWritableFileAtPath:crewBidDirectoryPath];
@@ -565,12 +566,11 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 				NSString *crewScheduleURLString = @"http://www.macrewsoft.com/bin/CrewBid.dmg.zip";
 				NSURL *crewScheduleURL = [NSURL URLWithString:crewScheduleURLString];
 				BOOL newVersionDownloaded = [[NSWorkspace sharedWorkspace] openURL:crewScheduleURL];
-//				BOOL newVersionDownloaded = NO;
 				[newVersAlert release];
 				NSAlert *downloadAlert = [[NSAlert alloc] init];
 				if (newVersionDownloaded) {
-					msgText = [NSString stringWithFormat:@"CrewBid version %@ successfully downloaded.", latestVersion];
-					infoText = @"You should now quit CrewBid and install the version that was just downloaded.";
+					msgText = [NSString stringWithFormat:@"CrewBid version %@ is being downloaded.", latestVersion];
+					infoText = @"When the download is complete, you should quit CrewBid and install the new version.";
 					[downloadAlert addButtonWithTitle:@"Quit"];
 					[downloadAlert addButtonWithTitle:@"Later"];
 				} else {

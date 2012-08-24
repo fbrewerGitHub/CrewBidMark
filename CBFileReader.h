@@ -14,11 +14,11 @@
    NSString *filePath;
    NSString *fileEnd;
    NSString *fileContents;
-   unsigned fileLength;
+   NSUInteger fileLength;
    NSRange  lineRange;
-   unsigned lineStart;
-   unsigned lineEnd;
-   unsigned contentsEnd;
+   NSUInteger lineStart;
+   NSUInteger lineEnd;
+   NSUInteger contentsEnd;
    NSMutableString *fileLine;
 }
 

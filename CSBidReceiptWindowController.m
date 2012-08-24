@@ -70,7 +70,7 @@
 - (CSBidReceipt *)selectedBidReceipt {
 	CSBidReceipt *selectedBidReceipt = nil;
 	unsigned selectedBidReceiptIndex = [[self selectedBidReceiptIndexes] firstIndex];
-	if (selectedBidReceiptIndex >= 0 && selectedBidReceiptIndex < [[self bidReceipts] count]) {
+	if (NSNotFound != selectedBidReceiptIndex && selectedBidReceiptIndex < [[self bidReceipts] count]) {
 		selectedBidReceipt = [[self bidReceipts] objectAtIndex:selectedBidReceiptIndex];
 	}
     return selectedBidReceipt;

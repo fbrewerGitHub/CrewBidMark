@@ -238,7 +238,7 @@
 
 - (int)vacationDaysOffForLine:(CBLine *)line calendarWeek:(CSCalendarWeek *)calendarWeek
 {
-    int vacationDaysOff = 0;
+    NSInteger vacationDaysOff = 0;
     NSCalendarDate *lastTripDateBefore = [self lastTripDateForLine:line beforeCalendarWeek:calendarWeek];
     NSCalendarDate *firstTripDateAfter = [self firstTripDateForLine:line afterCalendarWeek:calendarWeek];
     if (![line isBlankLine])

@@ -16,8 +16,7 @@
    // do nothing if the moving to same index
    if (oldIndex == newIndex) return;
    // raise exception for bad arguments
-   if (oldIndex < 0 || newIndex < 0 ||
-       oldIndex > [self count] - 1 || newIndex > [self count] - 1) {
+   if (oldIndex > [self count] - 1 || newIndex > [self count] - 1) {
       NSException *exception = [NSException 
          exceptionWithName:NSInvalidArgumentException 
          reason:@"Index(es) outside bounds of array in \"moveObjectAtIndex:toIndex\" method of NSMutableArray+MAArrayUtilities category." 

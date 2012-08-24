@@ -39,8 +39,9 @@
    // set undo manager action name
 //   [[[self owner] undoManager] setActionName:[self undoActionName]];
    // set data model
-   [[[self owner] dataModel] takeValue:[self interfaceItemValue] forKey:[self identifier]];
-   // 
+    [[[self owner] dataModel] setValue:[self interfaceItemValue] forKey:[self identifier]];
+//   [[[self owner] dataModel] takeValue:[self interfaceItemValue] forKey:[self identifier]];
+   //
 //	[[self owner] setValue:[self interfaceItemValue] forKeyPath:[self keyPath]];
 }
 

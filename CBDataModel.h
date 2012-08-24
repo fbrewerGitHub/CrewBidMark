@@ -71,7 +71,7 @@ typedef enum {
    // calendar
    NSCalendarDate *firstBidDate;
    NSCalendarDate *firstCalendarDate;
-   int calendarOffset;
+   NSInteger calendarOffset;
    NSCalendarDate *lastBidDate;
    // derived
    NSArray * overnightCities;
@@ -239,7 +239,7 @@ typedef enum {
 - (void)sortLines;
 - (NSValue *)sortFunctionValueWithSortSelection:(NSString *)sortSelection;
 - (void)adjustPointsForLines;
-int compareSortSelection(id fore, id aft, void * context );
+NSInteger compareSortSelection(id fore, id aft, void * context );
 
 #pragma mark ARRAY OBJECT MANIPULATION
 - (void)moveLinesArrayRows:(NSArray *)oldRows toRows:(NSArray *)newRows;

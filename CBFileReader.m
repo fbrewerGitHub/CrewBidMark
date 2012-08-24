@@ -19,7 +19,7 @@
    {
       [self setFilePath:inFilePath];
       [self setFileEnd:inFileEnd];
-      [self setFileContents:[[NSString alloc] initWithContentsOfFile:[self filePath]]];
+       [self setFileContents:[NSString stringWithContentsOfFile:[self filePath] encoding:NSUTF8StringEncoding error:NULL]];
       fileLength = [[self fileContents] length];
       fileLine = [[NSMutableString alloc] init];
    }

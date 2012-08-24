@@ -57,7 +57,14 @@ static NSString *CBViewTripToolbarViewDifferentTripMenuItem = @"View a Different
    [toolbar setAllowsUserCustomization:NO];
    [toolbar setAutosavesConfiguration:NO];
    [toolbar setDisplayMode:NSToolbarDisplayModeLabelOnly];
-   [toolbar setDelegate:self];
+    // Suppress complier warning for incompatible pointer type. Self is not
+    // declared as NSToolbarDelegate since that protocol was introduced in
+    // OS 10.6.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wno-protocol"
+    [toolbar setValue:self forKey:@"delegate"];
+//   [toolbar setDelegate:self];
+#pragma clang diagnostic pop
    [[self window] setToolbar:toolbar];
    [toolbar release];
 }

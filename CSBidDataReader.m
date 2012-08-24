@@ -150,13 +150,13 @@
 			// predicate test should have found a line of text that begins with 
 			// the string 'Line'.
 			if (![scanner scanString:@"Line" intoString:NULL]) {
-				[self setErrorReason:[NSString stringWithFormat:@"Failed to read line number for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+				[self setErrorReason:[NSString stringWithFormat:@"Failed to read line number for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 				return nil;
 			}
 			// Scan line number, which should immediately follow string 'Line' 
 			// at the start of the line info.
 			if (![scanner scanInteger:&lineNum]) {
-				[self setErrorReason:[NSString stringWithFormat:@"Failed to read line number for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+				[self setErrorReason:[NSString stringWithFormat:@"Failed to read line number for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 				return nil;
 			}
 			// Found the start of the info for the line that contains the trip
@@ -170,16 +170,16 @@
 				// Failed to read text 'TFP', which should immediately follow 
 				// line number in the line info.
 				if (![scanner scanString:@"TFP" intoString:NULL]) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to read TFP text for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to read TFP text for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				// Failed to read TFP value.
 				if (![scanner scanFloat:NULL]) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to read TFP value for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to read TFP value for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				if (![scanner scanInteger:NULL]) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find days of month start for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find days of month start for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				// This is the point at which all scanning of lines info should 
@@ -190,19 +190,19 @@
 				lineRange.location = lineRange.location + lineRange.length;
 				lineRange.length = 0;
 				if (lineRange.location >= lenFileInfo) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				lineRange = [fileInfo lineRangeForRange:lineRange];
 				lineRange.location = lineRange.location + lineRange.length;
 				lineRange.length = 0;
 				if (lineRange.location >= lenFileInfo) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				lineRange = [fileInfo lineRangeForRange:lineRange];
 				if (lineRange.location >= lenFileInfo) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				lineInfo = [fileInfo substringWithRange:lineRange];
@@ -221,7 +221,7 @@
 				// the scanner should already be at the start of the partial 
 				// trip number, this scan should fail.
 				if ([scanner scanUpToString:partTripNum intoString:NULL]) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				NSUInteger tripStartLoc = [scanner scanLocation];
@@ -230,7 +230,7 @@
 				lineRange.location = lineRange.location + lineRange.length;
 				lineRange.length = 0;
 				if (lineRange.location >= lenFileInfo) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				lineRange = [fileInfo lineRangeForRange:lineRange];
@@ -242,7 +242,7 @@
 				// characters scanned should be evenly divisible by 3.
 				[scanner scanCharactersFromSet:[NSCharacterSet alphanumericCharacterSet] intoString:&cities];
 				if (0 != [cities length] % 3) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find overnight cities for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find overnight cities for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				// Skip to next line of text, which will have start/end times 
@@ -251,7 +251,7 @@
 				lineRange.length = 0;
 				lineRange = [fileInfo lineRangeForRange:lineRange];
 				if (lineRange.location >= lenFileInfo) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				lineInfo = [fileInfo substringWithRange:lineRange];
@@ -264,7 +264,7 @@
 					lineRange.length = 0;
 					lineRange = [fileInfo lineRangeForRange:lineRange];
 					if (lineRange.location >= lenFileInfo) {
-						[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+						[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 						return nil;
 					}
 					lineInfo = [lineInfo stringByAppendingString:[fileInfo substringWithRange:lineRange]];
@@ -285,7 +285,7 @@
 				// If scanner is at end, then failed to find partial trip 
 				// number in trip start/end and pay info.
 				if ([scanner isAtEnd]) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip start/end and pay info for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find trip start/end and pay info for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				NSUInteger prevScanLoc = [scanner scanLocation];
@@ -293,7 +293,7 @@
 				// Should read an integer and should read exactly 4 characters 
 				// (i.e., scan location should advance by 4).
 				if (![scanner scanInteger:&depTime] || 4 != [scanner scanLocation] - prevScanLoc) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to read start time for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to read start time for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				prevScanLoc = [scanner scanLocation];
@@ -306,7 +306,7 @@
 				if (![scanner scanUpToCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:NULL] || 
 					![scanner scanInteger:&arrTime] || 
 					5 != [scanner scanLocation] - prevScanLoc) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to read end time for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to read end time for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				;
@@ -315,7 +315,7 @@
 				// character before the trip pay). Then, should read a float.
 				if (![scanner scanUpToCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:NULL] ||
 					![scanner scanFloat:&pay]) {
-					[self setErrorReason:[NSString stringWithFormat:@"Failed to find pay for line: %d trip: %@ sequence: %u.", lineNumber, [tripNumber substringToIndex:4], tripSequence]];
+					[self setErrorReason:[NSString stringWithFormat:@"Failed to find pay for line: %ld trip: %@ sequence: %lu.", (long)lineNumber, [tripNumber substringToIndex:4], (unsigned long)tripSequence]];
 					return nil;
 				}
 				// Create a new trip and set available properties. At this 

@@ -115,7 +115,7 @@
 			NSRange stringRange = NSMakeRange(stringStart, r.location - stringStart);
 			NSAttributedString *as = [textStorage attributedSubstringFromRange:stringRange];
 			NSSize stringSize = [as size];
-			NSLog(@"found at %u size: %0.1f %0.1f\n%@", r.location, stringSize.width, stringSize.height, as);
+			NSLog(@"found at %u size: %0.1f %0.1f\n%@", (unsigned int)(r.location), stringSize.width, stringSize.height, as);
 			r.location++;
 			r.length = l - r.location;
 			stringStart = r.location;

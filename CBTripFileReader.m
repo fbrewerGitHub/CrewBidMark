@@ -43,9 +43,9 @@
    // get contents of trips file
 	NSString * tripsString = [NSString stringWithContentsOfFile:[self tripsFilePath] encoding:NSUTF8StringEncoding error:NULL];
    NSRange lineRange = NSMakeRange(0, [tripsString length]);
-   unsigned lineStartIndex = 0;
-   unsigned lineEndIndex = 0;
-   unsigned nextLineStartIndex = 0;
+   NSUInteger lineStartIndex = 0;
+   NSUInteger lineEndIndex = 0;
+   NSUInteger nextLineStartIndex = 0;
    [tripsString getLineStart:&lineStartIndex end:&nextLineStartIndex contentsEnd:&lineEndIndex forRange:lineRange];
    NSString * lineSeparator = [tripsString substringWithRange:NSMakeRange(lineEndIndex, nextLineStartIndex - lineEndIndex)];
    NSArray * tripsData = [tripsString componentsSeparatedByString:lineSeparator];

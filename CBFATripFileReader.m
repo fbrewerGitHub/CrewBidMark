@@ -47,10 +47,10 @@
    
    NSString * fileContents = nil;
    NSRange  lineRange = NSMakeRange(0, 0);
-   unsigned fileLength = 0;
-   unsigned start = 0;
-   unsigned lineEnd = 0;
-   unsigned contentsEnd = 0;
+//   NSUInteger fileLength = 0;
+   NSUInteger start = 0;
+   NSUInteger lineEnd = 0;
+   NSUInteger contentsEnd = 0;
    NSMutableString * fileString = nil;
    NSString *EMPTY_STRING = nil;
    NSString *TRIP_START = nil;
@@ -73,15 +73,15 @@
    int prefsAmDepartTime = 0;
    int prefsAmArrivalTime = 0;
    
-   // allocate trips dictionay for retrun value
+   // allocate trips dictionay for return value
    tripsDict = [[NSMutableDictionary alloc] init];
    // get preferences from user defaults
    prefsAmDepartTime = [[[NSUserDefaults standardUserDefaults] objectForKey:CBAmDepartTimePreferencesKey] intValue];
    prefsAmArrivalTime = [[[NSUserDefaults standardUserDefaults] objectForKey:CBAmArrivalTimePreferencesKey] intValue];
 
    // get file contents
-   fileContents = [[NSString alloc] initWithContentsOfFile:[self tripsDataPath]];
-   fileLength = [fileContents length];
+    fileContents = [[NSString alloc] initWithContentsOfFile:[self tripsDataPath] encoding:NSUTF8StringEncoding error:NULL];
+//   fileLength = [fileContents length];
    
    // get first line of file
    [fileContents getLineStart:&start end:&lineEnd contentsEnd:&contentsEnd forRange:lineRange];
@@ -211,9 +211,10 @@
    [trip release];
    trip = nil;
 
+    [fileContents release];
    [fileString release];
    
-   return [NSDictionary dictionaryWithDictionary:tripsDict];
+   return [NSDictionary dictionaryWithDictionary:[tripsDict autorelease]];
 }
 
 - (CBTripDayLeg *)legWithFileString:(NSString *)fileString
@@ -262,7 +263,7 @@
    NSString *kCredit = @"Credit";
    char c = 0;
    
-   fileContents = [[NSString alloc] initWithContentsOfFile:path];
+    fileContents = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
    scanner = [[NSScanner alloc] initWithString:fileContents];
    hyphen = [NSCharacterSet characterSetWithCharactersInString:@"-"];
    decPoint = [NSCharacterSet characterSetWithCharactersInString:@"."];

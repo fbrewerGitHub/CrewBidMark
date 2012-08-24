@@ -38,7 +38,7 @@
 		int firstRow = 0;
 		while (rowNumber = [rowsEnum nextObject]) {
 			rowIndex = [rowNumber intValue];
-			[[self linesTableView] selectRow:rowIndex byExtendingSelection:YES];
+            [[self linesTableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] byExtendingSelection:YES];
 			if (rowIndex < firstRow) {
 				firstRow = rowIndex;
 			}

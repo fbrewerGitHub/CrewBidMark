@@ -120,7 +120,7 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
     // which will result in a bid round of 0
     if ([self bidRound] == 0)
     {
-        NSString *docFileNamePath = [[self document] fileName];
+        NSString *docFileNamePath = [[[self document] fileURL] path];
         NSString *docFileName = [[docFileNamePath lastPathComponent] stringByDeletingPathExtension];
         unsigned docFileNameLen = [docFileName length];
         NSString *docFileBidRound = [docFileName substringFromIndex:docFileNameLen - 1];
@@ -308,7 +308,7 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
       int lineNumberOf3Days = 0;
       int lineNumberOf4Days = 0;
       // block of days off
-      int blockOfDaysOff = 0;
+      NSInteger blockOfDaysOff = 0;
       int lineLongestBlockOfDaysOff = 0;
       NSCalendarDate * tripStartDate = nil;
       NSCalendarDate *endDatePreviousTrip = [[self month] dateByAddingYears:0 months:0 days:-1 hours:0 minutes:0 seconds:0];
@@ -1222,7 +1222,7 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
 }
 
 // returns NSComparisonResult based on sort selection's title
-int compareSortSelection(id fore, id aft, void * context )
+NSInteger compareSortSelection(id fore, id aft, void * context )
 {
    int comparisonResult = NSOrderedSame;
    
@@ -2437,7 +2437,7 @@ static NSString *CBDataModelMaxLegsPerDayGreaterThanPointsValueKey = @"Max Legs 
    if ([choices writeToFile:choicesFilePath atomically:NO])
    {
       fileManager = [NSFileManager defaultManager];
-      [fileManager changeFileAttributes:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSFileExtensionHidden] atPath:choicesFilePath];
+       [fileManager setAttributes:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSFileExtensionHidden] ofItemAtPath:choicesFilePath error:NULL];
    }
    else
    {
@@ -2450,7 +2450,7 @@ static NSString *CBDataModelMaxLegsPerDayGreaterThanPointsValueKey = @"Max Legs 
 {
    NSDictionary * choices = nil;
    
-   if (choices = [NSDictionary dictionaryWithContentsOfFile:path])
+   if (choices == [NSDictionary dictionaryWithContentsOfFile:path])
    {
       // sort selections
 		[self saveSortSelectionsUsingChoices:choices];
@@ -2872,7 +2872,7 @@ static NSString *CBDataModelMaxLegsPerDayGreaterThanPointsValueKey = @"Max Legs 
 {
    if (availableSortSelections != inValue) {
       [availableSortSelections release];
-      availableSortSelections = [[inValue sortedArrayUsingFunction:compareSortSelection context:nil] retain];
+      availableSortSelections = [[[inValue mutableCopy] sortedArrayUsingFunction:compareSortSelection context:nil] copy];
       // post notification
       [[NSNotificationCenter defaultCenter] postNotificationName:CBDataModelSortSelectionsChangedNotification object:[self document] userInfo:[NSDictionary dictionaryWithObject:availableSortSelections forKey:CBDataModelSortSelectionsChangedNotification]];
    }
@@ -2900,7 +2900,7 @@ static NSString *CBDataModelMaxLegsPerDayGreaterThanPointsValueKey = @"Max Legs 
    if (![faPositions isEqualToArray:inValue])
    {
       [faPositions release];
-      faPositions = [inValue retain];
+      faPositions = [inValue mutableCopy];
       [[NSNotificationCenter defaultCenter] postNotificationName:CBDataModelFaPositionValuesChangedNotification object:[self document] userInfo:[NSDictionary dictionaryWithObject:faPositions forKey:CBDataModelFaPositionValuesChangedNotification]];
       if (sortingEnabled)
       {

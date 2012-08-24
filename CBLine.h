@@ -116,7 +116,7 @@ typedef enum enumCBLineDeselectedFlag
 - (NSString *)faPosition;
 
 #pragma mark COMPARISON FUNCTIONS
-int compareLines( id foreLine, id aftLine, void * context );
+NSInteger compareLines( id foreLine, id aftLine, void * context );
 NSComparisonResult compareLinesByPoints( CBLine * fore, CBLine * aft );
 NSComparisonResult compareLinesByAmThenPm( CBLine * fore, CBLine * aft );
 NSComparisonResult compareLinesByPmThenAm( CBLine * fore, CBLine * aft );

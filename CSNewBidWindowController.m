@@ -211,12 +211,12 @@
         [[self bidPeriod] round]];
     NSString *crewBidDir = [[NSApp delegate] valueForKey:@"crewBidDirectoryPath"];
     NSString * newDocumentPath = [crewBidDir stringByAppendingPathComponent:[newDocumentName stringByAppendingPathExtension:@"crewbid"]];
-    [newDocument writeToFile:newDocumentPath ofType:@"CrewBid document"];
+    [newDocument writeToURL:[NSURL fileURLWithPath:newDocumentPath] ofType:@"CrewBid document" error:NULL];
     // release newly created document
     [newDocument release];
     // hide file extension
     NSMutableDictionary * fileExtensionHiddenAttributes = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSFileExtensionHidden];
-    [fileManager changeFileAttributes:fileExtensionHiddenAttributes atPath:newDocumentPath];
+    [fileManager setAttributes:fileExtensionHiddenAttributes ofItemAtPath:newDocumentPath error:NULL];
     // open new document and add to archived array of bid periods
     if ([[NSDocumentController sharedDocumentController] openDocumentWithContentsOfFile:newDocumentPath display:YES])
     {

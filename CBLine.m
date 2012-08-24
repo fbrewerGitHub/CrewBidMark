@@ -307,7 +307,7 @@ static NSString * CBLineDeselectedFlagsKey = @"Line Deselected Flags";
 #pragma mark COMPARISON FUNCTIONS
 
 // context is an array of line comparison functions
-int compareLines( id foreLine, id aftLine, void * context )
+NSInteger compareLines( id foreLine, id aftLine, void * context )
 {
    // return value
    NSComparisonResult comparisonResult = NSOrderedSame;

@@ -38,8 +38,8 @@
    // point where mouseDown occurred in window coordinates
    NSPoint matrixPoint = [self convertPoint:windowPoint fromView:nil];
    // cell where mouseDown occurred
-	int row = 0;
-	int column = 0;
+	NSInteger row = 0;
+	NSInteger column = 0;
 	[self getRow:&row column:&column forPoint:matrixPoint];
 	NSTextFieldCell * matrixCell = [self cellAtRow:row column:column];
 	if (matrixCell) {

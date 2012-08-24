@@ -61,7 +61,7 @@
       dataFileUnzipped = YES;
       
       // remove compressed data file
-      [fileManager removeFileAtPath:[self dataFilePath] handler:nil];
+       [fileManager removeItemAtPath:[self dataFilePath] error:NULL];
    }
    return dataFileUnzipped;
 }

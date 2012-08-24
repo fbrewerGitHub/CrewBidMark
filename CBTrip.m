@@ -383,7 +383,7 @@ static NSString * CBTripCreditKey = @"Trip Credit";
    int tripDay = 1;
    NSString * headerString = nil;
    if (generic) {
-      headerString = [NSString stringWithFormat:@"                        Trip  %@          \n Date Flight  Depart   Arrive   Eq Blk Grnd  Blk Duty Cred\n", [self number], [date descriptionWithCalendarFormat:@"%d%b%y"]];
+      headerString = [NSString stringWithFormat:@"                        Trip  %@          \n Date Flight  Depart   Arrive   Eq Blk Grnd  Blk Duty Cred\n", [self number]/*, [date descriptionWithCalendarFormat:@"%d%b%y"]*/];
    } else {
       headerString = [NSString stringWithFormat:@"                 Trip  %@  dated  %@\n Date Flight  Depart   Arrive   Eq Blk Grnd  Blk Duty Cred\n", [self number], [date descriptionWithCalendarFormat:@"%d%b%y"]];
    }

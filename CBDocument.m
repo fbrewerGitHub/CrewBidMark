@@ -69,7 +69,7 @@
    NSWindow * mainWindow = nil;
    NSSavePanel * savePanel = nil;
       
-   if (mainWindow = [[self mainWindowController] window])
+   if ((mainWindow = [[self mainWindowController] window]))
    {
       savePanel = [NSSavePanel savePanel];
       [savePanel beginSheetForDirectory:[[NSApp delegate] crewBidDirectoryPath] file:nil modalForWindow:mainWindow modalDelegate:self didEndSelector:@selector(choicesSavePanelDidEnd:returnCode:contextInfo:) contextInfo:nil];
@@ -82,7 +82,7 @@
    NSWindow * mainWindow = nil;
    NSOpenPanel * openPanel = nil;
    
-   if (mainWindow = [[self mainWindowController] window])
+   if ((mainWindow = [[self mainWindowController] window]))
    {
       openPanel = [NSOpenPanel openPanel];
       [openPanel setPrompt:@"Apply"];
@@ -266,14 +266,19 @@
 		contextInfo:brwc];
 }
 
+- (void)bidReceiptWindowController:(CSBidReceiptWindowController *)controller didSelectBidReceiptAtPath:(NSString *)bidReceiptPath
+{
+	[NSApp endSheet:[controller window] returnCode:NSOKButton];
+}
+
 - (void)showBidReceiptSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	// context info is CSBidReceiptWindowController *
-	[sheet close];
 	if (NSOKButton == returnCode) {
 		NSString *selectedBidReceiptPath = [[(CSBidReceiptWindowController *)contextInfo selectedBidReceipt] path];
 		[[NSWorkspace sharedWorkspace] openFile:selectedBidReceiptPath];
 	}
+	[sheet close];
 	[(CSBidReceiptWindowController *)contextInfo release];
 }
 
