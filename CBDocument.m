@@ -258,6 +258,7 @@
 	// dialog, so that the user can see for whom and by whom the bid was
 	// submitted
 	CSBidReceiptWindowController *brwc = [[CSBidReceiptWindowController alloc] initWithBidPeriod:[[self dataModel] bidPeriod]];
+	[brwc setDelegate:self];
 	[NSApp 
 		beginSheet:[brwc window] 
 		modalForWindow:[self windowForSheet] 

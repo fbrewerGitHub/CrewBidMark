@@ -55,7 +55,9 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
       // version 6 added deadheads and commuting
 	  //
       // version 7 added max legs per day
-      [self setVersion:7];
+	   // 
+	   // version 8 added FA 'D' position
+      [self setVersion:8];
       initialized = YES;
    }
 }
@@ -232,7 +234,7 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
 
 - (NSArray *)initialFaPositionsArray
 {
-   return [NSArray arrayWithObjects:@"A", @"B", @"C", nil];
+   return [NSArray arrayWithObjects:@"A", @"B", @"C", @"D", nil];
 }
 
 - (void)initializeDerivedValues
@@ -243,18 +245,31 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
    // data member has not been set, and isFlightAttendantBid method needs
    // the crewPosition data member to determine if it is a flight attendant
    // bid
+	// If this is a flight attendant bid.
    if ([self isFlightAttendantBid])
    {
+	   // Add sorting by flight attendant position if they are not already 
+	   // in the available sort positions.
       NSArray *faPositionsArray = [NSArray arrayWithObjects:
          @"Position A",
          @"Position B",
          @"Position C",
+		 @"Position D",
          nil];
       id commonObj = [available firstObjectCommonWithArray:faPositionsArray];
       if (!commonObj)
       {
          [available addObjectsFromArray:faPositionsArray];
       }
+	   
+	   // Add position D if it is not in faPositions array.
+	   if (3 == [[self faPositions] count]) {
+		   NSMutableArray *positions = [NSMutableArray arrayWithArray:[self faPositions]];
+		   [positions addObject:@"D"];
+		   [self setFaPositions:positions];
+	   }
+	   
+	   // Remove aircraft changes.
       [available removeObject:@"Aircraft Changes"];
    }
    // remove inappropriate sort selections for pilot second round bids
@@ -1027,6 +1042,10 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
    else if ([sortSelection isEqualToString:@"Position C"])
    {
       sortFunctionValue = [NSValue valueWithPointer:compareLinesByFACPosition];
+   }
+   else if ([sortSelection isEqualToString:@"Position D"])
+   {
+	   sortFunctionValue = [NSValue valueWithPointer:compareLinesByFADPosition];
    }
    else if ([sortSelection isEqualToString:@"Vacation Drop"])
    {

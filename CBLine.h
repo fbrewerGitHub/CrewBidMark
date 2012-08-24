@@ -148,6 +148,7 @@ NSComparisonResult compareLinesByFAPosition(CBLine * fore, CBLine * aft, void * 
 NSComparisonResult compareLinesByFAAPosition(CBLine * fore, CBLine * aft);
 NSComparisonResult compareLinesByFABPosition(CBLine * fore, CBLine * aft);
 NSComparisonResult compareLinesByFACPosition(CBLine * fore, CBLine * aft);
+NSComparisonResult compareLinesByFADPosition(CBLine * fore, CBLine * aft);
 NSComparisonResult compareLinesBySelected(CBLine * fore, CBLine * aft);
 
 #pragma mark COMPARISON METHOD

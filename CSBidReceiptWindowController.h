@@ -15,6 +15,7 @@
 {
 	NSArray *_bidReceipts;
 	NSIndexSet *_selectedBidReceiptIndexes;
+	id _delegate;
 }
 
 #pragma mark Initialization
@@ -32,5 +33,7 @@
 - (void)setBidReceipts:(NSArray *)value;
 - (NSIndexSet *)selectedBidReceiptIndexes;
 - (void)setSelectedBidReceiptIndexes:(NSIndexSet *)value;
+- (id)delegate;
+- (void)setDelegate:(id)value;
 
 @end

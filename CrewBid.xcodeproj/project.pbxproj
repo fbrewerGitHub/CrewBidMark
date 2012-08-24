@@ -116,6 +116,7 @@
 		4D7C9820064656E700FC83DE /* CBMainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D7C981E064656E700FC83DE /* CBMainWindowController.h */; };
 		4D7C9821064656E700FC83DE /* CBMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C981F064656E700FC83DE /* CBMainWindowController.m */; };
 		4D7C98270646589600FC83DE /* CBLinesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C98260646589600FC83DE /* CBLinesTableViewController.m */; };
+		4D81968B15E5167800452897 /* CBInterfaceItemController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB16434065430F3001984FD /* CBInterfaceItemController.h */; };
 		4D850AB60658DF03002610DB /* CBSelectTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D850AB50658DF03002610DB /* CBSelectTabViewController.m */; };
 		4D850BDF06596FBA002610DB /* CBRadioMatrixController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D850BDD06596FBA002610DB /* CBRadioMatrixController.h */; };
 		4D850BE006596FBA002610DB /* CBRadioMatrixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D850BDE06596FBA002610DB /* CBRadioMatrixController.m */; };
@@ -159,7 +160,6 @@
 		4DA85B620645A4A0008C8071 /* CBTripDayLeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA85B600645A4A0008C8071 /* CBTripDayLeg.h */; };
 		4DA85B630645A4A0008C8071 /* CBTripDayLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA85B610645A4A0008C8071 /* CBTripDayLeg.m */; };
 		4DADE94507D5CEC80001F76F /* CBRegistration.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4DADE94307D5CEC80001F76F /* CBRegistration.nib */; };
-		4DB16436065430F3001984FD /* CBInterfaceItemController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB16434065430F3001984FD /* CBInterfaceItemController.h */; };
 		4DB16437065430F3001984FD /* CBInterfaceItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB16435065430F3001984FD /* CBInterfaceItemController.m */; };
 		4DB16462065436EF001984FD /* CBPopUpButtonController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB16460065436EF001984FD /* CBPopUpButtonController.h */; };
 		4DB16463065436EF001984FD /* CBPopUpButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB16461065436EF001984FD /* CBPopUpButtonController.m */; };
@@ -822,7 +822,6 @@
 				4D7C9820064656E700FC83DE /* CBMainWindowController.h in Headers */,
 				4D77DCD5064BB6370015E535 /* CBMatrixController.h in Headers */,
 				4D970984064C5E1D0040F76B /* CBCalendarMatrix.h in Headers */,
-				4DB16436065430F3001984FD /* CBInterfaceItemController.h in Headers */,
 				4DB16462065436EF001984FD /* CBPopUpButtonController.h in Headers */,
 				4DB16730065648AF001984FD /* CBCheckboxController.h in Headers */,
 				4DB168F20657B745001984FD /* CBTableView.h in Headers */,
@@ -875,6 +874,7 @@
 				4D853C730F28FC8000678029 /* CBBidCredentialWindowController.h in Headers */,
 				4D853C750F28FC8200678029 /* CBProgressWindowController.h in Headers */,
 				4D853C770F28FC8900678029 /* CBBidFileDownload.h in Headers */,
+				4D81968B15E5167800452897 /* CBInterfaceItemController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,8 +1313,10 @@
 		4D4BD6240A5DA216009B4BEE /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
@@ -1332,6 +1334,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lSystem";
 				PRODUCT_NAME = CrewBid;
+				SDKROOT = macosx10.5;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1376,7 +1379,7 @@
 		4D4BD6270A5DA216009B4BEE /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-bind_at_load";
 				SDKROOT = macosx;
@@ -1386,7 +1389,10 @@
 		4D4BD6280A5DA216009B4BEE /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-lSystem";
 				SDKROOT = macosx;

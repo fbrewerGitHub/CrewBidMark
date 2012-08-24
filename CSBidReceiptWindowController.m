@@ -100,4 +100,14 @@
     }
 }
 
+- (id)delegate
+{
+	return _delegate;
+}
+
+- (void)setDelegate:(id)value
+{
+	_delegate = value;
+}
+
 @end
