@@ -24,8 +24,16 @@
 #import "CBFileReader.h"
 #import "CBFALineFileReader.h"
 
+
 NSString * CBMostRecentBidReceiptKey = @"Most Recent Bid Receipt";
 NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
+
+/***** Subscription Check *****/
+NSString *CBSubscriptionsEnabledKey = @"CrewBidSupbscriptionsOn";
+NSString *CBSubscriptionRequiredKey = @"CrewBidSubscriptionRequired";
+NSString *CBSubscriptionURLKey = @"CrewBidSubscriptionInfoURL";
+NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
+
 
 @implementation CBAppController
 
@@ -34,6 +42,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 + (void)initialize
 {
    static BOOL initialized = NO;
+    
    if (!initialized && (self == [CBAppController class])) {
       [self setVersion:1];
    }
@@ -73,6 +82,8 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
    [preferencesController release];
    [newBidController release];
    [openFileController release];
+    [_appVersionData release]; _appVersionData = nil;
+    [self setVersionDictionary:nil];
    [super dealloc];
 }
 
@@ -132,23 +143,24 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
    BOOL validMenu = YES;
-   NSString * menuTitle = [menuItem title];
-   NSString * pathToBidReceipt = nil;
+    SEL menuAction = [menuItem action];
    // new bid menu item
-   if ([menuTitle isEqualToString:@"New Bid..."]) {
+   if (@selector(newBid:) == menuAction /*[menuTitle isEqualToString:@"New Bid..."]*/) {
+       // Disable if subscription required or if there is a new bid selection
+       // and/or download in progress.
       // new bid menu item is valid if there is not a new bid selection
       // and download in progress
-      validMenu = (nil == [self newBidController]);
+      validMenu = (nil == [self newBidController]) && ![[NSUserDefaults standardUserDefaults] boolForKey:CBSubscriptionRequiredKey];
    }
    // open bid receipt menu item
-   else if ([menuTitle isEqualToString:@"Open Bid Receipt..."]) {
-      // open bid receipt menu is valid if there is a bid receipt path in
-      // user defaults
-      pathToBidReceipt = [[NSUserDefaults standardUserDefaults] objectForKey:CBMostRecentBidReceiptKey];
-      if ((nil == pathToBidReceipt) || (0 == [pathToBidReceipt length])) {
-         validMenu = NO;
-      }
-   }
+//   else if ([menuTitle isEqualToString:@"Open Bid Receipt..."]) {
+//      // open bid receipt menu is valid if there is a bid receipt path in
+//      // user defaults
+//      pathToBidReceipt = [[NSUserDefaults standardUserDefaults] objectForKey:CBMostRecentBidReceiptKey];
+//      if ((nil == pathToBidReceipt) || (0 == [pathToBidReceipt length])) {
+//         validMenu = NO;
+//      }
+//   }
    return validMenu;
 }
 
@@ -167,11 +179,18 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 
 - (IBAction)newBid:(id)sender
 {
+    // Don't allow new bids if subscription required.
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CBSubscriptionRequiredKey]) {
+        NSBeep();
+        return;
+    }
+    
    // create new bid controller, which will be released when it's finished,
    // in newBidDidFinish: method
    // new bid controller will download bid data and open new document with
    // bid data
     CSNewBidWindowController *nbwc = [[CSNewBidWindowController alloc] initWithBidPeriod:[CSBidPeriod defaultBidPeriod]];
+    newBidController = nbwc;
     [[nbwc window] center];
     [nbwc showWindow:nil];
 }
@@ -251,7 +270,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
          self,
          @selector(removeFilesSheetDidEnd:returnCode:contextInfo:),
          NULL,
-         [panel retain],
+         [[panel filenames] retain], // context
          @"Are you sure you want to remove %lu %@?\n\nThe %@ will be moved to the Trash.",
          (unsigned long)[[panel filenames] count], ([[panel filenames] count] > 1 ? @"files" : @"file"), ([[panel filenames] count] > 1 ? @"files" : @"file"));
    }
@@ -262,7 +281,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
     if (NSAlertDefaultReturn == returnCode)
     {
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSOpenPanel *openPanel = (NSOpenPanel *)contextInfo;
+        NSArray *selectedFiles = (NSArray *)contextInfo;
         NSMutableArray *filesToDelete = [NSMutableArray array];
 
         // Use open bid file window controller to convert bid document name to
@@ -270,7 +289,8 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
         CSOpenBidWindowController *obwc = [[CSOpenBidWindowController alloc] init];
         CSBidPeriod *bidPeriod = [[CSBidPeriod alloc] init];
       
-        NSEnumerator *e = [[openPanel filenames] objectEnumerator];
+        NSEnumerator *e = [selectedFiles objectEnumerator];
+        
         NSString *filename = nil;
         while (filename = [e nextObject])
         {
@@ -305,12 +325,10 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
             destination:trashDir 
             files:filesToDelete 
             tag:&tag];
-//        [sharedWorkspace noteFileSystemChanged:crewBidDir];
-//        [sharedWorkspace noteFileSystemChanged:trashDir];
         // clean up
         [obwc release];
         [bidPeriod release];
-        [openPanel release];
+        [selectedFiles release]; // retained in method above
     }
 }
 
@@ -328,15 +346,32 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)n
 {
-	// begin check for new version asynchronously
-	NSString *latestVersionURLString = @"http://www.macrewsoft.com/bin/CrewBidVersion.plist";
-	NSURL *latestVersionURL = [NSURL URLWithString:latestVersionURLString];
-	NSURLRequest *latestVersionRequest = [NSURLRequest requestWithURL:latestVersionURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30];
-	[NSURLConnection connectionWithRequest:latestVersionRequest delegate:self];
+    /* At application start up, perform the following:
+     
+     1. Start network reachability on main run loop. When network reachability 
+        changes, fetch the latest version dictionary from the macrewsoft 
+        website. The version dictionary is used to determine if there is a new 
+        version of the app available and whether subscriptions have been 
+        enable or are required.
+     
+     2. If this is the first run of the app (employee number in user defaults),
+        show the preferences window.
+     
+     3. If there is a most recent opened bid file in the user defaults, open 
+        that document unless the global user default is set to automatically 
+        restore windows (NSQuitAlwaysKeepsWindows), in which case do nothing as 
+        the system will open that last document. 
+     
+     4. If there is no most recent opened bid file in the user defaults, show 
+        the new bid window. */
+    
+    [self startNetworkReachability];
 
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
    // TEMPORARY FIX FOR USER DEFAULTS THAT MAY HAVE SEAT POSITION AND 
    // AVOIDANCE BIDS
-   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+//   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
    NSString *seatPos = [userDefaults objectForKey:@"Seat Position"];
    NSString *avoid1 = [userDefaults objectForKey:@"Avoidance Bid 1"];
    NSString *avoid2 = [userDefaults objectForKey:@"Avoidance Bid 2"];
@@ -387,7 +422,7 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
       
       if ([fileCreatedDate monthOfYear] == [now monthOfYear])
       {
-         [self openBidFile:nil];
+          [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfFile:lastOpenedBidPath display:YES];
       }
       // else open new bid window
       else
@@ -543,11 +578,56 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 
 #pragma mark Version Check
 
+- (void)startNetworkReachability
+{
+    
+    // Context for reachability callback. Set info to self to be used in
+    // callback function. Self will be used to call startVersionCheckConnection
+    // method.
+    SCNetworkReachabilityContext context;
+    context.retain = NULL;
+    context.release = NULL;
+    context.info = self;
+    context.copyDescription = NULL;
+    
+    // Schedule network reachability changed callback on main run loop.
+    SCNetworkReachabilityRef networkReachability = SCNetworkReachabilityCreateWithName(NULL, "http://www.macrewsoft.com");
+    SCNetworkReachabilitySetCallback(networkReachability, NetworkReachabilityChanged, &context);
+    CFRunLoopRef mainRunLoop = CFRunLoopGetMain();
+    SCNetworkReachabilityScheduleWithRunLoop(networkReachability, mainRunLoop, kCFRunLoopDefaultMode);
+}
+
+void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info)
+{
+    // If the network is reachable, check for subscriptions enabled or
+    // required and new version of the app. Unschedule network reachability
+    // target and release.
+    if (kSCNetworkReachabilityFlagsReachable & flags) {
+        [(id)info performSelector:@selector(startVersionCheckConnection)];
+        SCNetworkReachabilityUnscheduleFromRunLoop(target, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
+        CFRelease(target);
+    }
+}
+
+- (void)startVersionCheckConnection
+{
+    // begin check for new version asynchronously
+    _appVersionData = [[NSMutableData alloc] init];
+    NSString *latestVersionURLString = @"http://www.macrewsoft.com/bin/CrewBidVersion.plist";
+    NSURL *latestVersionURL = [NSURL URLWithString:latestVersionURLString];
+    NSURLRequest *latestVersionRequest = [NSURLRequest requestWithURL:latestVersionURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30];
+    [NSURLConnection connectionWithRequest:latestVersionRequest delegate:self];
+}
+
 - (void)checkForNewVersion
 {
-	NSDictionary *latestVersionDict = [NSPropertyListSerialization propertyListFromData:_appVersionData mutabilityOption:NSPropertyListImmutable format:NULL errorDescription:NULL];
+	NSDictionary *latestVersionDict = [self versionDictionary];
+    
 	if (latestVersionDict)
 	{
+        // Check if subscriptions are enabled and/or required.
+        [self checkSubscriptions];
+        
 		NSString *latestVersion = [latestVersionDict objectForKey:@"CFBundleShortVersionString"];
 		NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 		if (NO == [version isEqualToString:latestVersion]) {
@@ -602,24 +682,108 @@ NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 	}
 }
 
+- (void)checkSubscriptions
+{
+    // *** Remove for production ***
+//    versionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], CBSubscriptionsEnabledKey, [NSNumber numberWithBool:NO], CBSubscriptionRequiredKey, nil];
+    
+    NSNumber *subscriptionRequired = [[self versionDictionary] objectForKey:CBSubscriptionRequiredKey];
+    if (subscriptionRequired && [subscriptionRequired boolValue]) {
+        NSLog(@"subscription required");
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CBSubscriptionRequiredKey];
+        [self showSubscriptionRequiredAlert];
+    }
+    
+    NSNumber *subscriptionsEnabled = [[self versionDictionary] objectForKey:CBSubscriptionsEnabledKey];
+    if (subscriptionsEnabled && [subscriptionsEnabled boolValue]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CBSubscriptionsEnabledKey];
+        NSInteger alertShownMonth = [[NSUserDefaults standardUserDefaults] integerForKey:CBSubscriptionAlertMonthKey];
+        NSInteger currentMonth = [[[NSCalendar currentCalendar] components:NSMonthCalendarUnit fromDate:[NSDate date]] month];
+        if (alertShownMonth != currentMonth) {
+            [[NSUserDefaults standardUserDefaults] setInteger:currentMonth forKey:CBSubscriptionAlertMonthKey];
+            [self showSubscriptionsEnabledAlert];
+        }
+    }
+}
+
+- (void)showSubscriptionsEnabledAlert
+{
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Subscription Will Be Required in the Future."];
+    [alert setInformativeText:@"Sometime in the next month or two, a subscription will be required to use CrewBid. Please visit the website for more information on subscritpions."];
+    [alert addButtonWithTitle:@"Go to Website"];
+    [alert addButtonWithTitle:@"Not Now"];
+    
+    NSInteger returnCode = [alert runModal];
+    if (NSAlertFirstButtonReturn == returnCode) {
+        NSURL *websiteURL = [NSURL URLWithString:@"http://www.figware.com"];
+        if ([[self versionDictionary] objectForKey:CBSubscriptionURLKey]) {
+            websiteURL = [[self versionDictionary] objectForKey:CBSubscriptionURLKey];
+        }
+        [[NSWorkspace sharedWorkspace] openURL:websiteURL];
+    }
+}
+
+- (void)showSubscriptionRequiredAlert
+{
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Subscription Required."];
+    [alert setInformativeText:@"A subscription is now required to use CrewBid. Please visit the website for more information on how to start a subscription."];
+    [alert addButtonWithTitle:@"Go to Website"];
+    [alert addButtonWithTitle:@"Not Now"];
+    
+    NSInteger returnCode = [alert runModal];
+    if (NSAlertFirstButtonReturn == returnCode) {
+        NSURL *websiteURL = [NSURL URLWithString:@"http://www.figware.com"];
+        if ([[self versionDictionary] objectForKey:CBSubscriptionURLKey]) {
+            websiteURL = [[self versionDictionary] objectForKey:CBSubscriptionURLKey];
+        }
+        [[NSWorkspace sharedWorkspace] openURL:websiteURL];
+    }
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-	if (!_appVersionData) {
-		_appVersionData = [[NSMutableData alloc] init];
-	}
 	[_appVersionData appendData:data];
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    // Finished downloading version dictionary plist from macrewsoft site.
+    // Create a dictionary from the plist data. Check for subscription
+    // requirements and availability of a new version of the app.
+	NSDictionary *versionDict = [NSPropertyListSerialization propertyListFromData:_appVersionData mutabilityOption:NSPropertyListImmutable format:NULL errorDescription:NULL];
+    
+    // FOR TESTING SUBSCRIPTION
+//    NSMutableDictionary *temp = [NSMutableDictionary dictionaryWithDictionary:versionDict];
+//    [temp setObject:[NSNumber numberWithBool:YES] forKey:CBSubscriptionsEnabledKey];
+//    [temp setObject:[NSNumber numberWithBool:YES] forKey:CBSubscriptionRequiredKey];
+//    [[NSUserDefaults standardUserDefaults] setInteger:7 forKey:CBSubscriptionAlertMonthKey];
+    
+    [self setVersionDictionary:versionDict];
+    [_appVersionData release]; _appVersionData = nil;
 	[self checkForNewVersion];
 }
 
 #pragma mark ACCESSORS
 
 - (CBMainPreferencesWindowController *)preferencesController { return preferencesController; }
-- (CBNewBidWindowController *)newBidController { return newBidController; }
+- (CSNewBidWindowController *)newBidController { return newBidController; }
 - (CBFileSelectWindowController *)openFileController { return openFileController; }
 - (NSWindow *)progressWindow { return progressWindow; }
+
+- (NSDictionary *)versionDictionary
+{
+    return _versionDictionary;
+}
+
+- (void)setVersionDictionary:(NSDictionary *)value
+{
+    if (_versionDictionary != value) {
+        [_versionDictionary release];
+        _versionDictionary = [value copy];
+    }
+}
+
 
 @end

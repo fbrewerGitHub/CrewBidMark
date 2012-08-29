@@ -178,6 +178,7 @@
 		4DCFCFF507A906130075D0FD /* CBFileSelect.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCFCFF307A906130075D0FD /* CBFileSelect.nib */; };
 		4DCFCFF807A907570075D0FD /* CBFileSelectWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFCFF607A907570075D0FD /* CBFileSelectWindowController.m */; };
 		4DCFCFF907A907570075D0FD /* CBFileSelectWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DCFCFF707A907570075D0FD /* CBFileSelectWindowController.h */; };
+		4DDFC52215E9255A00700B2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDFC52115E9255A00700B2C /* SystemConfiguration.framework */; };
 		4DE2CF2308373E870057DF4B /* NSMutableArray+MAArrayUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE2CF2108373E870057DF4B /* NSMutableArray+MAArrayUtilities.h */; };
 		4DE2CF2408373E870057DF4B /* NSMutableArray+MAArrayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2CF2208373E870057DF4B /* NSMutableArray+MAArrayUtilities.m */; };
 		4DE50F0106B97AD700E6E61F /* CBBidFileOpener.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE50EFF06B97AD700E6E61F /* CBBidFileOpener.h */; };
@@ -376,6 +377,7 @@
 		4DCFCFF407A906130075D0FD /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CBFileSelect.nib; sourceTree = "<group>"; };
 		4DCFCFF607A907570075D0FD /* CBFileSelectWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CBFileSelectWindowController.m; sourceTree = "<group>"; };
 		4DCFCFF707A907570075D0FD /* CBFileSelectWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CBFileSelectWindowController.h; sourceTree = "<group>"; };
+		4DDFC52115E9255A00700B2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4DE2CF2108373E870057DF4B /* NSMutableArray+MAArrayUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MAArrayUtilities.h"; sourceTree = "<group>"; };
 		4DE2CF2208373E870057DF4B /* NSMutableArray+MAArrayUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MAArrayUtilities.m"; sourceTree = "<group>"; };
 		4DE50EFF06B97AD700E6E61F /* CBBidFileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBidFileOpener.h; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDFC52215E9255A00700B2C /* SystemConfiguration.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				4D1D279B06C3DBA700FB3A9F /* Carbon.framework in Frameworks */,
 			);
@@ -411,6 +414,7 @@
 			children = (
 				4D1D26F106C3B88C00FB3A9F /* Carbon.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+				4DDFC52115E9255A00700B2C /* SystemConfiguration.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -1383,6 +1387,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-bind_at_load";
 				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64 ppc";
 			};
 			name = Development;
 		};
@@ -1396,6 +1401,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-lSystem";
 				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64 ppc";
 			};
 			name = Deployment;
 		};
@@ -1405,6 +1411,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64 ppc";
 			};
 			name = Default;
 		};

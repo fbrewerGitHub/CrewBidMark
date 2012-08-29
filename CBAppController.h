@@ -15,9 +15,12 @@ windows at startup, and implements application delegate methods.
 */
 
 #import <Cocoa/Cocoa.h>
+// Network Reachability.
+#import <SystemConfiguration/SCNetworkReachability.h>
+
 
 @class CBMainPreferencesWindowController;
-@class CBNewBidWindowController;
+@class CSNewBidWindowController;
 @class CBFileSelectWindowController;
 
 @interface CBAppController : NSObject
@@ -25,14 +28,14 @@ windows at startup, and implements application delegate methods.
    // preferences
    CBMainPreferencesWindowController * preferencesController;
    // new bid
-   CBNewBidWindowController * newBidController;
+   CSNewBidWindowController * newBidController;
    // open bid file
    CBFileSelectWindowController *openFileController;
    // progress window for opening files
    NSWindow * progressWindow;
 	// version check
 	NSMutableData *_appVersionData;
-
+    NSDictionary *_versionDictionary;
 }
 
 #pragma mark INITIALIZATION
@@ -90,11 +93,22 @@ application. */
 /* Connects to macrewsoft.com to check if new version is available */
 - (void)checkForNewerVersion:(id)sender;
 
+#pragma mark Version Check
+- (void)startNetworkReachability;
+void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info);
+- (void)startVersionCheckConnection;
+- (void)checkForNewVersion;
+- (void)checkSubscriptions;
+- (void)showSubscriptionsEnabledAlert;
+- (void)showSubscriptionRequiredAlert;
+
 #pragma mark ACCESSORS
 - (CBMainPreferencesWindowController *)preferencesController;
-- (CBNewBidWindowController *)newBidController;
+- (CSNewBidWindowController *)newBidController;
 - (CBFileSelectWindowController *)openFileController;
 - (NSWindow *)progressWindow;
+- (NSDictionary *)versionDictionary;
+- (void)setVersionDictionary:(NSDictionary *)value;
 
 @end
 
@@ -102,3 +116,4 @@ extern NSString * CBMostRecentBidReceiptKey;
 extern NSString * CBMostRecentBidDocumentKey;
 extern NSString * CBAmDepartTimePreferencesKey;
 extern NSString * CBAmArrivalTimePreferencesKey;
+extern NSString *CBSubscriptionRequiredKey;

@@ -237,6 +237,12 @@
 
 - (void)submitBid:(id)sender
 {
+    // Don't allow bid submission if subscription required.
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CBSubscriptionRequiredKey]) {
+        NSBeep();
+        return;
+    }
+    
 	// create bid period
 	CSBidPeriod *bidPeriod = [[CSBidPeriod alloc] init];
 	[bidPeriod setMonth:[[self dataModel] month]];
@@ -330,6 +336,13 @@
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
+    // Disable bid submit menu item if subscription required.
+    if (@selector(submitBid:) == [menuItem action]) {
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:CBSubscriptionRequiredKey]) {
+            return NO;
+        }
+    }
+    
 	BOOL enable = YES;
 	int menuItemTag = [menuItem tag];
 

@@ -45,7 +45,7 @@
    // get files and select flle
    fileManager = [NSFileManager defaultManager];
     filesToDisplay = [NSMutableArray arrayWithArray:[fileManager contentsOfDirectoryAtPath:[self directory] error:NULL]];
-   if ([self fileTypes])
+    if ([self fileTypes])
    {
       filesEnumerator = [filesToDisplay objectEnumerator];
       while (file = [filesEnumerator nextObject])
