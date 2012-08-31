@@ -92,9 +92,9 @@
 
 #pragma mark TABLE VIEW METHODS
 
-- (int)numberOfRowsInTableView:(NSTableView *)tableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-   int rows = 0;
+   NSInteger rows = 0;
    if (tableView == [self fileSelectTableView])
    {
       rows = [[self files] count];
@@ -102,7 +102,7 @@
    return rows;
 }
 
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(int)rowIndex
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
    NSString *file = nil;
    

@@ -839,8 +839,8 @@ NSString * CBDataModelPointsValueKey = @"CBDataModel Points Value Key";
    int topFreezeAtStart = [self topFreezeIndex];
    int botFreezeAtStart = [self bottomFreezeIndex];
    // remove reserve and MRT bids, to be reinserted after sorting
-   unsigned resvBidIdx = NSNotFound;
-   unsigned mrtBidIdx = NSNotFound;
+   NSUInteger resvBidIdx = NSNotFound;
+   NSUInteger mrtBidIdx = NSNotFound;
    if ([self isFlightAttendantFirstRoundBid]) {
       // reserve bid
       if ([self hasFaReserveBid]) {
@@ -1363,9 +1363,9 @@ NSInteger compareSortSelection(id fore, id aft, void * context )
    }
 }
 
-- (unsigned)removeFaReserveBid
+- (NSUInteger)removeFaReserveBid
 {
-   unsigned index = [self faReserveBidIndex];
+   NSUInteger index = [self faReserveBidIndex];
    if (index != NSNotFound) {
       [self removeLine:[self faReserveBidLine] atIndex:index];
       [self setHasFaReserveBid:NO];
@@ -1381,9 +1381,9 @@ NSInteger compareSortSelection(id fore, id aft, void * context )
    }
 }
 
-- (unsigned)removeFaMrtBid
+- (NSUInteger)removeFaMrtBid
 {
-   unsigned index = [self faMrtBidIndex];
+   NSUInteger index = [self faMrtBidIndex];
    if (index != NSNotFound) {
       [self removeLine:[self faMrtBidLine] atIndex:index];
       [self setHasFaMrtBid:NO];
@@ -1391,11 +1391,11 @@ NSInteger compareSortSelection(id fore, id aft, void * context )
    return index;
 }
 
-- (unsigned)faReserveBidIndex
+- (NSUInteger)faReserveBidIndex
 {
    NSArray *linesArr = [self lines];
-   unsigned linesCount = [linesArr count];
-   unsigned index = 0;
+   NSUInteger linesCount = [linesArr count];
+   NSUInteger index = 0;
    while (index < linesCount && CBFaReserveLineNumber != [(CBLine *)[linesArr objectAtIndex:index] number]) {
       index++;
    }
@@ -1405,11 +1405,11 @@ NSInteger compareSortSelection(id fore, id aft, void * context )
    return index;
 }
 
-- (unsigned)faMrtBidIndex
+- (NSUInteger)faMrtBidIndex
 {
    NSArray *linesArr = [self lines];
-   unsigned linesCount = [linesArr count];
-   unsigned index = 0;
+   NSUInteger linesCount = [linesArr count];
+   NSUInteger index = 0;
    while (index < linesCount && CBFaMrtLineNumber != [(CBLine *)[linesArr objectAtIndex:index] number]) {
       index++;
    }

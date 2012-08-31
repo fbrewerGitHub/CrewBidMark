@@ -29,9 +29,9 @@ NSString * CBMostRecentBidReceiptKey = @"Most Recent Bid Receipt";
 NSString * CBMostRecentBidDocumentKey = @"Most Recent Bid Document";
 
 /***** Subscription Check *****/
-NSString *CBSubscriptionsEnabledKey = @"CrewBidSupbscriptionsOn";
+NSString *CBSubscriptionsEnabledKey = @"CrewBidSubscriptionsEnabled";
 NSString *CBSubscriptionRequiredKey = @"CrewBidSubscriptionRequired";
-NSString *CBSubscriptionURLKey = @"CrewBidSubscriptionInfoURL";
+NSString *CBSubscriptionInfoURLKey = @"CrewBidSubscriptionInfoURL";
 NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
 
 
@@ -191,6 +191,9 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
    // bid data
     CSNewBidWindowController *nbwc = [[CSNewBidWindowController alloc] initWithBidPeriod:[CSBidPeriod defaultBidPeriod]];
     newBidController = nbwc;
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newBidDidFinish:) name:CSBidFileDownloadWindowControllerDidFinishNotification object:newBidController];
+	
     [[nbwc window] center];
     [nbwc showWindow:nil];
 }
@@ -198,9 +201,9 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
 - (void)newBidDidFinish:(NSNotification *)notification
 {
    // remove self as notification observer
-   [[NSNotificationCenter defaultCenter] removeObserver:self name:CBNewBidControllerDidFinish object:[notification object]];
+   [[NSNotificationCenter defaultCenter] removeObserver:self name:CSBidFileDownloadWindowControllerDidFinishNotification object:[notification object]];
    // release new bid controller controller
-   [[self newBidController] release];
+//   [[self newBidController] release];
    newBidController = nil;
 }
 
@@ -365,10 +368,16 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
      4. If there is no most recent opened bid file in the user defaults, show 
         the new bid window. */
     
+	// If subscription required, no need to do anything else.
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	BOOL subscriptionRequired = [userDefaults boolForKey:CBSubscriptionRequiredKey];
+	if (subscriptionRequired) {
+		[self showSubscriptionRequiredAlert];
+		return;
+	}
+	
     [self startNetworkReachability];
 
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
    // TEMPORARY FIX FOR USER DEFAULTS THAT MAY HAVE SEAT POSITION AND 
    // AVOIDANCE BIDS
 //   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
@@ -597,12 +606,12 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
     SCNetworkReachabilityScheduleWithRunLoop(networkReachability, mainRunLoop, kCFRunLoopDefaultMode);
 }
 
-void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info)
+void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkConnectionFlags flags, void *info)
 {
     // If the network is reachable, check for subscriptions enabled or
     // required and new version of the app. Unschedule network reachability
     // target and release.
-    if (kSCNetworkReachabilityFlagsReachable & flags) {
+    if (kSCNetworkFlagsReachable == flags) {
         [(id)info performSelector:@selector(startVersionCheckConnection)];
         SCNetworkReachabilityUnscheduleFromRunLoop(target, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
         CFRelease(target);
@@ -683,24 +692,27 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 }
 
 - (void)checkSubscriptions
-{
-    // *** Remove for production ***
-//    versionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], CBSubscriptionsEnabledKey, [NSNumber numberWithBool:NO], CBSubscriptionRequiredKey, nil];
+{	
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSString *subscriptionInfoURL = [[self versionDictionary] objectForKey:CBSubscriptionInfoURLKey];
+	if (subscriptionInfoURL) {
+		[userDefaults setObject:subscriptionInfoURL forKey:CBSubscriptionInfoURLKey];
+	}
     
     NSNumber *subscriptionRequired = [[self versionDictionary] objectForKey:CBSubscriptionRequiredKey];
     if (subscriptionRequired && [subscriptionRequired boolValue]) {
-        NSLog(@"subscription required");
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CBSubscriptionRequiredKey];
+        [userDefaults setBool:YES forKey:CBSubscriptionRequiredKey];
         [self showSubscriptionRequiredAlert];
+		return;
     }
     
     NSNumber *subscriptionsEnabled = [[self versionDictionary] objectForKey:CBSubscriptionsEnabledKey];
     if (subscriptionsEnabled && [subscriptionsEnabled boolValue]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CBSubscriptionsEnabledKey];
+        [userDefaults setBool:YES forKey:CBSubscriptionsEnabledKey];
         NSInteger alertShownMonth = [[NSUserDefaults standardUserDefaults] integerForKey:CBSubscriptionAlertMonthKey];
         NSInteger currentMonth = [[[NSCalendar currentCalendar] components:NSMonthCalendarUnit fromDate:[NSDate date]] month];
         if (alertShownMonth != currentMonth) {
-            [[NSUserDefaults standardUserDefaults] setInteger:currentMonth forKey:CBSubscriptionAlertMonthKey];
+            [userDefaults setInteger:currentMonth forKey:CBSubscriptionAlertMonthKey];
             [self showSubscriptionsEnabledAlert];
         }
     }
@@ -717,15 +729,21 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
     NSInteger returnCode = [alert runModal];
     if (NSAlertFirstButtonReturn == returnCode) {
         NSURL *websiteURL = [NSURL URLWithString:@"http://www.figware.com"];
-        if ([[self versionDictionary] objectForKey:CBSubscriptionURLKey]) {
-            websiteURL = [[self versionDictionary] objectForKey:CBSubscriptionURLKey];
-        }
-        [[NSWorkspace sharedWorkspace] openURL:websiteURL];
+		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+		if ([userDefaults objectForKey:CBSubscriptionInfoURLKey]) {
+			websiteURL = [NSURL URLWithString:[userDefaults objectForKey:CBSubscriptionInfoURLKey]];
+		}
+		[[NSWorkspace sharedWorkspace] openURL:websiteURL];
     }
 }
 
 - (void)showSubscriptionRequiredAlert
 {
+	if ([self newBidController]) {
+		[[[self newBidController] window] orderOut:nil];
+		[[self newBidController] release];
+		newBidController = nil;
+	}
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:@"Subscription Required."];
     [alert setInformativeText:@"A subscription is now required to use CrewBid. Please visit the website for more information on how to start a subscription."];
@@ -735,9 +753,10 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
     NSInteger returnCode = [alert runModal];
     if (NSAlertFirstButtonReturn == returnCode) {
         NSURL *websiteURL = [NSURL URLWithString:@"http://www.figware.com"];
-        if ([[self versionDictionary] objectForKey:CBSubscriptionURLKey]) {
-            websiteURL = [[self versionDictionary] objectForKey:CBSubscriptionURLKey];
-        }
+		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+		if ([userDefaults objectForKey:CBSubscriptionInfoURLKey]) {
+			websiteURL = [NSURL URLWithString:[userDefaults objectForKey:CBSubscriptionInfoURLKey]];
+		}
         [[NSWorkspace sharedWorkspace] openURL:websiteURL];
     }
 }

@@ -85,19 +85,19 @@
 - (BOOL)line:(CBLine *)line hasTripsThatTouchCalendarWeekAtBothEnds:(CSCalendarWeek *)calendarWeek
 {
     BOOL hasTripsThatTouchCalendarWeekAtBothEnds = NO;
-    unsigned nextLineTripIndex = 0;
+    NSUInteger nextLineTripIndex = 0;
     hasTripsThatTouchCalendarWeekAtBothEnds = 
         [self line:line hasTripThatTouchesCalendarWeekAtStart:calendarWeek nextLineTripIndex:&nextLineTripIndex] &&
         [self line:line hasTripThatTouchesCalendarWeekAtEnd:calendarWeek lineTripStartIndex:nextLineTripIndex];
     return hasTripsThatTouchCalendarWeekAtBothEnds;
 }
 
-- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtStart:(CSCalendarWeek *)calendarWeek nextLineTripIndex:(unsigned *)nextIndexPtr
+- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtStart:(CSCalendarWeek *)calendarWeek nextLineTripIndex:(NSUInteger *)nextIndexPtr
 {
     BOOL hasTripThatTouchesCalendarWeekAtStart = NO;
     NSArray *lineTrips = [line trips];
-    unsigned lineTripsCount = lineTrips ? [lineTrips count] : 0;
-    unsigned lineTripIdx = 0;
+    NSUInteger lineTripsCount = lineTrips ? [lineTrips count] : 0;
+    NSUInteger lineTripIdx = 0;
     for (lineTripIdx = 0; lineTripIdx < lineTripsCount && !hasTripThatTouchesCalendarWeekAtStart; lineTripIdx++)
     {
         NSDictionary *lineTrip = [lineTrips objectAtIndex:lineTripIdx];
@@ -121,7 +121,7 @@
     return hasTripThatTouchesCalendarWeekAtStart;
 }
 
-- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtEnd:(CSCalendarWeek *)calendarWeek lineTripStartIndex:(unsigned)startIndex
+- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtEnd:(CSCalendarWeek *)calendarWeek lineTripStartIndex:(NSUInteger)startIndex
 {
     BOOL hasTripThatTouchesCalendarWeekAtEnd = NO;
     if (NSNotFound != startIndex)

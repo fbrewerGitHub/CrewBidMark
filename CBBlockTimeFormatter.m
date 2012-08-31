@@ -86,10 +86,10 @@
 //   BOOL returnValue = NO;
    
    NSString * tempPartialString = nil;
-   unsigned   tempPartialStringLength = 0;
-   unsigned   tempProposedSelRangeLocation = 0;
+   NSUInteger   tempPartialStringLength = 0;
+   NSUInteger   tempProposedSelRangeLocation = 0;
    NSString * insertedString = nil;
-   unsigned   timeSeparatorLocation = 0;
+   NSUInteger   timeSeparatorLocation = 0;
    NSScanner * scanner = nil;
    NSString * accumulatedDigits = nil;
    NSString * discardedDelimiters = nil;

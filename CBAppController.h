@@ -95,7 +95,7 @@ application. */
 
 #pragma mark Version Check
 - (void)startNetworkReachability;
-void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info);
+void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkConnectionFlags flags, void *info);
 - (void)startVersionCheckConnection;
 - (void)checkForNewVersion;
 - (void)checkSubscriptions;

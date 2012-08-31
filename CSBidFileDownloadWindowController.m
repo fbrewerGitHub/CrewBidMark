@@ -66,8 +66,11 @@ void *CSUserCredentialsChangedContext = (void *)4321;
     {
         [NSApp endSheet:[self window]];
     }
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:CSBidFileDownloadWindowControllerDidFinishNotification object:self];
+	
     [[self window] orderOut:nil];
-    [self release];
+    [self autorelease];
 }
 
 - (IBAction)progressCancelButtonAction:(id)sender
@@ -204,6 +207,7 @@ void *CSUserCredentialsChangedContext = (void *)4321;
 
 - (void)bidFileDownloadDidFinish
 {
+	[[NSNotificationCenter defaultCenter] postNotificationName:CSBidFileDownloadWindowControllerDidFinishNotification object:self];
     // Sublcasses must override to take some action after the bid file download 
     // has finished
     return;

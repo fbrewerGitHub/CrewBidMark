@@ -247,11 +247,11 @@ NSInteger compareSortSelection(id fore, id aft, void * context );
 - (void)insertLine:(CBLine *)line atIndex:(int)lineIndex;
 - (void)removeLine:(CBLine *)line atIndex:(int)lineIndex;
 - (void)insertFaReserveBidAtIndex:(unsigned)index;
-- (unsigned)removeFaReserveBid;
+- (NSUInteger)removeFaReserveBid;
 - (void)insertFaMrtBidAtIndex:(unsigned)index;
-- (unsigned)removeFaMrtBid;
-- (unsigned)faReserveBidIndex;
-- (unsigned)faMrtBidIndex;
+- (NSUInteger)removeFaMrtBid;
+- (NSUInteger)faReserveBidIndex;
+- (NSUInteger)faMrtBidIndex;
 - (CBLine *)faReserveBidLine;
 - (CBLine *)faMrtBidLine;
 
@@ -757,8 +757,8 @@ NSInteger compareSortSelection(id fore, id aft, void * context );
 
 - (void)selectLinesByVacation;
 - (BOOL)line:(CBLine *)line hasTripsThatTouchCalendarWeekAtBothEnds:(CSCalendarWeek *)calendarWeek;
-- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtStart:(CSCalendarWeek *)calendarWeek nextLineTripIndex:(unsigned *)nextIndexPtr;
-- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtEnd:(CSCalendarWeek *)calendarWeek lineTripStartIndex:(unsigned)startIndex;
+- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtStart:(CSCalendarWeek *)calendarWeek nextLineTripIndex:(NSUInteger *)nextIndexPtr;
+- (BOOL)line:(CBLine *)line hasTripThatTouchesCalendarWeekAtEnd:(CSCalendarWeek *)calendarWeek lineTripStartIndex:(NSUInteger)startIndex;
 
 #pragma mark
 #pragma mark Vacation Pay

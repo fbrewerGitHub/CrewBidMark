@@ -31,7 +31,7 @@ NSString * CBTableHeaderViewDragPboardType = @"CBTableHeaderView Drag Pasteboard
 
 #pragma mark DRAGGING SOURCE METHODS
 
-- (unsigned int)draggingSourceOperationMaskForLocal:(BOOL)isLocal
+- (NSDragOperation)draggingSourceOperationMaskForLocal:(BOOL)isLocal
 {
    return NSDragOperationMove;
 }

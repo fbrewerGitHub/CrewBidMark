@@ -223,8 +223,11 @@
     }
     // set user defaults for most recently opened bid
     [[NSUserDefaults standardUserDefaults] setObject:[newDocumentName stringByAppendingPathExtension:@"crewbid"] forKey:CBMostRecentOpenedBidFileKey];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:CSBidFileDownloadWindowControllerDidFinishNotification object:self];
+	
     [[self window] orderOut:nil];
-    [self release];
+    [self autorelease];
 }
 
 #pragma mark

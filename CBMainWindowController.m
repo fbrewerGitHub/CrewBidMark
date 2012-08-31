@@ -512,9 +512,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
 
 #pragma mark TABLE VIEW DATA SOURCE METHODS
 
-- (int)numberOfRowsInTableView:(NSTableView *)tableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-   int numberOfRows = 0;
+   NSInteger numberOfRows = 0;
    NSArray * dataSourceArray = nil;
    // lines table view
    if (tableView == [self linesTableView] || tableView == [self availableLinesTableColumns]) {
@@ -537,7 +537,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    return numberOfRows;
 }
 
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(int)rowIndex
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
 	id columnObject = nil;
    NSArray * dataSourceArray = nil;
@@ -593,7 +593,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
 
 #pragma mark TABLE VIEW DELEGATE METHODS
 
-- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(int)rowIndex
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
    // lines table
    if (tableView == [self linesTableView]) {
@@ -721,7 +721,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
 	return tableViewShouldStartDragSession;
 }
 
-- (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)operation
+- (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation
 {
    // return value for allowed drag operation
    NSDragOperation allowedDragOperation = NSDragOperationNone;
@@ -741,7 +741,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
 	return allowedDragOperation;
 }
 
-- (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(int)row dropOperation:(NSTableViewDropOperation)operation
+- (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
    BOOL tableViewShouldAcceptDrop = NO;
    // dragging source
