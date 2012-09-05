@@ -152,10 +152,10 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
     NSIndexSet *selectedRowIndexes = [[self linesTableView] selectedRowIndexes];
     NSUInteger selectedRow = selectedRowIndexes.firstIndex;
     while (NSNotFound != selectedRow) {
-        selectedRow = [selectedRowIndexes indexGreaterThanIndex:selectedRow];
         if (selectedRow < bottomFreeze) {
             [rowsArray addObject:[NSNumber numberWithUnsignedInteger:selectedRow]];
         }
+        selectedRow = [selectedRowIndexes indexGreaterThanIndex:selectedRow];
     }
     
 //    NSEnumerator *selectedRowsEnum = [[self linesTableView] selectedRowEnumerator];
