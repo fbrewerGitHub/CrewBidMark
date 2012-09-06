@@ -2469,7 +2469,7 @@ static NSString *CBDataModelMaxLegsPerDayGreaterThanPointsValueKey = @"Max Legs 
 {
    NSDictionary * choices = nil;
    
-   if (choices == [NSDictionary dictionaryWithContentsOfFile:path])
+   if ((choices = [NSDictionary dictionaryWithContentsOfFile:path]))
    {
       // sort selections
 		[self saveSortSelectionsUsingChoices:choices];
