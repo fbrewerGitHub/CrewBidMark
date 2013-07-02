@@ -185,19 +185,16 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
         return;
     }
     
-   // create new bid controller, which will be released when it's finished,
-   // in newBidDidFinish: method
    // new bid controller will download bid data and open new document with
    // bid data
     CSNewBidWindowController *nbwc = [[CSNewBidWindowController alloc] initWithBidPeriod:[CSBidPeriod defaultBidPeriod]];
-    newBidController = nbwc;
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newBidDidFinish:) name:CSBidFileDownloadWindowControllerDidFinishNotification object:newBidController];
-	
+//    newBidController = nbwc;
+		
     [[nbwc window] center];
     [nbwc showWindow:nil];
 }
 
+/*
 - (void)newBidDidFinish:(NSNotification *)notification
 {
    // remove self as notification observer
@@ -206,6 +203,7 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
 //   [[self newBidController] release];
    newBidController = nil;
 }
+*/
 
 - (IBAction)openBidFile:(id)sender
 {
@@ -606,12 +604,12 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
     SCNetworkReachabilityScheduleWithRunLoop(networkReachability, mainRunLoop, kCFRunLoopDefaultMode);
 }
 
-void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkConnectionFlags flags, void *info)
+void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info)
 {
     // If the network is reachable, check for subscriptions enabled or
     // required and new version of the app. Unschedule network reachability
     // target and release.
-    if (kSCNetworkFlagsReachable == flags) {
+    if (kSCNetworkFlagsReachable && flags) {
         [(id)info performSelector:@selector(startVersionCheckConnection)];
         SCNetworkReachabilityUnscheduleFromRunLoop(target, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
         CFRelease(target);
@@ -642,7 +640,9 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkConne
 		if (NO == [version isEqualToString:latestVersion]) {
 			NSString *changesURLString = @"http://www.macrewsoft.com/bin/CrewBidChanges.txt";
 			NSURL *changesURL = [NSURL URLWithString:changesURLString];
-			NSString *changes = [NSString stringWithContentsOfURL:changesURL encoding:NSUTF8StringEncoding error:NULL];
+            NSURLRequest *changesRequest = [NSURLRequest requestWithURL:changesURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
+            NSData *changeData = [NSURLConnection sendSynchronousRequest:changesRequest returningResponse:NULL error:NULL];
+			NSString *changes = [[[NSString alloc] initWithData:changeData encoding:NSUTF8StringEncoding] autorelease];
 			NSAlert *newVersAlert = [[NSAlert alloc] init];
 			NSString *msgText = [NSString stringWithFormat:@"A new version of CrewBid (%@) is available.", latestVersion];
 			NSString *infoText = nil;

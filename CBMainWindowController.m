@@ -90,6 +90,11 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [[self window] setFrameTopLeftPoint:screenUpperLeft];
    // set crew position in user defaults
    [[NSUserDefaults standardUserDefaults] setObject:[[self dataModel] crewPosition] forKey:CBCrewPositionKey];
+    
+    // prevent restoration of windows at startup
+    if ([[self window] respondsToSelector:@selector(setRestorable:)]) {
+        [[self window] setRestorable:NO];
+    }
 }
 
 - (void)dealloc

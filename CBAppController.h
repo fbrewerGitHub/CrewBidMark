@@ -56,7 +56,7 @@ method if there is no employee number in the user defaults. */
 from the new bid window controller if the new bid action is cancelled, the new
 bid is downloaded and opened, or an error occurs when downloading the new bid
 file. */
-- (void)newBidDidFinish:(NSNotification *)notification;
+//- (void)newBidDidFinish:(NSNotification *)notification;
 /* Opens the open bid window. */
 - (IBAction)openBidFile:(id)sender;
 /* Opens the most recent bid receeipt (identified in the user defaults by the

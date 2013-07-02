@@ -49,6 +49,45 @@
 #pragma mark Actions
 #pragma mark
 
+// override of super implementation to display alert if submitted for
+// employee number is different than submitted by user id
+
+static NSInteger kEmployeeNumberTextFieldTag = 10;
+static NSInteger kUseridTextFieldTag = 20;
+
+- (IBAction)okButtonAction:(id)sender
+{
+    NSView *windowContentView = [[self window] contentView];
+    NSTextField *empNumberTextField = (NSTextField *)[windowContentView viewWithTag:kEmployeeNumberTextFieldTag];
+    NSTextField *useridTextField = (NSTextField *)[windowContentView viewWithTag:kUseridTextFieldTag];
+    
+    NSString *submitFor = [empNumberTextField stringValue];
+    NSString *submitBy = [useridTextField stringValue];
+    if ([submitBy length] > 0) {
+        submitBy = [submitBy substringFromIndex:1];
+    }
+    // different submitted for employee number than submitted for
+    if (![submitFor isEqualToString:submitBy]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"'Submitted For' Employee Number Is Different Than 'Submitted By'" defaultButton:@"Cancel" alternateButton:@"Submit Bid Anyway" otherButton:nil informativeTextWithFormat:@"This bid will be submitted for employee number \n\n\t%@\n\nand is being submitted by employee number \n\n\t%@\n\nThis is permissible, but should only be done when intentionally submitting a bid for another employee.\n\n", submitFor, submitBy];
+        [alert setAlertStyle:NSCriticalAlertStyle];
+        [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(differentEmployeeNumbersAlertDidEnd:returnCode:context:) contextInfo:sender];
+    // same employee numbers for submitted by and submitted for
+    } else {
+        [super okButtonAction:sender];
+    }
+}
+
+- (void)differentEmployeeNumbersAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode context:(void *)contextInfo
+{
+    // bid submission cancelled
+    if (NSAlertDefaultReturn == returnCode) {
+        // do nothing
+    }
+    else if (NSAlertAlternateReturn == returnCode) {
+        [super okButtonAction:contextInfo];
+    }
+}
+
 - (IBAction)changeEmployeeNumberAction:(id)sender
 {
 	// remove submit bid dialog
