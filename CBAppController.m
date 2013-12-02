@@ -622,7 +622,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
     _appVersionData = [[NSMutableData alloc] init];
     NSString *latestVersionURLString = @"http://www.macrewsoft.com/bin/CrewBidVersion.plist";
     NSURL *latestVersionURL = [NSURL URLWithString:latestVersionURLString];
-    NSURLRequest *latestVersionRequest = [NSURLRequest requestWithURL:latestVersionURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30];
+    NSURLRequest *latestVersionRequest = [NSURLRequest requestWithURL:latestVersionURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
     [NSURLConnection connectionWithRequest:latestVersionRequest delegate:self];
 }
 

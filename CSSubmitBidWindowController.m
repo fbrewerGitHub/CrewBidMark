@@ -28,7 +28,11 @@
 		nibName = @"SubmitBid";
 	} else {
 		if ([bidPeriod isFlightAttendantBid]) {
-			nibName = @"BuddySubmitBid";
+            
+            // Temp fix to remove buddy bids from flight attendant bids.
+			//nibName = @"BuddySubmitBid";
+            nibName = @"SubmitBid";
+
 		} else {
 			nibName = @"AvoidanceSubmitBid";
 		}

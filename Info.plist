@@ -42,11 +42,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5.8</string>
+	<string>1.5.9</string>
 	<key>CFBundleSignature</key>
 	<string>MAcb</string>
 	<key>CFBundleVersion</key>
-	<string>31</string>
+	<string>32</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

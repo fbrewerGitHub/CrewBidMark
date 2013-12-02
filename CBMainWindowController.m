@@ -61,10 +61,14 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [self initializeLineCalendar];
    // initialize main tab view
    [[self mainWindowTabView] selectFirstTabViewItem:nil];
-	if ([self isPilotSecondRoundBid] || [self isFlightAttendantBid]) {
+    
+    // Temp fix to remove overlap tab from pilot first round bids.
+	if (YES/*[self isPilotSecondRoundBid] || [self isFlightAttendantBid]*/) {
 		NSTabViewItem *overlapTab = [[self mainWindowTabView] tabViewItemAtIndex:[[self mainWindowTabView] indexOfTabViewItemWithIdentifier:@"overlap"]];
 		[[self mainWindowTabView] removeTabViewItem:overlapTab];
 	}
+    
+    
    // initialize sort tab
    [self initializeSortTab];
    // initialize select tab view

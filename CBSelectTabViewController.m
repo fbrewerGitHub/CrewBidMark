@@ -75,10 +75,16 @@ NSString * CBSelectTabLineAttributeTabNumberKey = @"CBSelectTab Line Attribute T
             [NSDictionary dictionaryWithObjectsAndKeys:
                 @"Deadheads", @"label",
                 @"deadheads", @"identifier", nil]];
+        
+        // Temp fix to remove overlap from pilot fist round bids.
+        /*
 		[selectTabItemsArray addObject:
             [NSDictionary dictionaryWithObjectsAndKeys:
                 @"Overlap", @"label",
                 @"overlap", @"identifier", nil]];
+         */
+        
+        
 		[selectTabItemsArray addObject:
             [NSDictionary dictionaryWithObjectsAndKeys:
                 @"Max Legs per Day", @"label",

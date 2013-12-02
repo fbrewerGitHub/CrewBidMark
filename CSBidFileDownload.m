@@ -253,12 +253,17 @@ NSString *CSBidFileDownloadErrorKey = @"error";
 	NSString *optionalParams = @"";
 	if (![[self bidPeriod] isSecondRoundBid]) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        // Temp fix to remove flight attendant buddy bids.
 		if ([[self bidPeriod] isFlightAttendantBid]) {
+            /*
 			NSString *buddy1 = [defaults objectForKey:CBEmployeeBid1Key];
 			NSString *buddy2 = [defaults objectForKey:CBEmployeeBid2Key];
 			optionalParams = [NSString stringWithFormat:@"%@%@",
 				buddy1 != nil && [buddy1 length] > 0 ? [NSString stringWithFormat:@"&BUDDY1=%@", buddy1] : @"",
 				buddy2 != nil && [buddy2 length] > 0 ? [NSString stringWithFormat:@"&BUDDY2=%@", buddy2] : @""];
+            */
+        
 		} else {
 			NSString *avoid1 = [defaults objectForKey:CBEmployeeBid1Key];
 			NSString *avoid2 = [defaults objectForKey:CBEmployeeBid2Key];
