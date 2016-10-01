@@ -2707,7 +2707,8 @@ static NSString *CBDataModelMaxLegsPerDayGreaterThanPointsValueKey = @"Max Legs 
 {
 	if (nil == firstBidDate) {
 		NSArray *lineTripDicts = [[self lines] valueForKeyPath:@"@unionOfArrays.trips"];
-		NSNumber *minTripStartDay = [lineTripDicts valueForKeyPath:[@"@min" stringByAppendingPathExtension:CBLineTripDateKey]];
+        NSString *minKeyPath = [@"@min." stringByAppendingString:CBLineTripDateKey];
+		NSNumber *minTripStartDay = [lineTripDicts valueForKeyPath:minKeyPath];
 		int firstBidDateOffset = [minTripStartDay intValue];
 		if (firstBidDateOffset < 1) {
 			firstBidDate = [[[self month] dateByAddingYears:0 months:0 days:firstBidDateOffset - 1 hours:0 minutes:0 seconds:0] retain];

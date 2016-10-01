@@ -45,6 +45,9 @@ typedef enum enumCBMenuItemTag {
    CBUnfreezeTopLinesMenuItemTag = 40200,
    CBFreezeBottomLinesMenuItemTag = 40300,
    CBUnfreezeBottomLinesMenuItemTag = 40400,
+   CBMoveSelectedLineUpMenuItemTag = 40425,
+   CBMoveSelectedLinesToTopMenuItemTag = 40450,
+   CBMoveSelectedLineDownMenuItemTag = 40475,
    CBMoveSelectedLinesToBottomMenuItemTag = 40500,
    CBMove3on3offLinesToBottomMenuItemTag = 40550,
    CBMoveReserveLinesToBottomMenuItemTag = 40600,
@@ -116,6 +119,12 @@ typedef enum enumCBMenuItemTag {
 - (void)freezeBottomLines:(id)sender;
 // unfreeze bottom lines
 - (void)unfreezeBottomLines:(id)sender;
+// move selected line up 1 row
+- (IBAction)moveSelectedLineUp:(id)sender;
+// move lines selected in lines table view to bottom of top freeze range
+- (IBAction)freezeSelectedLinesAtTop:(id)sender;
+// move selected line down 1 row
+- (IBAction)moveSelectedLineDown:(id)sender;
 // move lines selected in lines table view to top of bottom freeze range
 - (void)freezeSelectedLinesAtBottom:(id)sender;
 // move 3-on/3-off lines to bottom

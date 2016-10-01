@@ -185,6 +185,8 @@ void *CSUserCredentialsChangedContext = (void *)4321;
     {
         // Remove password
         [[self bidFileDownload] setPassword:nil];
+        // Remove user id
+        [[self bidFileDownload] setUserID:nil];
         NSWindow *windowForSheet = nil;
         if ([[self window] isSheet])
         {

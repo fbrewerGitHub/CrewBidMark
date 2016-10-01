@@ -93,7 +93,7 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
    // notify user and quit if not a good operating system environment
    BOOL isGoodEnvironment = [self checkEnvironment];
    if (!isGoodEnvironment) {
-      NSRunAlertPanel(@"CrewBid requires System 10.5 or later", @"CrewBid requires operating system version 10.5 or later to run. Your computer appears to be operating an earlier version of the operating system. You must upgrade to 10.5 (Leopard) or later to run CrewBid.", @"Quit CrewBid", nil, nil);
+      NSRunAlertPanel(@"CrewBid requires System 10.6 or later", @"CrewBid requires operating system version 10.5 or later to run. Your computer appears to be operating an earlier version of the operating system. You must upgrade to 10.5 (Leopard) or later to run CrewBid.", @"Quit CrewBid", nil, nil);
       [NSApp terminate:self];
    }
    
@@ -347,6 +347,9 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)n
 {
+    [self startVersionCheckConnection];
+    
+    
     /* At application start up, perform the following:
      
      1. Start network reachability on main run loop. When network reachability 
@@ -424,12 +427,21 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
       NSString *lastOpenedBidPath = [[self crewBidDirectoryPath] stringByAppendingPathComponent:lastOpenedBid];
       NSFileManager *fileManager = [NSFileManager defaultManager];
        NSDate *fileDate = [[fileManager attributesOfItemAtPath:lastOpenedBidPath error:NULL] objectForKey:NSFileCreationDate];
+       
+       /***** Start Temp for Testing *******/
+       
+       [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:lastOpenedBidPath] display:YES error:NULL];
+       return;
+
+       /***** End Temp for Testing *******/
+       
+       
       NSCalendarDate *fileCreatedDate = [NSCalendarDate dateWithString:[fileDate description]];
       NSCalendarDate *now = [NSCalendarDate calendarDate];
       
       if ([fileCreatedDate monthOfYear] == [now monthOfYear])
       {
-          [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfFile:lastOpenedBidPath display:YES];
+          [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:lastOpenedBidPath] display:YES error:NULL];
       }
       // else open new bid window
       else
@@ -556,7 +568,7 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
 
 - (void)checkForNewerVersion:(id)sender
 {
-   NSDictionary *currentVersion = [NSDictionary dictionaryWithContentsOfURL:[NSURL URLWithString:@"http://www.macrewsoft.com/ver/cb_ver.plist"]];
+   NSDictionary *currentVersion = [NSDictionary dictionaryWithContentsOfURL:[NSURL URLWithString:@"https://www.macrewsoft.com/ver/cb_ver.plist"]];
    
    if (currentVersion) {
       // this version
@@ -598,7 +610,7 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
     context.copyDescription = NULL;
     
     // Schedule network reachability changed callback on main run loop.
-    SCNetworkReachabilityRef networkReachability = SCNetworkReachabilityCreateWithName(NULL, "http://www.macrewsoft.com");
+    SCNetworkReachabilityRef networkReachability = SCNetworkReachabilityCreateWithName(NULL, "https://www.macrewsoft.com");
     SCNetworkReachabilitySetCallback(networkReachability, NetworkReachabilityChanged, &context);
     CFRunLoopRef mainRunLoop = CFRunLoopGetMain();
     SCNetworkReachabilityScheduleWithRunLoop(networkReachability, mainRunLoop, kCFRunLoopDefaultMode);
@@ -620,7 +632,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 {
     // begin check for new version asynchronously
     _appVersionData = [[NSMutableData alloc] init];
-    NSString *latestVersionURLString = @"http://www.macrewsoft.com/bin/CrewBidVersion.plist";
+    NSString *latestVersionURLString = @"https://www.macrewsoft.com/bin/CrewBidVersion.plist";
     NSURL *latestVersionURL = [NSURL URLWithString:latestVersionURLString];
     NSURLRequest *latestVersionRequest = [NSURLRequest requestWithURL:latestVersionURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
     [NSURLConnection connectionWithRequest:latestVersionRequest delegate:self];
@@ -638,7 +650,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 		NSString *latestVersion = [latestVersionDict objectForKey:@"CFBundleShortVersionString"];
 		NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 		if (NO == [version isEqualToString:latestVersion]) {
-			NSString *changesURLString = @"http://www.macrewsoft.com/bin/CrewBidChanges.txt";
+			NSString *changesURLString = @"https://www.macrewsoft.com/bin/CrewBidChanges.txt";
 			NSURL *changesURL = [NSURL URLWithString:changesURLString];
             NSURLRequest *changesRequest = [NSURLRequest requestWithURL:changesURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
             NSData *changeData = [NSURLConnection sendSynchronousRequest:changesRequest returningResponse:NULL error:NULL];
@@ -652,9 +664,9 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 			[newVersAlert addButtonWithTitle:@"Later"];
 			int returnCode = [newVersAlert runModal];
 			if (NSAlertFirstButtonReturn == returnCode) {
-				NSString *crewScheduleURLString = @"http://www.macrewsoft.com/bin/CrewBid.dmg.zip";
-				NSURL *crewScheduleURL = [NSURL URLWithString:crewScheduleURLString];
-				BOOL newVersionDownloaded = [[NSWorkspace sharedWorkspace] openURL:crewScheduleURL];
+				NSString *crewBidURLString = @"https://www.macrewsoft.com/bin/CrewBid.dmg.zip";
+				NSURL *crewBidURL = [NSURL URLWithString:crewBidURLString];
+				BOOL newVersionDownloaded = [[NSWorkspace sharedWorkspace] openURL:crewBidURL];
 				[newVersAlert release];
 				NSAlert *downloadAlert = [[NSAlert alloc] init];
 				if (newVersionDownloaded) {
@@ -664,7 +676,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 					[downloadAlert addButtonWithTitle:@"Later"];
 				} else {
 					msgText = @"Download failed.";
-					infoText = [NSString stringWithFormat:@"You may obtain the latest version of CrewBid at:\n\n%@\n", crewScheduleURLString];
+					infoText = [NSString stringWithFormat:@"You may obtain the latest version of CrewBid at:\n\n%@\n", crewBidURLString];
 					[downloadAlert setInformativeText:infoText];
 					[downloadAlert addButtonWithTitle:@"OK"];
 				}
@@ -686,7 +698,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 {
 	[[alert window] orderOut:nil];
 	if (NSAlertDefaultReturn == returnCode) {
-		NSURL *crewScheduleURL = [NSURL URLWithString:@"http://www.macrewsoft.com/bin/CrewBid.dmg.zip"];
+		NSURL *crewScheduleURL = [NSURL URLWithString:@"https://www.macrewsoft.com/bin/CrewBid.dmg.zip"];
 		[[NSWorkspace sharedWorkspace] openURL:crewScheduleURL];
 	}
 }

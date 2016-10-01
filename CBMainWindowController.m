@@ -62,12 +62,6 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    // initialize main tab view
    [[self mainWindowTabView] selectFirstTabViewItem:nil];
     
-    // Temp fix to remove overlap tab from pilot first round bids.
-	if (YES/*[self isPilotSecondRoundBid] || [self isFlightAttendantBid]*/) {
-		NSTabViewItem *overlapTab = [[self mainWindowTabView] tabViewItemAtIndex:[[self mainWindowTabView] indexOfTabViewItemWithIdentifier:@"overlap"]];
-		[[self mainWindowTabView] removeTabViewItem:overlapTab];
-	}
-    
     
    // initialize sort tab
    [self initializeSortTab];
@@ -79,7 +73,6 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    // initialize overnight cities tab item
    [self initializeOvernightCitiesTabItem];
    // initialize overlap tab
-   [self initializeOverlapTabView];
    // update interface items
    [self updateWindow];
    
@@ -87,11 +80,13 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [self initializeLinesTableColumns];
    
    // position window in upper left corner of screen
-   NSRect visibleScreen = [[NSScreen mainScreen] visibleFrame];
-   NSPoint screenOrigin = visibleScreen.origin;
-   float screenHeight = NSMaxY(visibleScreen);
-   NSPoint screenUpperLeft = NSMakePoint(screenOrigin.x, screenOrigin.y + screenHeight);
-   [[self window] setFrameTopLeftPoint:screenUpperLeft];
+//   NSRect visibleScreen = [[NSScreen mainScreen] visibleFrame];
+//   NSPoint screenOrigin = visibleScreen.origin;
+//   float screenHeight = NSMaxY(visibleScreen);
+//   NSPoint screenUpperLeft = NSMakePoint(screenOrigin.x, screenOrigin.y + screenHeight);
+//   [[self window] setFrameTopLeftPoint:screenUpperLeft];
+    
+    [[self window] center];
    // set crew position in user defaults
    [[NSUserDefaults standardUserDefaults] setObject:[[self dataModel] crewPosition] forKey:CBCrewPositionKey];
     
@@ -122,41 +117,132 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [super dealloc];
 }
 
+#pragma mark
 #pragma mark ACTIONS
+#pragma mark
 
 - (void)freezeTopLines:(id)sender
 {
-   int selectedRow = [[self linesTableView] selectedRow];
+    NSIndexSet *selectedRows = [[self linesTableView] selectedRowIndexes];
+    NSUInteger selectedRow = [selectedRows lastIndex];
+    if (NSNotFound == selectedRow) {
+        return;
+    }
    [[self dataModel] setTopFreezeIndex:selectedRow];
    // reset bottom freeze index if top freeze index set in bottom freeze range
    if (selectedRow >= [[self dataModel] bottomFreezeIndex]) {
       [[self dataModel] setBottomFreezeIndex:selectedRow + 1];
    }
+    
+    // After any update to lines table, all rows are deselected. Reselect the
+    // previously selected rows.
+    [[self linesTableView] selectRowIndexes:selectedRows byExtendingSelection:NO];
 }
 
 - (void)unfreezeTopLines:(id)sender
 {
-   [[self dataModel] setTopFreezeIndex:-1];
+    NSIndexSet *selectedRows = [[self linesTableView] selectedRowIndexes];
+    [[self dataModel] setTopFreezeIndex:-1];
+    [[self linesTableView] selectRowIndexes:selectedRows byExtendingSelection:NO];
 }
 
 - (void)freezeBottomLines:(id)sender
 {
-   int selectedRow = [[self linesTableView] selectedRow];
+    NSIndexSet *selectedRows = [[self linesTableView] selectedRowIndexes];
+    NSUInteger selectedRow = [selectedRows firstIndex];
+    if (NSNotFound == selectedRow) {
+        return;
+    }
    [[self dataModel] setBottomFreezeIndex:selectedRow];
    // reset bottom freeze index if top freeze index set in bottom freeze range
    if (selectedRow <= [[self dataModel] topFreezeIndex]) {
       [[self dataModel] setTopFreezeIndex:selectedRow - 1];
    }
+
+    // After any update to lines table, all rows are deselected. Reselect the
+    // previously selected rows.
+    [[self linesTableView] selectRowIndexes:selectedRows byExtendingSelection:NO];
 }
 
 - (void)unfreezeBottomLines:(id)sender
 {
-   [[self dataModel] setBottomFreezeIndex:[[[self dataModel] lines] count]];
+    NSIndexSet *selectedRows = [[self linesTableView] selectedRowIndexes];
+    [[self dataModel] setBottomFreezeIndex:[[[self dataModel] lines] count]];
+    [[self linesTableView] selectRowIndexes:selectedRows byExtendingSelection:NO];
+}
+
+// move selected line up one row
+- (IBAction)moveSelectedLineUp:(id)sender
+{
+    NSInteger selectedRow = [[self linesTableView] selectedRow];
+    // Can't move a row at the top up.
+    if (0 == selectedRow) {
+        return;
+    }
+    
+    NSArray *movedRows = [NSArray arrayWithObject:[NSNumber numberWithInteger:selectedRow]];
+    NSArray *toRows = [NSArray arrayWithObject:[NSNumber numberWithInteger:selectedRow - 1]];
+    [[self dataModel] moveLinesArrayRows:movedRows toRows:toRows];
+    
+    [[self linesTableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedRow - 1] byExtendingSelection:NO];
+}
+
+// move selected lines to bottom of top freeze range
+- (IBAction)freezeSelectedLinesAtTop:(id)sender
+{
+    NSInteger topFreeze = [[self dataModel] topFreezeIndex];
+    NSInteger bottomFreeze = [[self dataModel] bottomFreezeIndex];
+    NSInteger rowsMovedOutOfBottomFreeze = 0;
+    
+    // Create array of rows to be moved. Don't include rows already in top
+    // freeze.
+    NSIndexSet *selectedRowIndexes = [[self linesTableView] selectedRowIndexes];
+    NSMutableArray *rowsArray = [NSMutableArray arrayWithCapacity:[selectedRowIndexes count]];
+    NSUInteger selectedRow = selectedRowIndexes.firstIndex;
+    while (NSNotFound != selectedRow) {
+        // top freeze < 0 means no lines frozen at top
+        if (topFreeze < 0 || selectedRow > topFreeze) {
+            [rowsArray addObject:[NSNumber numberWithUnsignedInteger:selectedRow]];
+        }
+        if (selectedRow >= bottomFreeze) {
+            rowsMovedOutOfBottomFreeze += 1;
+        }
+        selectedRow = [selectedRowIndexes indexGreaterThanIndex:selectedRow];
+    }
+    
+    [self moveLinesTableRows:rowsArray toRow:topFreeze + 1];
+    [[self dataModel] setTopFreezeIndex:topFreeze + [rowsArray count]];
+    
+    // Update bottom freeze index for lines moved from there.
+    [[self dataModel] setBottomFreezeIndex:bottomFreeze + rowsMovedOutOfBottomFreeze];
+}
+
+// move selected line down one row
+- (IBAction)moveSelectedLineDown:(id)sender
+{
+    NSInteger selectedRow = [[self linesTableView] selectedRow];
+    // Can't move a row at the bottom down
+    if ([[self linesTableView] numberOfRows] - 1 == selectedRow) {
+        return;
+    }
+    
+    NSArray *movedRows = [NSArray arrayWithObject:[NSNumber numberWithInteger:selectedRow]];
+    NSArray *toRows = [NSArray arrayWithObject:[NSNumber numberWithInteger:selectedRow + 1]];
+    [[self dataModel] moveLinesArrayRows:movedRows toRows:toRows];
+    
+    // Data model bottom freeze for move lines works for drag and drop but not
+    // for moving row down.
+    NSInteger bottomFreeze = [[self dataModel] bottomFreezeIndex];
+    if (selectedRow == bottomFreeze - 1) {
+        [[self dataModel] setBottomFreezeIndex:bottomFreeze - 1];
+    }
+    
+    [[self linesTableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedRow + 1] byExtendingSelection:NO];
 }
 
 - (void)freezeSelectedLinesAtBottom:(id)sender
 {
-	int bottomFreeze = [[self dataModel] bottomFreezeIndex];
+    int bottomFreeze = [[self dataModel] bottomFreezeIndex];
     NSMutableArray *rowsArray = [NSMutableArray array];
     NSIndexSet *selectedRowIndexes = [[self linesTableView] selectedRowIndexes];
     NSUInteger selectedRow = selectedRowIndexes.firstIndex;
@@ -167,16 +253,8 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
         selectedRow = [selectedRowIndexes indexGreaterThanIndex:selectedRow];
     }
     
-//    NSEnumerator *selectedRowsEnum = [[self linesTableView] selectedRowEnumerator];
-//	NSNumber *selectedRowNum = nil;
-//	while (selectedRowNum = [selectedRowsEnum nextObject]) {
-//		int selectedRow = [selectedRowNum intValue];
-//		if (selectedRow < bottomFreeze) {
-//			[rowsArray addObject:selectedRowNum];
-//		}
-//	}
-	[self moveLinesTableRows:rowsArray toRow:bottomFreeze];
-	[[self dataModel] setBottomFreezeIndex:bottomFreeze - [rowsArray count]];
+    [self moveLinesTableRows:rowsArray toRow:bottomFreeze];
+    [[self dataModel] setBottomFreezeIndex:bottomFreeze - [rowsArray count]];
 }
 
 - (void)move3on3offLinesToBottom:(id)sender
@@ -250,7 +328,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    }
 }
 
+#pragma mark
 #pragma mark INTERFACE MANAGEMENT
+#pragma mark
 
 - (void)updateWindow
 {
@@ -259,7 +339,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [self updateSortTab];
 }
 
+#pragma mark
 #pragma mark MENU MANAGEMENT
+#pragma mark
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
@@ -316,6 +398,30 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
          enable = [[self dataModel] bottomFreezeIndex] < [[[self dataModel] lines] count];
          break;
 
+       case CBMoveSelectedLineUpMenuItemTag:
+           enable = [linesTable numberOfSelectedRows] == 1 && [linesTable selectedRow] > 0;
+           break;
+           
+       case CBMoveSelectedLinesToTopMenuItemTag:
+           switch ([[self linesTableView] numberOfSelectedRows])
+           {
+               case 0:
+                   [menuItem setTitle:@"Move Selected Row(s) to Top"];
+                   enable = NO;
+                   break;
+               case 1:
+                   [menuItem setTitle:@"Move Selected Row to Top"];
+                   break;
+               default:
+                   [menuItem setTitle:[NSString stringWithFormat:@"Move %ld Selected Rows to Top", (long)[[self linesTableView] numberOfSelectedRows]]];
+                   break;
+               }
+           break;
+           
+       case CBMoveSelectedLineDownMenuItemTag:
+           enable = [linesTable numberOfSelectedRows] == 1 && [linesTable selectedRow] < [linesTable numberOfRows] - 1;
+           break;
+           
       case CBMoveSelectedLinesToBottomMenuItemTag:
          switch ([[self linesTableView] numberOfSelectedRows])
          {
@@ -327,7 +433,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
                [menuItem setTitle:@"Move Selected Row to Bottom"];
                break;
             default:
-               [menuItem setTitle:[NSString stringWithFormat:@"Freeze %ld Selected Rows at Bottom", (long)[[self linesTableView] numberOfSelectedRows]]];
+               [menuItem setTitle:[NSString stringWithFormat:@"Move %ld Selected Rows to Bottom", (long)[[self linesTableView] numberOfSelectedRows]]];
                break;
          }
          break;
@@ -357,7 +463,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       case CBCopyLineLegsMenuItemTag:
          enable = 1 == [[self linesTableView] numberOfSelectedRows];
          break;
-
+           
       case CBInsertReserveBidMenuItemTag:
          if ([self isFlightAttendantFirstRoundBid]) {
             if ([[self dataModel] hasFaReserveBid]) {
@@ -399,7 +505,10 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    return enable;
 }
 
+#pragma mark
 #pragma mark INPUT VALIDATION AND FORMATTING
+#pragma mark
+
 
 - (BOOL)control:(NSControl *)control didFailToFormatString:(NSString *)string errorDescription:(NSString *)error
 {
@@ -421,7 +530,10 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    }
 }
 
+#pragma mark
 #pragma mark WINDOW DELEGATE METHODS
+#pragma mark
+
 
 - (void)windowWillClose:(NSNotification *)n
 {
@@ -467,7 +579,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    return [[self document] undoManager];
 }
 
+#pragma mark
 #pragma mark CONTROL DELEGATE METHODS
+#pragma mark
 
 - (void)controlTextDidChange:(NSNotification *)notification
 {
@@ -478,7 +592,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    }
 }
 
+#pragma mark
 #pragma mark NOTIFICATIONS
+#pragma mark
 
 - (void)registerNotifications
 {
@@ -487,7 +603,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [self registerNotificationsForOverlapTabView];
 }
 
+#pragma mark
 #pragma mark CALENDAR METHODS
+#pragma mark
 
 - (NSArray *)calendarDatesWithMonth:(NSCalendarDate *)month
 {
@@ -519,7 +637,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    return [NSArray arrayWithArray:calendarStrings];
 }
 
+#pragma mark
 #pragma mark TABLE VIEW DATA SOURCE METHODS
+#pragma mark
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
@@ -600,7 +720,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    return columnObject;
 }
 
+#pragma mark
 #pragma mark TABLE VIEW DELEGATE METHODS
+#pragma mark
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
@@ -609,7 +731,7 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
       CBLine * line = nil;
       // cache colors
       NSColor *blackColor = [NSColor blackColor];
-      NSColor *greenColor = [NSColor greenColor];
+      NSColor *greenColor = [NSColor colorWithRed:0.0 green:0.90 blue:0.0 alpha:1.0];
       NSColor *orangeColor = [NSColor orangeColor];
       NSColor *redColor = [NSColor redColor];
       NSColor *brownColor = [NSColor brownColor];
@@ -705,7 +827,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    }
 }
 
+#pragma mark
 #pragma mark DRAG AND DROP - TABLE VIEW ROWS
+#pragma mark
 
 - (BOOL)tableView:(NSTableView *)tableView writeRows:(NSArray *)rows toPasteboard:(NSPasteboard *)pboard
 {
@@ -1012,7 +1136,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    }
 }
 
+#pragma mark
 #pragma mark DRAG AND DROP - TABLE VIEW COLUMNS
+#pragma mark
 
 - (void)createTableViewHeaderViews
 {
@@ -1034,7 +1160,9 @@ NSString *CBPilotSecondRoundLinesTableViewColumnsKey = @"Pilot Second Round Line
    [availableColumnsHeaderView release];
 }
 
+#pragma mark
 #pragma mark ACCESSORS
+#pragma mark
 
 - (CBDocument *)document
 {

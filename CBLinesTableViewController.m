@@ -62,7 +62,8 @@
 		if (fromRow > row) {
 			toRow = row + i - numRowsMovedFromAboveToRow;
 			[toIndexes addObject:[NSNumber numberWithInt:toRow]];
-		} else {
+        // Don't include top row if moving to row 0.
+		} else if (!(row == 0 && fromRow == 0)) {
 			numRowsMovedFromAboveToRow++;
 			toRow = row - numRowsMovedFromAboveToRow;
 			[toIndexes insertObject:[NSNumber numberWithInt:toRow] atIndex:0];

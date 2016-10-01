@@ -25,7 +25,7 @@
 
 - (void)setTripText:(NSString *)text
 {
-	NSDictionary * textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont userFixedPitchFontOfSize:9.0], NSFontAttributeName, nil];
+	NSDictionary * textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont userFixedPitchFontOfSize:12.0], NSFontAttributeName, nil];
 	[[[self tripTextView] textStorage] setAttributedString:[[[NSAttributedString alloc] initWithString:text attributes:textAttributes] autorelease]];
 }
 

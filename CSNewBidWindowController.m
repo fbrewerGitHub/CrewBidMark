@@ -239,7 +239,11 @@
     // Create an array of two dictionaries, with values for this and next month
     // with corresponding strings for display
     NSCalendarDate *today = [NSCalendarDate date];
-    NSCalendarDate *thisMonth = [NSCalendarDate 
+
+    // For testing in QA environment. November 2014 bid data available.
+//    today = [NSCalendarDate dateWithYear:2014 month:10 day:1 hour:0 minute:0 second:0 timeZone:[NSTimeZone defaultTimeZone]];
+    
+    NSCalendarDate *thisMonth = [NSCalendarDate
         dateWithYear:[today yearOfCommonEra] 
         month:[today monthOfYear] 
         day:1 

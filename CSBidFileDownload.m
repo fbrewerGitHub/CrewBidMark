@@ -16,6 +16,10 @@
 //NSString *CSThirdPartyURL = @"https://www.myswa.com/webbid3pty/ThirdParty";
 //NSString *CSThirdPartyURL = @"https://www1.swalife.com/webbid3pty/ThirdParty";
 NSString *CSThirdPartyURL = @"https://www27.swalife.com/webbid3pty/ThirdParty";
+
+// This is for qa testing on SWA end only!!
+//NSString *CSThirdPartyURL = @"https://12.191.17.47/webbid3pty/ThirdParty";
+
 NSString *CSBidFileDownloadDidFinishNotification = @"Bid File Download Did Finish Notification";
 NSString *CSBidFileDownloadErrorKey = @"error";
 

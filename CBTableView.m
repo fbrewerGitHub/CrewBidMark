@@ -49,11 +49,13 @@
 - (void)mouseDown:(NSEvent *)event
 {
    if (tKeyDown) {
+       
       NSPoint clickedPoint = [self convertPoint:[event locationInWindow] fromView:nil];
       int clickedRow = [self rowAtPoint:clickedPoint];
       if (clickedRow > -1) {
+          NSIndexSet *selectedRows = [self selectedRowIndexes];
          CBDataModel * dataModel = [(CBMainWindowController *)[[self window] windowController] dataModel];
-         // remove top freeze if alt key down and click on largest top frozen line
+          // remove top freeze if alt key down and click on largest top frozen line
          if (NSAlternateKeyMask == ([event modifierFlags] & NSAlternateKeyMask)) {
             if (clickedRow == [dataModel topFreezeIndex]) {
                [dataModel setTopFreezeIndex:-1];
@@ -62,11 +64,15 @@
          } else if (clickedRow < [dataModel bottomFreezeIndex]) {
             [dataModel setTopFreezeIndex:clickedRow];
          }
+          // Keep row selection.
+          [self selectRowIndexes:selectedRows byExtendingSelection:NO];
       }
+       
    } else if (bKeyDown) {
       NSPoint clickedPoint = [self convertPoint:[event locationInWindow] fromView:nil];
       int clickedRow = [self rowAtPoint:clickedPoint];
       if (clickedRow > -1) {
+          NSIndexSet *selectedRows = [self selectedRowIndexes];
          CBDataModel * dataModel = [(CBMainWindowController *)[[self window] windowController] dataModel];
          if (NSAlternateKeyMask == ([event modifierFlags] & NSAlternateKeyMask)) {
             if (clickedRow == [dataModel bottomFreezeIndex]) {
@@ -75,6 +81,8 @@
          } else if (clickedRow > [dataModel topFreezeIndex]) {
             [dataModel setBottomFreezeIndex:clickedRow];
          }
+          // Keep row selection.
+          [self selectRowIndexes:selectedRows byExtendingSelection:NO];
       }
    } else {
       [super mouseDown:event];
