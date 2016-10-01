@@ -207,29 +207,27 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
 
 - (IBAction)openBidFile:(id)sender
 {
-   // create open bid panel
-   NSOpenPanel * openPanel = [NSOpenPanel openPanel];
-//   [openPanel setDelegate:self];
-   [openPanel setCanChooseDirectories:NO];
-   [openPanel setAllowsMultipleSelection:NO];
-//    [openPanel setDirectoryURL:[NSURL fileURLWithPath:[self crewBidDirectoryPath]]];
-//    [openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"crewbid"]];
-    
-   NSString * fileToSelect = [[NSUserDefaults standardUserDefaults] objectForKey:CBMostRecentOpenedBidFileKey];
-   NSArray * fileTypes = [NSArray arrayWithObject:@"crewbid"];
-   int result = [openPanel runModalForDirectory:[self crewBidDirectoryPath] file:fileToSelect types:fileTypes];
-   if (result == NSOKButton) {
-      // get file to open
-      NSArray * filesToOpen = [openPanel filenames];
-      if ([filesToOpen count] > 0) {
-	     // file to open
-         NSString *fileToOpen = [filesToOpen objectAtIndex:0];
-	     // set most recent opened file in user defaults
-		 [[NSUserDefaults standardUserDefaults] setObject:[fileToOpen lastPathComponent] forKey:CBMostRecentOpenedBidFileKey];
-		 // open bid file
-		 [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfFile:fileToOpen display:YES];
-      }
-   }
+    // create open bid panel
+    NSOpenPanel * openPanel = [NSOpenPanel openPanel];
+    [openPanel setCanChooseDirectories:NO];
+    [openPanel setCanChooseFiles:YES];
+    [openPanel setAllowsMultipleSelection:NO];
+    [openPanel setDirectoryURL:[NSURL fileURLWithPath:[self crewBidDirectoryPath]]];
+    [openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"crewbid"]];
+
+    NSInteger result = [openPanel runModal];
+    if (result == NSOKButton) {
+        // get file to open
+        NSArray * filesToOpen = [openPanel URLs];
+        if ([filesToOpen count] > 0) {
+             // file to open
+             NSURL *fileToOpen = [filesToOpen objectAtIndex:0];
+             // set most recent opened file in user defaults
+             [[NSUserDefaults standardUserDefaults] setObject:[fileToOpen lastPathComponent] forKey:CBMostRecentOpenedBidFileKey];
+             // open bid file
+            [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:fileToOpen display:YES error:NULL];
+        }
+    }
 }
 
 - (void)openBidReceipt:(id)sender
@@ -427,15 +425,7 @@ NSString *CBSubscriptionAlertMonthKey = @"CrewBidSubscriptionAlertMonth";
       NSString *lastOpenedBidPath = [[self crewBidDirectoryPath] stringByAppendingPathComponent:lastOpenedBid];
       NSFileManager *fileManager = [NSFileManager defaultManager];
        NSDate *fileDate = [[fileManager attributesOfItemAtPath:lastOpenedBidPath error:NULL] objectForKey:NSFileCreationDate];
-       
-       /***** Start Temp for Testing *******/
-       
-       [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:lastOpenedBidPath] display:YES error:NULL];
-       return;
-
-       /***** End Temp for Testing *******/
-       
-       
+            
       NSCalendarDate *fileCreatedDate = [NSCalendarDate dateWithString:[fileDate description]];
       NSCalendarDate *now = [NSCalendarDate calendarDate];
       
