@@ -42,7 +42,8 @@
    // if data file exists, unzip
    if (!bogusFilesExist && dataFileExists) {
       // check that unzip utility is available
-      NSString * unzipPath = [NSBundle pathForResource:@"unzip" ofType:nil inDirectory:[[NSBundle mainBundle] bundlePath]];
+//      NSString * unzipPath = [NSBundle pathForResource:@"unzip" ofType:nil inDirectory:[[NSBundle mainBundle] bundlePath]];
+       NSString *unzipPath = @"/usr/bin/unzip";
       if ([fileManager isExecutableFileAtPath:unzipPath]) {
          NSTask * task = [[NSTask alloc] init];
          [task setCurrentDirectoryPath:unzipDirectory];

@@ -66,7 +66,15 @@
     // Set bid period month. This is required for System 10.3 because
     // contentObjects binding requires System 10.4.
     [[self bidPeriod] setMonth:[[self selectedMonth] objectForKey:@"month"]];
+    
+    // ************************************************************************
+    // FOR TESTING
+    // ************************************************************************
+//    [self bidFileDownloadDidFinish];
+//    return;
+    // ************************************************************************
 
+    
     // Bid data already exists
     if ([[NSFileManager defaultManager] fileExistsAtPath:[[self bidPeriod] bidDocumentPath]])
     {

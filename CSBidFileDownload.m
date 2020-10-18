@@ -75,6 +75,14 @@ NSString *CSBidFileDownloadErrorKey = @"error";
     // Create data directory
     [[NSFileManager defaultManager] createDirectoryAtPath:[self downloadDirectory] withIntermediateDirectories:YES attributes:nil error:NULL];
     
+//    NSFileManager *fm = [NSFileManager defaultManager];
+//
+//    NSString *firstFile = [[self filesToDownload] firstObject];
+//    if (firstFile != NULL && [fm fileExistsAtPath:[[self downloadDirectory] stringByAppendingPathComponent:firstFile]]) {
+//        [self processDownloadedFiles];
+//        return;
+//    }
+    
     // Initialize third party url request
     NSURL *thirdPartyURL = [[NSURL alloc] initWithString:CSThirdPartyURL];
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:thirdPartyURL];
@@ -231,8 +239,8 @@ NSString *CSBidFileDownloadErrorKey = @"error";
 		bid = [bidLineNumbers componentsJoinedByString:@","];
 	} else {
 		NSArray *bidLines = [[self bidPeriod] bidLines];
-		unsigned bidLinesCount = [bidLines count];
-		unsigned bidLineIndex = 0;
+		NSUInteger bidLinesCount = [bidLines count];
+		NSUInteger bidLineIndex = 0;
 		NSMutableString *faFirstRoundBid = [NSMutableString stringWithCapacity:bidLinesCount];
 		for (; bidLineIndex < bidLinesCount; bidLineIndex++) {
 			id line = [bidLines objectAtIndex:bidLineIndex];

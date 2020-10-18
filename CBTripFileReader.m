@@ -72,11 +72,11 @@
       int tripDutyPeriods = [[record1 substringWithRange:DUTY_PERIODS_RANGE] intValue];
       // create trip with initial data
       CBTrip * trip = [[CBTrip alloc] initWithNumber:tripNumber departureStation:tripDepartureStation departureTime:tripDepartureTime returnTime:tripReturnTime isAMTrip:tripIsAMTrip totalBlock:tripTotalBlock dutyPeriods:tripDutyPeriods];
-      // adjust departure and arrival times for reserve trip
-      if ([trip isReserve]) {
-         tripDepartureTime -= 700;
-         tripReturnTime += 700;
-      }
+      // adjust departure and arrival times for reserve tripw
+//      if ([trip isReserve]) {
+//         tripDepartureTime -= 700;
+//         tripReturnTime += 700;
+//      }
 
       // read RECORD2 - day's credit and number of type 5 records
       NSString * record2 = [tripsData objectAtIndex:tripDataIndex];
@@ -187,10 +187,10 @@
          BOOL legIsDeadhead = ([dayTimes characterAtIndex:IS_DEADHEAD_INDEX] == IS_DEADHEAD_CHAR);
          BOOL legIsAircraftChange = ([dayFlightData characterAtIndex:IS_AIRCRAFT_CHANGE_INDEX] == IS_AIRCRAFT_CHANGE_CHAR);
          // adjust leg departure and arrival times for reserve trips
-         if (isReserve) {
-            legDepartureTime -= (7 * 60);
-            legArrivalTime += (7 * 60);
-         }
+//         if (isReserve) {
+//            legDepartureTime -= (7 * 60);
+//            legArrivalTime += (7 * 60);
+//         }
          leg = [[CBTripDayLeg alloc] initWithFlightNumber:legFlightNumber departureCity:legDepartureCity departureTime:legDepartureTime arrivalCity:legArrivalCity arrivalTime:legArrivalTime equipmentType:legEquipmentType isDeadhead:legIsDeadhead  isAircraftChange:legIsAircraftChange];
          [dayLegs addObject:leg];
 			// derive ground time for previous leg

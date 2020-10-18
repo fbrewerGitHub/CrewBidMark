@@ -1,4 +1,3 @@
-//
 //  CBNewBidWindowController.m
 //  CrewBid
 //

@@ -259,7 +259,7 @@
 				// so, append to lineInfo string. If the following line starts 
 				// with a '-' char, then there is no more trip info available.
 				NSUInteger nextCharLoc = lineRange.location + lineRange.length;
-				if (nextCharLoc < lenFileInfo && '-' != [fileInfo characterAtIndex:nextCharLoc]) {
+				while (nextCharLoc < lenFileInfo && '-' != [fileInfo characterAtIndex:nextCharLoc]) {
 					lineRange.location = lineRange.location + lineRange.length;
 					lineRange.length = 0;
 					lineRange = [fileInfo lineRangeForRange:lineRange];
@@ -268,6 +268,7 @@
 						return nil;
 					}
 					lineInfo = [lineInfo stringByAppendingString:[fileInfo substringWithRange:lineRange]];
+                    nextCharLoc = lineRange.location + lineRange.length;
 				}
 				// Read trip info (format: P03=0620/1605(14.50)).
 				// Start scanning at dates start location since 
