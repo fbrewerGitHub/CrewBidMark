@@ -639,7 +639,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
         
 		NSString *latestVersion = [latestVersionDict objectForKey:@"CFBundleShortVersionString"];
 		NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-		if (NO == [version isEqualToString:latestVersion]) {
+		if ([self newerVersionExists:version latestVersion:latestVersion]/*NO == [version isEqualToString:latestVersion]*/) {
 			NSString *changesURLString = @"https://www.macrewsoft.com/bin/CrewBidChanges.txt";
 			NSURL *changesURL = [NSURL URLWithString:changesURLString];
             NSURLRequest *changesRequest = [NSURLRequest requestWithURL:changesURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
@@ -652,7 +652,7 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 			[newVersAlert setInformativeText:changes];
 			[newVersAlert addButtonWithTitle:@"Download New Version"];
 			[newVersAlert addButtonWithTitle:@"Later"];
-			int returnCode = [newVersAlert runModal];
+			long returnCode = [newVersAlert runModal];
 			if (NSAlertFirstButtonReturn == returnCode) {
 				NSString *crewBidURLString = @"https://www.macrewsoft.com/bin/CrewBid.dmg.zip";
 				NSURL *crewBidURL = [NSURL URLWithString:crewBidURLString];
@@ -692,6 +692,41 @@ void NetworkReachabilityChanged (SCNetworkReachabilityRef target, SCNetworkReach
 		[[NSWorkspace sharedWorkspace] openURL:crewScheduleURL];
 	}
 }
+
+- (BOOL)newerVersionExists:(NSString *)current latestVersion:(NSString *)latest {
+    if ([current isEqualToString:latest]) {
+        return  NO;
+    }
+    
+    NSArray<NSString *> *currentComponents = [current componentsSeparatedByString:@"."];
+    NSArray<NSString *> *latestComponents = [latest componentsSeparatedByString:@"."];
+    
+    if ([currentComponents count] < 2 || [latestComponents count] < 2) {
+        return  NO;
+    }
+    
+    NSInteger currentMajor = [[currentComponents objectAtIndex:0] intValue];
+    NSInteger latestMajor = [[latestComponents objectAtIndex:0] intValue];
+    if (currentMajor < latestMajor ) {
+        return YES;
+    }
+
+    NSInteger currentMinor = [[currentComponents objectAtIndex:1] intValue];
+    NSInteger latestMinor = [[latestComponents objectAtIndex:1] intValue];
+    if (currentMinor < latestMinor) {
+        return YES;
+    }
+
+    NSInteger currentRev = [currentComponents count] > 2 ? [[currentComponents objectAtIndex:2] intValue] : 0;
+    NSInteger latestRev = [latestComponents count] > 2 ? [[latestComponents objectAtIndex:2] intValue] : 0;
+    if (currentRev < latestRev) {
+        return YES;
+    }
+
+    return NO;
+}
+
+
 
 - (void)checkSubscriptions
 {	

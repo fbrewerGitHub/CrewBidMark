@@ -61,7 +61,7 @@
 	// A dictionary to hold the second round trips that are created.
 	NSMutableDictionary *round2Trips = [NSMutableDictionary dictionaryWithCapacity:32];
 	NSArray *bpLines = [bidPeriod bidLines];
-	unsigned countOfLines = [bpLines count];
+	unsigned long countOfLines = [bpLines count];
 	unsigned l = 0;
 	// Enumerate lines.
 	for (l = 0; l < countOfLines; l++)
@@ -72,7 +72,7 @@
 		// line. It is used to determine if their are trips with the same 
 		// number in the line (duplicate trip numbers).
 		NSMutableArray *r2TripsToRead = [NSMutableArray arrayWithCapacity:[lnTrips count]];
-		unsigned countOfTrips = [lnTrips count];
+		unsigned long countOfTrips = [lnTrips count];
 		unsigned t = 0;
 		// Enumerate line trip dictionaries for line.
 		for (t = 0; t < countOfTrips; t++)
@@ -278,7 +278,10 @@
 				scanner = [NSScanner scannerWithString:lineInfo];
 				[scanner setScanLocation:datesStart];
 				NSUInteger s = 0;
-				for (s = 0; s < tripSequence; s++) {
+                // 29 May 2021: It appears that the trip start/end/pay is no
+                // longer duplicated when the same trip appears more than once.
+                // Therefore, need not scan past previous data.
+				for (s = 0; s < 1 /*tripSequence*/; s++) {
 					[scanner scanUpToString:partTripNum intoString:NULL];
 					[scanner scanString:partTripNum intoString:NULL];
 					[scanner scanUpToCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:NULL];

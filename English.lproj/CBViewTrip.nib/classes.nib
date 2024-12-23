@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                cancelButtonAction = id; 
+                copyLegs = id; 
+                showViewTripDialog = id; 
+                viewTripButtonAction = id; 
+            }; 
+            CLASS = CBViewTripWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                startDayTextField = NSTextField; 
+                tripNumberTextField = NSTextField; 
+                tripTextView = NSTextView; 
+                viewTripButton = NSButton; 
+                viewTripDialog = NSWindow; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

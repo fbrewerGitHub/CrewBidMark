@@ -127,9 +127,9 @@
    NSMutableArray * tripDays = [NSMutableArray array];
    // number of days in trip
    int day = 0;
-   unsigned NUM_DAYS = [payArray count];
-   unsigned FLIGHT_DATA_LENGTH = [flightData length];
-   unsigned TIMES_LENGTH = [times length];
+   unsigned long NUM_DAYS = [payArray count];
+   unsigned long FLIGHT_DATA_LENGTH = [flightData length];
+   unsigned long TIMES_LENGTH = [times length];
    // day ranges and intervals
    NSRange dayFlightDataRange = NSMakeRange(0, 15);
    const unsigned DAY_FLIGHT_DATA_INTVL = 15;

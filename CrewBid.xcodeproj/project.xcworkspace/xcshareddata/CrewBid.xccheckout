@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>98017364-BBC0-4A20-AF3D-2BF82593A24F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CrewBid</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>90009EE1EB9DC77193CA94E65A3C35500A48A1F8</key>
+		<string>niamey.dreamhost.com:~/git/crewbid_old.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CrewBid.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>90009EE1EB9DC77193CA94E65A3C35500A48A1F8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>niamey.dreamhost.com:~/git/crewbid_old.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>90009EE1EB9DC77193CA94E65A3C35500A48A1F8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>90009EE1EB9DC77193CA94E65A3C35500A48A1F8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>crewbid_old</string>
+		</dict>
+	</array>
+</dict>
+</plist>

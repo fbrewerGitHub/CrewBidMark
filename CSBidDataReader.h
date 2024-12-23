@@ -11,7 +11,7 @@
  Depsite the name, this class is used only for reading second round pilot 
  trip data from the lines text file.
  
- Second round trips have limited information, namely:
+ Second round trips have limited information, namely:d
  - trip number
  - trip duty periods
  - trip overnight cities
